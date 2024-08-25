@@ -13,7 +13,7 @@ namespace TheGorillaWatch.Patches
         private static Harmony instance;
 
         public static bool IsPatched { get; private set; }
-        public const string InstanceId = "1.0.1";
+        public const string InstanceId = "1.2.0";
 
         internal static void ApplyHarmonyPatches()
         {
