@@ -16,7 +16,7 @@ namespace TheGorillaWatch
     /* This attribute tells Utilla to look for [ModdedGameJoin] and [ModdedGameLeave] */
     [ModdedGamemode]
     [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
-    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.0.1")]
+    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.2.0")]
     public class Mod : BaseUnityPlugin
     {
         bool inRoom;
@@ -56,15 +56,15 @@ namespace TheGorillaWatch
         public static bool ToggleMod10;
 
         public static bool ToggleMod11;
-        
+
         public static bool ToggleMod12;
-        
+
         public static bool ToggleMod13;
 
         public static GameObject leftplat = null;
 
         public static GameObject rightplat = null;
-        
+
         public static GameObject Frozone = null;
 
         public static GameObject FrozoneR = null;
@@ -132,9 +132,9 @@ namespace TheGorillaWatch
                 }
                 if (counter < 0)
                 {
-                    counter = 13;
+                    counter = 12;
                 }
-                if (counter > 13)
+                if (counter > 12)
                 {
                     counter = 0;
                 }
@@ -265,16 +265,6 @@ namespace TheGorillaWatch
                 }
                 if (counter == 12)
                 {
-                    GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "Fixing";
-                    /*if (ControllerInputPoller.instance.rightControllerPrimaryButton && Time.time > PageCoolDown + .5)
-                    {
-                        PageCoolDown = Time.time;
-                        ToggleMod7 = !ToggleMod7;
-                        GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(69, true, 1f);
-                    }*/
-                }
-                if (counter == 13)
-                {
                     GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "MonkeBoing-- " + ToggleMod9.ToString();
                     if (ControllerInputPoller.instance.rightControllerPrimaryButton && Time.time > PageCoolDown + .5)
                     {
@@ -344,12 +334,12 @@ namespace TheGorillaWatch
                         Frozone.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
                         Frozone.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                         Frozone.GetComponent<Renderer>().material.color = Color.cyan;
-                        Frozone.AddComponent<GorillaSurfaceOverride>().overrideIndex = 70;
+                        Frozone.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
                         GameObject.Destroy(Frozone.GetComponent<Rigidbody>());
                         GameObject.Destroy(Frozone, .2f);
                         GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(AddForceStuff);
                     }
-                    
+
                     if (ControllerInputPoller.instance.rightGrab)
                     {
                         FrozoneR = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -358,7 +348,7 @@ namespace TheGorillaWatch
                         FrozoneR.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
                         FrozoneR.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                         FrozoneR.GetComponent<Renderer>().material.color = Color.cyan;
-                        FrozoneR.AddComponent<GorillaSurfaceOverride>().overrideIndex = 70;
+                        FrozoneR.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
                         GameObject.Destroy(FrozoneR.GetComponent<Rigidbody>());
                         GameObject.Destroy(FrozoneR, .2f);
                         GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(AddForceStuff);
@@ -386,7 +376,7 @@ namespace TheGorillaWatch
                         DrawR.transform.rotation = GorillaLocomotion.Player.Instance.rightControllerTransform.rotation;
                         DrawR.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                         DrawR.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
-                        DrawR.GetComponent<Renderer>().material.color = Color.cyan;
+                        DrawR.GetComponent<Renderer>().material.color = Color.black;
                         GameObject.Destroy(DrawR.GetComponent<Rigidbody>());
                         GameObject.Destroy(DrawR.GetComponent<SphereCollider>());
                         GameObject.Destroy(DrawR, 10f);
@@ -424,10 +414,6 @@ namespace TheGorillaWatch
                 {
                     GorillaLocomotion.Player.Instance.scale = .5f;
                 }
-                if (ToggleMod7)
-                {
-                    //Fixin
-                }
                 if (ToggleMod8)
                 {
                     MeshCollider[] array = Resources.FindObjectsOfTypeAll<MeshCollider>();
@@ -444,19 +430,6 @@ namespace TheGorillaWatch
                         meshCollider2.enabled = true;
                     }
                 }
-                /*if (ToggleMod8)
-                {
-                    baseMask = GorillaLocomotion.Player.Instance.locomotionEnabledLayers;
-                    GorillaLocomotion.Player.Instance.locomotionEnabledLayers = layerMask;
-                    GorillaLocomotion.Player.Instance.bodyCollider.isTrigger = true;
-                    GorillaLocomotion.Player.Instance.headCollider.isTrigger = true;
-                }
-                else
-                {
-                    /*GorillaLocomotion.Player.Instance.locomotionEnabledLayers = baseMask;
-                    GorillaLocomotion.Player.Instance.bodyCollider.isTrigger = false;
-                    GorillaLocomotion.Player.Instance.headCollider.isTrigger = false;
-                }*/
                 if (ToggleMod9)
                 {
                     bounce = GorillaLocomotion.Player.Instance.bodyCollider.material.bounciness;
@@ -486,9 +459,6 @@ namespace TheGorillaWatch
         [ModdedGamemodeJoin]
         public void OnJoin(string gamemode)
         {
-            //Activate your mod here
-            //ModName();
-
             inRoom = true;
         }
 
@@ -496,8 +466,6 @@ namespace TheGorillaWatch
         [ModdedGamemodeLeave]
         public void OnLeave(string gamemode)
         {
-            //Deactivate your mod here
-            //!ModName();
 
             inRoom = false;
         }
