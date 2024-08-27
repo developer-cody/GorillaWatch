@@ -17,7 +17,7 @@ namespace TheGorillaWatch
     /* This attribute tells Utilla to look for [ModdedGameJoin] and [ModdedGameLeave] */
     [ModdedGamemode]
     [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
-    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.3.0")]
+    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.3.1")]
     public class Mod : BaseUnityPlugin
     {
         bool inRoom;
@@ -153,7 +153,7 @@ namespace TheGorillaWatch
                 }
                 if (counter == 0)
                 {
-                    GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "GorillaWatch! \n \n Made by: \n ARTIFICIALGORILLAS";
+                    GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "GorillaWatch!\nMade by:\nARTIFICIALGORILLAS";
                 }
                 if (counter == 1)
                 {
