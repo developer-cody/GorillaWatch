@@ -7,6 +7,7 @@ using GorillaLocomotion;
 using Utilla;
 using CjLib;
 using UnityEngine.XR.LegacyInputHelpers;
+using System.Collections;
 
 namespace TheGorillaWatch
 {
@@ -17,7 +18,7 @@ namespace TheGorillaWatch
     /* This attribute tells Utilla to look for [ModdedGameJoin] and [ModdedGameLeave] */
     [ModdedGamemode]
     [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
-    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.3.1")]
+    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.4.0")]
     public class Mod : BaseUnityPlugin
     {
         bool inRoom;
@@ -67,6 +68,16 @@ namespace TheGorillaWatch
         public static bool ToggleMod15;
 
         public static bool ToggleMod16;
+        
+        public static bool ToggleMod17;        
+        
+        public static bool ToggleMod18;
+        
+        public static bool ToggleMod19;
+
+        GameObject thisPlayerCollider = null;
+
+        private GameObject playerColliderParent;
 
         public static GameObject leftplat = null;
 
@@ -75,7 +86,6 @@ namespace TheGorillaWatch
         public static GameObject Frozone = null;
 
         public static GameObject FrozoneR = null;
-
 
         public static GameObject DrawR = null;
 
@@ -115,45 +125,29 @@ namespace TheGorillaWatch
                 GameObject.Destroy(GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().rightHand);
                 GameObject.Destroy(GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().hat);
                 GameObject.Destroy(GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().face);
-                if (ControllerInputPoller.instance.rightControllerIndexFloat >= .5f && Time.time > PageCoolDown + 0.5)
+                if (ControllerInputPoller.instance.rightControllerSecondaryButton && Time.time > PageCoolDown + 0.5)
                 {
                     PageCoolDown = Time.time;
                     counter++;
                     GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                 }
-                if (ControllerInputPoller.instance.leftControllerIndexFloat >= .5f && Time.time > PageCoolDown + 0.5)
+                if (ControllerInputPoller.instance.leftControllerSecondaryButton && Time.time > PageCoolDown + 0.5f)
                 {
                     PageCoolDown = Time.time;
                     counter--;
                     GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                 }
-                if (ControllerInputPoller.instance.leftControllerSecondaryButton && Time.time > PageCoolDown + 0.5f)
-                {
-                    toggleWatch = !toggleWatch;
-                    PageCoolDown = Time.time;
-
-                    if (toggleWatch)
-                    {
-                        GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(false);
-                        Debug.Log("HuntWatch Disabled. Toggle is ON.");
-                    }
-                    else
-                    {
-                        GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(true);
-                        Debug.Log("HuntWatch Enabled. Toggle is OFF.");
-                    }
-                }
                 if (counter < 0)
                 {
-                    counter = 14;
+                    counter = 15;
                 }
-                if (counter > 14)
+                if (counter > 15)
                 {
                     counter = 0;
                 }
                 if (counter == 0)
                 {
-                    GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "GorillaWatch!\nMade by:\nARTIFICIALGORILLAS";
+                    GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "GorillaWatch!\nMade by:\nCody n' Ty";
                 }
                 if (counter == 1)
                 {
@@ -190,13 +184,13 @@ namespace TheGorillaWatch
                 }
                 if (counter == 4)
                 {
-                    GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "NoClip-- " + ToggleMod8.ToString();
+                    GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "VelocityFly-- " + ToggleMod2.ToString();
                     if (ControllerInputPoller.instance.rightControllerPrimaryButton && Time.time > PageCoolDown + .5)
                     {
                         PageCoolDown = Time.time;
-                        ToggleMod8 = !ToggleMod8;
+                        ToggleMod2 = !ToggleMod2;
                         GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(69, true, 1f);
-                        Debug.Log("Noclip, Go through the map!");
+                        Debug.Log("FLY");
                     }
                 }
                 if (counter == 5)
@@ -212,13 +206,13 @@ namespace TheGorillaWatch
                 }
                 if (counter == 6)
                 {
-                    GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "VelocityFly-- " + ToggleMod2.ToString();
+                    GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "NoClip-- " + ToggleMod8.ToString();
                     if (ControllerInputPoller.instance.rightControllerPrimaryButton && Time.time > PageCoolDown + .5)
                     {
                         PageCoolDown = Time.time;
-                        ToggleMod2 = !ToggleMod2;
+                        ToggleMod8 = !ToggleMod8;
                         GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(69, true, 1f);
-                        Debug.Log("FLY");
+                        Debug.Log("Noclip, Go through the map!");
                     }
                 }
 
@@ -268,7 +262,7 @@ namespace TheGorillaWatch
                 }
                 if (counter == 11)
                 {
-                    GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "SmallMonkers--" + ToggleMod4.ToString();
+                    GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "SmallMonkers-" + ToggleMod4.ToString();
                     if (ControllerInputPoller.instance.rightControllerPrimaryButton && Time.time > PageCoolDown + .5)
                     {
                         PageCoolDown = Time.time;
@@ -290,6 +284,17 @@ namespace TheGorillaWatch
                 }
                 if (counter == 13)
                 {
+                    GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "MonkeWalker-- " + ToggleMod16.ToString();
+                    if (ControllerInputPoller.instance.rightControllerPrimaryButton && Time.time > PageCoolDown + .5)
+                    {
+                        PageCoolDown = Time.time;
+                        ToggleMod16 = !ToggleMod16;
+                        GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(69, true, 1f);
+                        Debug.Log("MonkeWalker");
+                    }
+                }
+                if (counter == 14)
+                {
                     GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "MonkeBoing-- " + ToggleMod9.ToString();
                     if (ControllerInputPoller.instance.rightControllerPrimaryButton && Time.time > PageCoolDown + .5)
                     {
@@ -299,8 +304,8 @@ namespace TheGorillaWatch
                         Debug.Log("Go BOING BOING BOING");
                     }
                 }
-                
-                if (counter == 14)
+
+                if (counter == 15)
                 {
                     GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "AirSwim-- " + ToggleMod14.ToString();
                     if (ControllerInputPoller.instance.rightControllerPrimaryButton && Time.time > PageCoolDown + .5)
@@ -311,7 +316,7 @@ namespace TheGorillaWatch
                         Debug.Log("Swim Everywhere");
                     }
                 }
-                
+
 
                 if (ToggleMod1)
                 {
@@ -337,11 +342,10 @@ namespace TheGorillaWatch
                     {
                         if (leftplat != null)
                         {
-                            GameObject.Destroy(leftplat, .2f);
+                            GameObject.Destroy(leftplat, .5f);
                             leftplat = null;
                         }
                     }
-
                     if (ControllerInputPoller.instance.rightGrab)
                     {
                         if (rightplat == null)
@@ -358,7 +362,7 @@ namespace TheGorillaWatch
                     {
                         if (rightplat != null)
                         {
-                            GameObject.Destroy(rightplat, .2f);
+                            GameObject.Destroy(rightplat, .5f);
                             rightplat = null;
                         }
                     }
@@ -368,6 +372,87 @@ namespace TheGorillaWatch
                     GameObject.Destroy(leftplat);
                     GameObject.Destroy(rightplat);
                 }
+
+                if (ToggleMod2)
+                {
+                    if (ControllerInputPoller.instance.leftControllerPrimaryButton)
+                    {
+                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity = GorillaLocomotion.Player.Instance.headCollider.transform.forward * Time.deltaTime * 1400f;
+                    }
+                }
+                if (ToggleMod3)
+                {
+                    GorillaLocomotion.Player.Instance.scale = 2f;
+                }
+                if (ToggleMod4)
+                {
+                    GorillaLocomotion.Player.Instance.scale = .5f;
+                }
+                if (ToggleMod5)
+                {
+                    GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(Vector3.up * 9.8f, ForceMode.Acceleration);
+                }
+                if (ToggleMod6)
+                {
+                    if (ControllerInputPoller.instance.leftControllerGripFloat > .5)
+                    {
+                        GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(10 * GorillaTagger.Instance.offlineVRRig.transform.Find("rig/body/shoulder.L/upper_arm.L/forearm.L/hand.L").right, ForceMode.Acceleration);
+                        GorillaTagger.Instance.StartVibration(true, GorillaTagger.Instance.tapHapticStrength / 50f * GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
+                    }
+                    if (ControllerInputPoller.instance.rightControllerGripFloat > .5)
+                    {
+                        GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(10 * -GorillaTagger.Instance.offlineVRRig.transform.Find("rig/body/shoulder.R/upper_arm.R/forearm.R/hand.R").right, ForceMode.Acceleration);
+                        GorillaTagger.Instance.StartVibration(false, GorillaTagger.Instance.tapHapticStrength / 50f * GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
+                    }
+                }
+                if (ToggleMod7)
+                {
+
+                }
+                if (ToggleMod8)
+                {
+                    MeshCollider[] array = Resources.FindObjectsOfTypeAll<MeshCollider>();
+                    foreach (MeshCollider meshCollider in array)
+                    {
+                        meshCollider.enabled = false;
+                    }
+                }
+                else
+                {
+                    MeshCollider[] array3 = Resources.FindObjectsOfTypeAll<MeshCollider>();
+                    foreach (MeshCollider meshCollider2 in array3)
+                    {
+                        meshCollider2.enabled = true;
+                    }
+                }
+                if (ToggleMod9)
+                {
+                    bounce = GorillaLocomotion.Player.Instance.bodyCollider.material.bounciness;
+                    PMCombine = GorillaLocomotion.Player.Instance.bodyCollider.material.bounceCombine;
+                    GorillaLocomotion.Player.Instance.bodyCollider.material.bounceCombine = PhysicMaterialCombine.Maximum;
+                    GorillaLocomotion.Player.Instance.bodyCollider.material.bounciness = 1.0f;
+                }
+                else
+                {
+                    bounce = GorillaLocomotion.Player.Instance.bodyCollider.material.bounciness;
+                    PMCombine = GorillaLocomotion.Player.Instance.bodyCollider.material.bounceCombine;
+                    GorillaLocomotion.Player.Instance.bodyCollider.material.bounceCombine = PhysicMaterialCombine.Maximum;
+                    GorillaLocomotion.Player.Instance.bodyCollider.material.bounciness = 0f;
+                }
+                if (ToggleMod10)
+                {
+                    GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(Vector3.up * (Time.deltaTime * (6.66f / Time.deltaTime)), ForceMode.Acceleration);
+                }
+                if (ToggleMod11)
+                {
+                    GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(Vector3.down * (Time.deltaTime * (7.77f / Time.deltaTime)), ForceMode.Acceleration);
+                }
+                else
+                {
+                    GameObject.Destroy(FrozoneR);
+                    GameObject.Destroy(Frozone);
+                }
+
                 if (ToggleMod12)
                 {
                     Vector3 leftOffset = new Vector3(0f, -0.06f, 0f);
@@ -401,11 +486,6 @@ namespace TheGorillaWatch
                         GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(AddForceStuff);
                     }
                 }
-                if (!ToggleMod12)
-                {
-                    GameObject.Destroy(FrozoneR);
-                    GameObject.Destroy(Frozone);
-                }
                 if (ToggleMod13)
                 {
                     if (ControllerInputPoller.instance.leftGrab)
@@ -434,88 +514,19 @@ namespace TheGorillaWatch
                         GameObject.Destroy(DrawR, 10f);
                     }
                 }
-                if (ToggleMod6)
-                {
-                    if (ControllerInputPoller.instance.leftControllerGripFloat > .5)
-                    {
-                        GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(10 * GorillaTagger.Instance.offlineVRRig.transform.Find("rig/body/shoulder.L/upper_arm.L/forearm.L/hand.L").right, ForceMode.Acceleration);
-                        GorillaTagger.Instance.StartVibration(true, GorillaTagger.Instance.tapHapticStrength / 50f * GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
-                    }
-                    if (ControllerInputPoller.instance.rightControllerGripFloat > .5)
-                    {
-                        GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(10 * -GorillaTagger.Instance.offlineVRRig.transform.Find("rig/body/shoulder.R/upper_arm.R/forearm.R/hand.R").right, ForceMode.Acceleration);
-                        GorillaTagger.Instance.StartVibration(false, GorillaTagger.Instance.tapHapticStrength / 50f * GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
-                    }
-                }
-                if (ToggleMod2)
-                {
-                    if (ControllerInputPoller.instance.leftControllerPrimaryButton)
-                    {
-                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity = GorillaLocomotion.Player.Instance.headCollider.transform.forward * Time.deltaTime * 1400f;
-                    }
-                }
-                if (ToggleMod5)
-                {
-                    GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(Vector3.up * 10f, ForceMode.Acceleration);
-                }
-                if (ToggleMod3)
-                {
-                    GorillaLocomotion.Player.Instance.scale = 2f;
-                }
-                if (ToggleMod4)
-                {
-                    GorillaLocomotion.Player.Instance.scale = .5f;
-                }
-                if (ToggleMod8)
-                {
-                    MeshCollider[] array = Resources.FindObjectsOfTypeAll<MeshCollider>();
-                    foreach (MeshCollider meshCollider in array)
-                    {
-                        meshCollider.enabled = false;
-                    }
-                }
-                else
-                {
-                    MeshCollider[] array3 = Resources.FindObjectsOfTypeAll<MeshCollider>();
-                    foreach (MeshCollider meshCollider2 in array3)
-                    {
-                        meshCollider2.enabled = true;
-                    }
-                }
-                if (ToggleMod9)
-                {
-                    bounce = GorillaLocomotion.Player.Instance.bodyCollider.material.bounciness;
-                    PMCombine = GorillaLocomotion.Player.Instance.bodyCollider.material.bounceCombine;
-                    GorillaLocomotion.Player.Instance.bodyCollider.material.bounceCombine = PhysicMaterialCombine.Maximum;
-                    GorillaLocomotion.Player.Instance.bodyCollider.material.bounciness = 1.0f;
-                }
-                if (!ToggleMod9)
-                {
-                    bounce = GorillaLocomotion.Player.Instance.bodyCollider.material.bounciness;
-                    PMCombine = GorillaLocomotion.Player.Instance.bodyCollider.material.bounceCombine;
-                    GorillaLocomotion.Player.Instance.bodyCollider.material.bounceCombine = PhysicMaterialCombine.Maximum;
-                    GorillaLocomotion.Player.Instance.bodyCollider.material.bounciness = 0f;
-                }
-                if (ToggleMod10)
-                {
-                    GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(Vector3.up * (Time.deltaTime * (6.66f / Time.deltaTime)), ForceMode.Acceleration);
-                }
-                if (ToggleMod11)
-                {
-                    GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(Vector3.down * (Time.deltaTime * (7.77f / Time.deltaTime)), ForceMode.Acceleration);
-                }
+
                 if (ToggleMod14)
                 {
                     if (Swim == null)
                     {
                         Swim = UnityEngine.Object.Instantiate<GameObject>(GameObject.Find("Environment Objects/LocalObjects_Prefab/ForestToBeach/ForestToBeach_Prefab_V4/CaveWaterVolume"));
-                        Swim.transform.localScale = new Vector3(5f, 5f, 5f);
+                        Swim.transform.localScale = new Vector3(5f, 1000f, 5f);
                         Swim.GetComponent<Renderer>().enabled = false;
                     }
                     else
                     {
                         GorillaLocomotion.Player.Instance.audioManager.UnsetMixerSnapshot(0.1f);
-                        Swim.transform.position = GorillaTagger.Instance.headCollider.transform.position + new Vector3(0f, 2.5f, 0f);
+                        Swim.transform.position = GorillaTagger.Instance.headCollider.transform.position + new Vector3(0f, 200f, 0f);
                     }
                 }
                 else
@@ -556,6 +567,59 @@ namespace TheGorillaWatch
                     }
                 }
             }
+            if (ToggleMod16)
+            {
+                if (playerColliderParent != null)
+                {
+                    Destroy(playerColliderParent);
+                }
+
+                playerColliderParent = new GameObject();
+
+                foreach (VRRig vrig in GorillaParent.instance.vrrigs)
+                {
+                    if (vrig != GorillaTagger.Instance.offlineVRRig)
+                    {
+                        GameObject thisPlayerCollider = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        thisPlayerCollider.transform.position = vrig.transform.position;
+                        thisPlayerCollider.GetComponent<Renderer>().enabled = false;
+                        thisPlayerCollider.transform.localScale = new Vector3(0.3f, 0.55f, 0.3f);
+                        thisPlayerCollider.transform.rotation = vrig.transform.rotation;
+                        thisPlayerCollider.transform.SetParent(playerColliderParent.transform, false);
+
+                        thisPlayerCollider.layer = LayerMask.NameToLayer("Box");
+
+                        if (thisPlayerCollider.GetComponent<BoxCollider>() != null)
+                        {
+                            thisPlayerCollider.GetComponent<BoxCollider>().enabled = true;
+                        }
+                        else
+                        {
+                            thisPlayerCollider.AddComponent<BoxCollider>();
+                        }
+
+                        Rigidbody rb = thisPlayerCollider.AddComponent<Rigidbody>();
+                        rb.isKinematic = true;
+                        rb.useGravity = false;
+
+                        Rigidbody handRigidbody = vrig.gameObject.GetComponent<Rigidbody>();
+                        if (handRigidbody != null)
+                        {
+                            handRigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
+                        }
+                    }
+                }
+
+                StartCoroutine(DestroyAfterOneFrame(playerColliderParent));
+            }
+            else
+            {
+                thisPlayerCollider.GetComponent<BoxCollider>().enabled = false;
+            }
+            if (ToggleMod17)
+            {
+
+            }
             if (!inRoom)
             {
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(false);
@@ -565,22 +629,14 @@ namespace TheGorillaWatch
                 GameObject.Destroy(Frozone);
                 GameObject.Destroy(FrozoneR);
                 GameObject.Destroy(Swim);
+                ToggleMod16 = false;
             }
         }
 
-        /* This attribute tells Utilla to call this method when a modded room is joined */
-        [ModdedGamemodeJoin]
-        public void OnJoin(string gamemode)
+        private IEnumerator DestroyAfterOneFrame(GameObject obj)
         {
-            inRoom = true;
-        }
-
-        /* This attribute tells Utilla to call this method when a modded room is left */
-        [ModdedGamemodeLeave]
-        public void OnLeave(string gamemode)
-        {
-
-            inRoom = false;
+            yield return null;
+            Destroy(obj);
         }
     }
 }
