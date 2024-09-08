@@ -4,7 +4,6 @@ using TheGorillaWatch.Patches;
 using UnityEngine;
 using GorillaNetworking;
 using GorillaLocomotion;
-using Utilla;
 using CjLib;
 using UnityEngine.XR.LegacyInputHelpers;
 using System.Collections;
@@ -12,13 +11,7 @@ using Photon.Pun;
 
 namespace TheGorillaWatch
 {
-    /// <summary>
-    /// This is your mod's main class.
-    /// </summary>
 
-    /* This attribute tells Utilla to look for [ModdedGameJoin] and [ModdedGameLeave] */
-    [ModdedGamemode]
-    [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
     [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.4.5")]
     public class Mod : BaseUnityPlugin
     {
@@ -100,21 +93,9 @@ namespace TheGorillaWatch
 
         Vector3 AddForceStuff = new Vector3(0f, 40f, 0f);
 
-        void Start()
-        {
-            /* A lot of Gorilla Tag systems will not be set up when start is called /*
-			/* Put code in OnGameInitialized to avoid null references */
-
-            Utilla.Events.GameInitialized += OnGameInitialized;
-        }
-
-        void OnGameInitialized(object sender, EventArgs e)
-        {
-            /* Code here runs after the game initializes (i.e. GorillaLocomotion.Player.Instance != null) */
-        }
-
         void Update()
         {
+            inRoom = PhotonNetwork.CurrentRoom.CustomProperties["gameMode"].ToString().Contains("MODDED");
             if (inRoom || !PhotonNetwork.InRoom)
             {
                 Debug.Log("GorillaWatch Has Loaded Successfully");
@@ -126,6 +107,7 @@ namespace TheGorillaWatch
                 GameObject.Destroy(GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().rightHand);
                 GameObject.Destroy(GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().hat);
                 GameObject.Destroy(GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().face);
+                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.supportRichText = true;
                 if (ControllerInputPoller.instance.rightControllerSecondaryButton && Time.time > PageCoolDown + 0.5)
                 {
                     PageCoolDown = Time.time;
@@ -653,21 +635,6 @@ namespace TheGorillaWatch
         {
             yield return null;
             Destroy(obj);
-        }
-
-        /* This attribute tells Utilla to call this method when a modded room is joined */
-        [ModdedGamemodeJoin]
-        public void OnJoin(string gamemode)
-        {
-            inRoom = true;
-        }
-
-        /* This attribute tells Utilla to call this method when a modded room is left */
-        [ModdedGamemodeLeave]
-        public void OnLeave(string gamemode)
-        {
-
-            inRoom = false;
         }
     }
 }
