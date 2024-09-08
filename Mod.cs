@@ -8,6 +8,7 @@ using Utilla;
 using CjLib;
 using UnityEngine.XR.LegacyInputHelpers;
 using System.Collections;
+using Photon.Pun;
 
 namespace TheGorillaWatch
 {
@@ -18,7 +19,7 @@ namespace TheGorillaWatch
     /* This attribute tells Utilla to look for [ModdedGameJoin] and [ModdedGameLeave] */
     [ModdedGamemode]
     [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
-    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.4.0")]
+    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.4.5")]
     public class Mod : BaseUnityPlugin
     {
         bool inRoom;
@@ -114,7 +115,7 @@ namespace TheGorillaWatch
 
         void Update()
         {
-            if (inRoom)
+            if (inRoom || !PhotonNetwork.InRoom)
             {
                 Debug.Log("GorillaWatch Has Loaded Successfully");
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(true);
@@ -447,12 +448,6 @@ namespace TheGorillaWatch
                 {
                     GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(Vector3.down * (Time.deltaTime * (7.77f / Time.deltaTime)), ForceMode.Acceleration);
                 }
-                else
-                {
-                    GameObject.Destroy(FrozoneR);
-                    GameObject.Destroy(Frozone);
-                }
-
                 if (ToggleMod12)
                 {
                     Vector3 leftOffset = new Vector3(0f, -0.06f, 0f);
@@ -460,7 +455,7 @@ namespace TheGorillaWatch
 
                     if (ControllerInputPoller.instance.leftGrab)
                     {
-                        Frozone = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        /*Frozone = GameObject.CreatePrimitive(PrimitiveType.Cube);
                         Frozone.transform.position = GorillaLocomotion.Player.Instance.leftControllerTransform.position + leftOffset;
                         Frozone.transform.rotation = GorillaLocomotion.Player.Instance.leftControllerTransform.rotation;
                         Frozone.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
@@ -469,13 +464,21 @@ namespace TheGorillaWatch
                         Frozone.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
                         GameObject.Destroy(Frozone.GetComponent<Rigidbody>());
                         GameObject.Destroy(Frozone, .2f);
-                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(AddForceStuff);
+                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(AddForceStuff);*/
+                        Frozone = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        Frozone.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
+                        Frozone.transform.position = GorillaTagger.Instance.leftHandTransform.position + leftOffset;
+                        Frozone.transform.rotation = GorillaTagger.Instance.leftHandTransform.rotation;
+                        Frozone.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
+                        Frozone.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
+                        Frozone.GetComponent<Renderer>().material.color = Color.cyan;
+                        GameObject.Destroy(Frozone, .2f);
                     }
 
                     if (ControllerInputPoller.instance.rightGrab)
                     {
-                        FrozoneR = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        FrozoneR.transform.position = GorillaLocomotion.Player.Instance.rightControllerTransform.position + leftOffset;
+                        /*FrozoneR = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        FrozoneR.transform.position = GorillaLocomotion.Player.Instance.rightControllerTransform.position + rightOffset;
                         FrozoneR.transform.rotation = GorillaLocomotion.Player.Instance.rightControllerTransform.rotation;
                         FrozoneR.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
                         FrozoneR.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
@@ -483,8 +486,21 @@ namespace TheGorillaWatch
                         FrozoneR.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
                         GameObject.Destroy(FrozoneR.GetComponent<Rigidbody>());
                         GameObject.Destroy(FrozoneR, .2f);
-                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(AddForceStuff);
+                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(AddForceStuff);*/
+                        FrozoneR = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        FrozoneR.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
+                        FrozoneR.transform.position = GorillaTagger.Instance.rightHandTransform.position + rightOffset;
+                        FrozoneR.transform.rotation = GorillaTagger.Instance.rightHandTransform.rotation;
+                        FrozoneR.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
+                        FrozoneR.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
+                        FrozoneR.GetComponent<Renderer>().material.color = Color.cyan;
+                        GameObject.Destroy(FrozoneR, .2f);
                     }
+                }
+                else
+                {
+                    GameObject.Destroy(FrozoneR);
+                    GameObject.Destroy(Frozone);
                 }
                 if (ToggleMod13)
                 {
@@ -566,61 +582,61 @@ namespace TheGorillaWatch
                         }
                     }
                 }
-            }
-            if (ToggleMod16)
-            {
-                if (playerColliderParent != null)
+                if (ToggleMod16)
                 {
-                    Destroy(playerColliderParent);
-                }
-
-                playerColliderParent = new GameObject();
-
-                foreach (VRRig vrig in GorillaParent.instance.vrrigs)
-                {
-                    if (vrig != GorillaTagger.Instance.offlineVRRig)
+                    if (playerColliderParent != null)
                     {
-                        GameObject thisPlayerCollider = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        thisPlayerCollider.transform.position = vrig.transform.position;
-                        thisPlayerCollider.GetComponent<Renderer>().enabled = false;
-                        thisPlayerCollider.transform.localScale = new Vector3(0.3f, 0.55f, 0.3f);
-                        thisPlayerCollider.transform.rotation = vrig.transform.rotation;
-                        thisPlayerCollider.transform.SetParent(playerColliderParent.transform, false);
+                        Destroy(playerColliderParent);
+                    }
 
-                        thisPlayerCollider.layer = LayerMask.NameToLayer("Box");
+                    playerColliderParent = new GameObject();
 
-                        if (thisPlayerCollider.GetComponent<BoxCollider>() != null)
+                    foreach (VRRig vrig in GorillaParent.instance.vrrigs)
+                    {
+                        if (vrig != GorillaTagger.Instance.offlineVRRig)
                         {
-                            thisPlayerCollider.GetComponent<BoxCollider>().enabled = true;
-                        }
-                        else
-                        {
-                            thisPlayerCollider.AddComponent<BoxCollider>();
-                        }
+                            GameObject thisPlayerCollider = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                            thisPlayerCollider.transform.position = vrig.transform.position;
+                            thisPlayerCollider.GetComponent<Renderer>().enabled = false;
+                            thisPlayerCollider.transform.localScale = new Vector3(0.3f, 0.55f, 0.3f);
+                            thisPlayerCollider.transform.rotation = vrig.transform.rotation;
+                            thisPlayerCollider.transform.SetParent(playerColliderParent.transform, false);
 
-                        Rigidbody rb = thisPlayerCollider.AddComponent<Rigidbody>();
-                        rb.isKinematic = true;
-                        rb.useGravity = false;
+                            thisPlayerCollider.layer = LayerMask.NameToLayer("Box");
 
-                        Rigidbody handRigidbody = vrig.gameObject.GetComponent<Rigidbody>();
-                        if (handRigidbody != null)
-                        {
-                            handRigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
+                            if (thisPlayerCollider.GetComponent<BoxCollider>() != null)
+                            {
+                                thisPlayerCollider.GetComponent<BoxCollider>().enabled = true;
+                            }
+                            else
+                            {
+                                thisPlayerCollider.AddComponent<BoxCollider>();
+                            }
+
+                            Rigidbody rb = thisPlayerCollider.AddComponent<Rigidbody>();
+                            rb.isKinematic = true;
+                            rb.useGravity = false;
+
+                            Rigidbody handRigidbody = vrig.gameObject.GetComponent<Rigidbody>();
+                            if (handRigidbody != null)
+                            {
+                                handRigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
+                            }
                         }
                     }
-                }
 
-                StartCoroutine(DestroyAfterOneFrame(playerColliderParent));
+                    StartCoroutine(DestroyAfterOneFrame(playerColliderParent));
+                }
+                else
+                {
+                    thisPlayerCollider.GetComponent<BoxCollider>().enabled = false;
+                }
+                if (ToggleMod17)
+                {
+
+                }
             }
             else
-            {
-                thisPlayerCollider.GetComponent<BoxCollider>().enabled = false;
-            }
-            if (ToggleMod17)
-            {
-
-            }
-            if (!inRoom)
             {
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(false);
                 GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().enabled = true;
@@ -637,6 +653,21 @@ namespace TheGorillaWatch
         {
             yield return null;
             Destroy(obj);
+        }
+
+        /* This attribute tells Utilla to call this method when a modded room is joined */
+        [ModdedGamemodeJoin]
+        public void OnJoin(string gamemode)
+        {
+            inRoom = true;
+        }
+
+        /* This attribute tells Utilla to call this method when a modded room is left */
+        [ModdedGamemodeLeave]
+        public void OnLeave(string gamemode)
+        {
+
+            inRoom = false;
         }
     }
 }
