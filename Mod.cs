@@ -11,11 +11,12 @@ using Photon.Pun;
 using HarmonyLib;
 using Valve.VR;
 using UnityEngine.XR;
+using GorillaLocomotion.Climbing;
 
 namespace TheGorillaWatch
 {
 
-    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.4.5")]
+    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.5.0")]
     public class Mod : BaseUnityPlugin
     {
         bool inRoom;
@@ -65,11 +66,11 @@ namespace TheGorillaWatch
         public static bool ToggleMod15;
 
         public static bool ToggleMod16;
-        
-        public static bool ToggleMod17;        
-        
+
+        public static bool ToggleMod17;
+
         public static bool ToggleMod18;
-        
+
         public static bool ToggleMod19;
 
         GameObject thisPlayerCollider = null;
@@ -116,16 +117,33 @@ namespace TheGorillaWatch
             inRoom = PhotonNetwork.CurrentRoom.CustomProperties["gameMode"].ToString().Contains("MODDED");
             if (inRoom || !PhotonNetwork.InRoom)
             {
-                bool stickclick;
-                if (IsSteamVR) { stickclick = SteamVR_Actions.gorillaTag_LeftJoystickClick.GetState(SteamVR_Input_Sources.LeftHand); }
-                else { ControllerInputPoller.instance.leftControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out stickclick); }
+                bool stickclickWatchToggleWatch;
+                if (IsSteamVR)
+                {
+                    stickclickWatchToggleWatch = SteamVR_Actions.gorillaTag_LeftJoystickClick.GetState(SteamVR_Input_Sources.LeftHand);
+                }
+                else
+                {
+                    ControllerInputPoller.instance.leftControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out stickclickWatchToggleWatch);
+                }
+                
+                bool stickclickmods;
 
-                if(stickclick && !stickClickJustPressed)
+                if (IsSteamVR)
+                {
+                    stickclickmods = SteamVR_Actions.gorillaTag_RightJoystickClick.GetState(SteamVR_Input_Sources.RightHand);
+                }
+                else
+                {
+                    ControllerInputPoller.instance.rightControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out stickclickmods);
+                }
+
+                if (stickclickWatchToggleWatch && !stickClickJustPressed)
                 {
                     watchOn = !watchOn;
                     stickClickJustPressed = true;
                 }
-                else if(!stickclick)
+                else if (!stickclickWatchToggleWatch)
                 {
                     stickClickJustPressed = false;
                 }
@@ -146,13 +164,13 @@ namespace TheGorillaWatch
                     if (ControllerInputPoller.instance.leftControllerPrimaryButton && Time.time > PageCoolDown + 0.5)
                     {
                         PageCoolDown = Time.time;
-                        counter++;
+                        counter--;
                         GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                     }
                     if (ControllerInputPoller.instance.leftControllerSecondaryButton && Time.time > PageCoolDown + 0.5f)
                     {
                         PageCoolDown = Time.time;
-                        counter--;
+                        counter++;
                         GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                     }
                     if (counter < 0)
@@ -165,12 +183,12 @@ namespace TheGorillaWatch
                     }
                     if (counter == 0)
                     {
-                        GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "<color=black>Freaky</color>Watch!\nMade by:\nCody n' Ty";
+                        GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "<color=black>Gorilla</color>Watch!\nMade by:\n<color=blue>Cody</color> n' Ty";
                     }
                     if (counter == 1)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "PlatformGuy--" + ToggleMod1.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod1 = !ToggleMod1;
@@ -181,7 +199,7 @@ namespace TheGorillaWatch
                     if (counter == 2)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "FrozoneGuy--" + ToggleMod12.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod12 = !ToggleMod12;
@@ -192,7 +210,7 @@ namespace TheGorillaWatch
                     if (counter == 3)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "DrawingGuy-- " + ToggleMod13.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods  && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod13 = !ToggleMod13;
@@ -203,7 +221,7 @@ namespace TheGorillaWatch
                     if (counter == 4)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "VelocityFly-- " + ToggleMod2.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod2 = !ToggleMod2;
@@ -214,7 +232,7 @@ namespace TheGorillaWatch
                     if (counter == 5)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "IronMonke-- " + ToggleMod6.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods  && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(69, true, 1f);
@@ -225,7 +243,7 @@ namespace TheGorillaWatch
                     if (counter == 6)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "NoClip-- " + ToggleMod8.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod8 = !ToggleMod8;
@@ -237,7 +255,7 @@ namespace TheGorillaWatch
                     if (counter == 7)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "HighGravity-- " + ToggleMod11.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod11 = !ToggleMod11;
@@ -248,7 +266,7 @@ namespace TheGorillaWatch
                     if (counter == 8)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "LowGravity-- " + ToggleMod10.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod10 = !ToggleMod10;
@@ -259,7 +277,7 @@ namespace TheGorillaWatch
                     if (counter == 9)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "NoGravity-- " + ToggleMod5.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod5 = !ToggleMod5;
@@ -270,7 +288,7 @@ namespace TheGorillaWatch
                     if (counter == 10)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "BigMonkers---" + ToggleMod3.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod3 = !ToggleMod3;
@@ -281,7 +299,7 @@ namespace TheGorillaWatch
                     if (counter == 11)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "SmallMonkers-" + ToggleMod4.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod4 = !ToggleMod4;
@@ -292,7 +310,7 @@ namespace TheGorillaWatch
                     if (counter == 12)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "MonkePunch-- " + ToggleMod15.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod15 = !ToggleMod15;
@@ -303,7 +321,7 @@ namespace TheGorillaWatch
                     if (counter == 13)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "MonkeWalker-- " + ToggleMod16.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod16 = !ToggleMod16;
@@ -314,7 +332,7 @@ namespace TheGorillaWatch
                     if (counter == 14)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "MonkeBoing-- " + ToggleMod9.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod9 = !ToggleMod9;
@@ -326,7 +344,7 @@ namespace TheGorillaWatch
                     if (counter == 15)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "AirSwim-- " + ToggleMod14.ToString();
-                        if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                        if (stickclickmods && Time.time > PageCoolDown + .5)
                         {
                             PageCoolDown = Time.time;
                             ToggleMod14 = !ToggleMod14;
@@ -336,6 +354,7 @@ namespace TheGorillaWatch
                     }
                 }
 
+                //ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f
 
                 if (ToggleMod1)
                 {
@@ -351,7 +370,7 @@ namespace TheGorillaWatch
                         {
                             leftplat = GameObject.CreatePrimitive(PrimitiveType.Cube);
                             leftplat.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
-                            leftplat.transform.position = GorillaTagger.Instance.leftHandTransform.position + leftOffset;
+                            leftplat.transform.position = GorillaLocomotion.Player.Instance.LastLeftHandPosition + leftOffset;
                             leftplat.transform.rotation = GorillaTagger.Instance.leftHandTransform.rotation;
                             leftplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                             leftplat.GetComponent<Renderer>().material.color = playerColor;
@@ -371,7 +390,7 @@ namespace TheGorillaWatch
                         {
                             rightplat = GameObject.CreatePrimitive(PrimitiveType.Cube);
                             rightplat.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
-                            rightplat.transform.position = GorillaTagger.Instance.rightHandTransform.position + rightOffset;
+                            rightplat.transform.position = GorillaLocomotion.Player.Instance.LastRightHandPosition + rightOffset;
                             rightplat.transform.rotation = GorillaTagger.Instance.rightHandTransform.rotation;
                             rightplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                             rightplat.GetComponent<Renderer>().material.color = playerColor;
@@ -394,7 +413,7 @@ namespace TheGorillaWatch
 
                 if (ToggleMod2)
                 {
-                    if (ControllerInputPoller.instance.leftControllerPrimaryButton)
+                    if (ControllerInputPoller.instance.rightControllerPrimaryButton)
                     {
                         GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity = GorillaLocomotion.Player.Instance.headCollider.transform.forward * Time.deltaTime * 1400f;
                     }
@@ -409,7 +428,7 @@ namespace TheGorillaWatch
                 }
                 if (ToggleMod5)
                 {
-                    GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(Vector3.up * 9.8f, ForceMode.Acceleration);
+                    GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(Vector3.up * 9.807f, ForceMode.Acceleration);
                 }
                 if (ToggleMod6)
                 {
@@ -428,7 +447,7 @@ namespace TheGorillaWatch
                 {
 
                 }
-                if (ToggleMod8 && ControllerInputPoller.instance.leftControllerPrimaryButton)
+                if (ToggleMod8)
                 {
                     MeshCollider[] array = Resources.FindObjectsOfTypeAll<MeshCollider>();
                     foreach (MeshCollider meshCollider in array)
@@ -490,7 +509,7 @@ namespace TheGorillaWatch
                         Frozone.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                         Frozone.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
                         Frozone.GetComponent<Renderer>().material.color = Color.cyan;
-                        GameObject.Destroy(Frozone, .2f);
+                        GameObject.Destroy(Frozone, .15f);
                     }
 
                     if (ControllerInputPoller.instance.rightGrab)
@@ -512,7 +531,7 @@ namespace TheGorillaWatch
                         FrozoneR.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                         FrozoneR.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
                         FrozoneR.GetComponent<Renderer>().material.color = Color.cyan;
-                        GameObject.Destroy(FrozoneR, .2f);
+                        GameObject.Destroy(FrozoneR, .15f);
                     }
                 }
                 else
@@ -585,7 +604,7 @@ namespace TheGorillaWatch
 
                             if (distance < 0.25)
                             {
-                                GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity += Vector3.Normalize(vrrig.rightHandTransform.position - lastRight[index]) * 10f;
+                                GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity += Vector3.Normalize(vrrig.rightHandTransform.position - lastRight[index]) * 5f;
                             }
                             lastRight[index] = vrrig.rightHandTransform.position;
 
@@ -594,7 +613,7 @@ namespace TheGorillaWatch
 
                             if (distance < 0.25)
                             {
-                                GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity += Vector3.Normalize(vrrig.leftHandTransform.position - lastLeft[index]) * 10f;
+                                GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity += Vector3.Normalize(vrrig.leftHandTransform.position - lastLeft[index]) * 5f;
                             }
                             lastLeft[index] = vrrig.leftHandTransform.position;
                         }
@@ -631,6 +650,8 @@ namespace TheGorillaWatch
                                 thisPlayerCollider.AddComponent<BoxCollider>();
                             }
 
+                            thisPlayerCollider.AddComponent<GorillaClimbable>().enabled = true;
+
                             Rigidbody rb = thisPlayerCollider.AddComponent<Rigidbody>();
                             rb.isKinematic = true;
                             rb.useGravity = false;
@@ -649,6 +670,7 @@ namespace TheGorillaWatch
                 {
                     thisPlayerCollider.GetComponent<BoxCollider>().enabled = false;
                 }
+
                 if (ToggleMod17)
                 {
 
