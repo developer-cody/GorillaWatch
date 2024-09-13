@@ -1,0 +1,1 @@
+Uhmmmmmmm, so when you go into normal hunt, you can see the watch, but you can't use it. SO hunt is **UNPLAYABLE** for the time being. Reed licence if u wanna do shtuff with it. Idk what ima put the licence so ye. Prolly MIT.
