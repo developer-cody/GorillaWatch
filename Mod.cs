@@ -55,7 +55,6 @@ namespace TheGorillaWatch
                     var types = assembly.GetTypes().Where(type => type.IsSubclassOf(typeof(Page)));
                     foreach (var type in types)
                     {
-                        
                         try
                         {
                             Debug.Log(type.Name);
@@ -63,7 +62,7 @@ namespace TheGorillaWatch
                             Page modObject = (Page)mod.AddComponent(type);
                             mods.Add(modObject);
                             mod.transform.SetParent(modHolder.transform);
-                            if (modObject.modName == "GorillaWatchMainInfoPage")
+                            if(modObject.modName == "GorillaWatchMainInfoPage")
                             {
                                 mainPageNum = mods.IndexOf(modObject);
                             }
