@@ -9,6 +9,8 @@ namespace TheGorillaWatch.Models
         public abstract string modName { get; }
         public virtual string info { get; set; } = "";
 
+        public virtual bool showOnMainMenu { get; set; } = true;
+
         public virtual PageType pageType { get; } = PageType.Toggle;
 
         public virtual void Enable() { modEnabled = true; Debug.Log($"{modName} enabled"); }
