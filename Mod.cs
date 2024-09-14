@@ -61,14 +61,11 @@ namespace TheGorillaWatch
                             Debug.Log(type.Name);
                             GameObject mod = new GameObject($"Mod {type.Name}");
                             Page modObject = (Page)mod.AddComponent(type);
-                            if (modObject.showOnMainMenu)
+                            mods.Add(modObject);
+                            mod.transform.SetParent(modHolder.transform);
+                            if (modObject.modName == "GorillaWatchMainInfoPage")
                             {
-                                mods.Add(modObject);
-                                mod.transform.SetParent(modHolder.transform);
-                                if (modObject.modName == "GorillaWatchMainInfoPage")
-                                {
-                                    mainPageNum = mods.IndexOf(modObject);
-                                }
+                                mainPageNum = mods.IndexOf(modObject);
                             }
                         }
                         catch (Exception e)

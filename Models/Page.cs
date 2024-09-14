@@ -9,7 +9,7 @@ namespace TheGorillaWatch.Models
         public abstract string modName { get; }
         public virtual string info { get; set; } = "";
 
-        public virtual bool showOnMainMenu { get; set; } = true;
+        // fuck you wryser | public virtual bool showOnMainMenu { get; set; } = true;
 
         public virtual PageType pageType { get; } = PageType.Toggle;
 
