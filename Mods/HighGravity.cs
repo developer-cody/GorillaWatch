@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using TheGorillaWatch.Models;
@@ -10,9 +10,19 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "HighGravity";
 
+        private bool isEnabled = false;
+
         public override void OnUpdate()
         {
-            GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(Vector3.down * (Time.deltaTime * (7.77f / Time.deltaTime)), ForceMode.Acceleration);
+            if (isEnabled)
+            {
+                GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(Vector3.down * (Time.deltaTime * (7.77f / Time.deltaTime)), ForceMode.Acceleration);
+            }
+        }
+
+        public void ToggleHighGravity()
+        {
+            isEnabled = !isEnabled;
         }
     }
 }
