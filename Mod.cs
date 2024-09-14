@@ -1,19 +1,26 @@
 using BepInEx;
 using System;
+using TheGorillaWatch.Patches;
 using UnityEngine;
 using GorillaNetworking;
+using GorillaLocomotion;
+using CjLib;
+using UnityEngine.XR.LegacyInputHelpers;
+using System.Collections;
 using Photon.Pun;
 using HarmonyLib;
+using Valve.VR;
 using UnityEngine.XR;
 using System.Collections.Generic;
 using System.Linq;
 using TheGorillaWatch.Models;
 using TheGorillaWatch.Mods;
+using System.Globalization;
 
 namespace TheGorillaWatch
 {
 
-    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.4.5")]
+    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.4.6")]
     public class Mod : BaseUnityPlugin
     {
         bool inRoom;
@@ -23,15 +30,18 @@ namespace TheGorillaWatch
         public static float PageCoolDown;
 
         bool IsSteamVR;
+        
+        bool ToggleModButton;
 
         bool watchOn = true;
+
         bool stickClickJustPressed;
 
         public static List<Page> mods = new List<Page>();
+
         bool reset = true;
 
         bool initialized = false;
-
 
         void Start()
         {
@@ -52,7 +62,7 @@ namespace TheGorillaWatch
                             Page modObject = (Page)mod.AddComponent(type);
                             mods.Add(modObject);
                             mod.transform.SetParent(modHolder.transform);
-                            if(modObject.modName == "GorillaWatchMainInfoPageWABSHUWAJSD")
+                            if(modObject.modName == "GorillaWatchMainInfoPage")
                             {
                                 mainPageNum = mods.IndexOf(modObject);
                             }
@@ -87,8 +97,14 @@ namespace TheGorillaWatch
             {
                 reset = false;
                 bool stickclick;
-                if (IsSteamVR) { stickclick = SteamVR_Actions.gorillaTag_LeftJoystickClick.GetState(SteamVR_Input_Sources.LeftHand); }
-                else { ControllerInputPoller.instance.leftControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out stickclick); }
+                if (IsSteamVR)
+                {
+                    stickclick = SteamVR_Actions.gorillaTag_LeftJoystickClick.GetState(SteamVR_Input_Sources.LeftHand);
+                }
+                else
+                {
+                    ControllerInputPoller.instance.leftControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out stickclick);
+                }
 
                 if (stickclick && !stickClickJustPressed)
                 {
@@ -98,6 +114,18 @@ namespace TheGorillaWatch
                 else if (!stickclick)
                 {
                     stickClickJustPressed = false;
+                }
+
+
+                bool stickclickmods;
+
+                if (IsSteamVR)
+                {
+                    stickclickmods = SteamVR_Actions.gorillaTag_RightJoystickClick.GetState(SteamVR_Input_Sources.RightHand);
+                }
+                else
+                {
+                    ControllerInputPoller.instance.rightControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out stickclickmods);
                 }
 
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(watchOn);
@@ -147,7 +175,7 @@ namespace TheGorillaWatch
                             string modEnabled = mods[counter].modEnabled ? "<color=green>enabled</color>" : $"<color=red>disabled</color>";
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].modName + ":\n" + modEnabled + $"\n{mods[counter].info}";
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.color = mods[counter].modEnabled ? Color.green : Color.red;
-                            if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.3f && Time.time > PageCoolDown + .5)
+                            if (stickclickmods && Time.time > PageCoolDown + .5)
                             {
                                 PageCoolDown = Time.time;
                                 if (mods[counter].modEnabled)
