@@ -7,9 +7,9 @@ using UnityEngine;
 
 namespace TheGorillaWatch.Mods
 {
-    class MonkeWalker : Page
+    class SolidMonkey : Page
     {
-        public override string modName => "MonkeWalker";
+        public override string modName => "SolidMonkey";
 
         private GameObject playerColliderParent;
 

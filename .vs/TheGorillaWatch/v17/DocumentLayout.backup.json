@@ -1,78 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GithubRepos\\GorillaWatch\\",
+  "WorkspaceRootPath": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|d:\\githubrepos\\gorillawatch\\mod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\projects\\c#\\gorillawatch\\gorillawatch\\mod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\projects\\c#\\gorillawatch\\gorillawatch\\mods\\dashmonke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\dashmonke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\monkewalker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\monkewalker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\monkeboing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\monkeboing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\frozone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\frozone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\fly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\fly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\highgravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\highgravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\noclip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\noclip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\models\\page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\projects\\c#\\gorillawatch\\gorillawatch\\models\\page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:models\\page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\lowgravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\lowgravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\projects\\c#\\gorillawatch\\gorillawatch\\mods\\solidmonkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\solidmonkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\ironmonke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\ironmonke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\projects\\c#\\gorillawatch\\gorillawatch\\gui\\guimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:gui\\guimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\monkepunch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\monkepunch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\projects\\c#\\gorillawatch\\gorillawatch\\mods\\noclip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\noclip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\smallmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\smallmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\platforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\projects\\c#\\gorillawatch\\gorillawatch\\mods\\platforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\platforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\nogravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\projects\\c#\\gorillawatch\\gorillawatch\\mods\\nogravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\nogravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\drawing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\drawing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\projects\\c#\\gorillawatch\\gorillawatch\\directory.build.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:directory.build.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\bigmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\bigmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|D:\\GithubRepos\\GorillaWatch\\mods\\airswim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\airswim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\projects\\c#\\gorillawatch\\gorillawatch\\thegorillawatch.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:thegorillawatch.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,232 +50,137 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Page.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Models\\Page.cs",
-              "RelativeDocumentMoniker": "Models\\Page.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Models\\Page.cs",
-              "RelativeToolTip": "Models\\Page.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T11:52:36.935Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MonkePunch.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\MonkePunch.cs",
-              "RelativeDocumentMoniker": "Mods\\MonkePunch.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\MonkePunch.cs",
-              "RelativeToolTip": "Mods\\MonkePunch.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA1wCQAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T10:21:23.755Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MonkeWalker.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\MonkeWalker.cs",
-              "RelativeDocumentMoniker": "Mods\\MonkeWalker.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\MonkeWalker.cs",
-              "RelativeToolTip": "Mods\\MonkeWalker.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAiwBoAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:36:25.914Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MonkeBoing.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\MonkeBoing.cs",
-              "RelativeDocumentMoniker": "Mods\\MonkeBoing.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\MonkeBoing.cs",
-              "RelativeToolTip": "Mods\\MonkeBoing.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBcAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:35:44.56Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Fly.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\Fly.cs",
-              "RelativeDocumentMoniker": "Mods\\Fly.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\Fly.cs",
-              "RelativeToolTip": "Mods\\Fly.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:35:13.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Frozone.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\Frozone.cs",
-              "RelativeDocumentMoniker": "Mods\\Frozone.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\Frozone.cs",
-              "RelativeToolTip": "Mods\\Frozone.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:35:22.067Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HighGravity.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\HighGravity.cs",
-              "RelativeDocumentMoniker": "Mods\\HighGravity.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\HighGravity.cs",
-              "RelativeToolTip": "Mods\\HighGravity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:35:29.036Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IronMonke.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\IronMonke.cs",
-              "RelativeDocumentMoniker": "Mods\\IronMonke.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\IronMonke.cs",
-              "RelativeToolTip": "Mods\\IronMonke.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:35:30.324Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "LowGravity.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\LowGravity.cs",
-              "RelativeDocumentMoniker": "Mods\\LowGravity.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\LowGravity.cs",
-              "RelativeToolTip": "Mods\\LowGravity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:35:33.369Z"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainPage.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\MainPage.cs",
-              "RelativeDocumentMoniker": "Mods\\MainPage.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\MainPage.cs",
-              "RelativeToolTip": "Mods\\MainPage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABCAAAA",
+              "Title": "DashMonke.cs",
+              "DocumentMoniker": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Mods\\DashMonke.cs",
+              "RelativeDocumentMoniker": "Mods\\DashMonke.cs",
+              "ToolTip": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Mods\\DashMonke.cs",
+              "RelativeToolTip": "Mods\\DashMonke.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:35:34.659Z"
+              "WhenOpened": "2024-09-14T00:02:57.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NoClip.cs",
+              "DocumentMoniker": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Mods\\NoClip.cs",
+              "RelativeDocumentMoniker": "Mods\\NoClip.cs",
+              "ToolTip": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Mods\\NoClip.cs",
+              "RelativeToolTip": "Mods\\NoClip.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T23:31:27.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GUIManager.cs",
+              "DocumentMoniker": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\GUI\\GUIManager.cs",
+              "RelativeDocumentMoniker": "GUI\\GUIManager.cs",
+              "ToolTip": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\GUI\\GUIManager.cs",
+              "RelativeToolTip": "GUI\\GUIManager.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T23:31:19.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Platforms.cs",
+              "DocumentMoniker": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Mods\\Platforms.cs",
+              "RelativeDocumentMoniker": "Mods\\Platforms.cs",
+              "ToolTip": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Mods\\Platforms.cs",
+              "RelativeToolTip": "Mods\\Platforms.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowCgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T23:13:58.951Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "NoClip.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\NoClip.cs",
-              "RelativeDocumentMoniker": "Mods\\NoClip.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\NoClip.cs",
-              "RelativeToolTip": "Mods\\NoClip.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAsAAAAgAAAA",
+              "Title": "NoGravity.cs",
+              "DocumentMoniker": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Mods\\NoGravity.cs",
+              "RelativeDocumentMoniker": "Mods\\NoGravity.cs",
+              "ToolTip": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Mods\\NoGravity.cs",
+              "RelativeToolTip": "Mods\\NoGravity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:36:29.5Z"
+              "WhenOpened": "2024-09-13T23:13:56.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Page.cs",
+              "DocumentMoniker": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Models\\Page.cs",
+              "RelativeDocumentMoniker": "Models\\Page.cs",
+              "ToolTip": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Models\\Page.cs",
+              "RelativeToolTip": "Models\\Page.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T23:13:16.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SolidMonkey.cs",
+              "DocumentMoniker": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Mods\\SolidMonkey.cs",
+              "RelativeDocumentMoniker": "Mods\\SolidMonkey.cs",
+              "ToolTip": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Mods\\SolidMonkey.cs",
+              "RelativeToolTip": "Mods\\SolidMonkey.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T23:13:06.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Directory.Build.props",
+              "DocumentMoniker": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Directory.Build.props",
+              "RelativeDocumentMoniker": "Directory.Build.props",
+              "ToolTip": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Directory.Build.props",
+              "RelativeToolTip": "Directory.Build.props",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-09-13T23:09:29.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TheGorillaWatch.csproj",
+              "DocumentMoniker": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\TheGorillaWatch.csproj",
+              "RelativeDocumentMoniker": "TheGorillaWatch.csproj",
+              "ToolTip": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\TheGorillaWatch.csproj",
+              "RelativeToolTip": "TheGorillaWatch.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-13T23:09:27.65Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Mod.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mod.cs",
+              "DocumentMoniker": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Mod.cs",
               "RelativeDocumentMoniker": "Mod.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mod.cs",
+              "ToolTip": "C:\\Projects\\C#\\GorillaWatch\\GorillaWatch\\Mod.cs",
               "RelativeToolTip": "Mod.cs",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAUwKEAAAA8AAAA",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAAAFwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T06:40:13.999Z",
+              "WhenOpened": "2024-09-13T23:08:57.946Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SmallMonkers.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\SmallMonkers.cs",
-              "RelativeDocumentMoniker": "Mods\\SmallMonkers.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\SmallMonkers.cs",
-              "RelativeToolTip": "Mods\\SmallMonkers.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T11:51:41.18Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Drawing.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\Drawing.cs",
-              "RelativeDocumentMoniker": "Mods\\Drawing.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\Drawing.cs",
-              "RelativeToolTip": "Mods\\Drawing.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAIwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:35:17.701Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "NoGravity.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\NoGravity.cs",
-              "RelativeDocumentMoniker": "Mods\\NoGravity.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\NoGravity.cs",
-              "RelativeToolTip": "Mods\\NoGravity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:37:00.793Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Platforms.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\Platforms.cs",
-              "RelativeDocumentMoniker": "Mods\\Platforms.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\Platforms.cs",
-              "RelativeToolTip": "Mods\\Platforms.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:37:03.175Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "BigMonkers.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\BigMonkers.cs",
-              "RelativeDocumentMoniker": "Mods\\BigMonkers.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\BigMonkers.cs",
-              "RelativeToolTip": "Mods\\BigMonkers.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T08:35:16.623Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AirSwim.cs",
-              "DocumentMoniker": "D:\\GithubRepos\\GorillaWatch\\Mods\\AirSwim.cs",
-              "RelativeDocumentMoniker": "Mods\\AirSwim.cs",
-              "ToolTip": "D:\\GithubRepos\\GorillaWatch\\Mods\\AirSwim.cs",
-              "RelativeToolTip": "Mods\\AirSwim.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA7wCEAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T06:37:10.954Z"
             }
           ]
         }
