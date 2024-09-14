@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using TheGorillaWatch.Models;
@@ -10,9 +10,23 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "NoGravity";
 
+        private bool isEnabled = false;
+
         public override void OnUpdate()
         {
-            GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(Vector3.up * 9.8f, ForceMode.Acceleration);
+            if (isEnabled)
+            {
+                Physics.gravity = Vector3.zero;
+            }
+            else
+            {
+                Physics.gravity = new Vector3(0, -9.81f, 0);
+            }
+        }
+
+        public void ToggleGravity()
+        {
+            isEnabled = !isEnabled;
         }
     }
 }
