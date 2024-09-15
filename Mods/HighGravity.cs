@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using TheGorillaWatch.Models;
 using UnityEngine;
 
@@ -9,20 +7,22 @@ namespace TheGorillaWatch.Mods
     class HighGravity : Page
     {
         public override string modName => "HighGravity";
-
-        private bool isEnabled = false;
+        private bool Enabled = false;
 
         public override void OnUpdate()
         {
-            if (isEnabled)
+            if (Enabled)
             {
-                GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(Vector3.down * (Time.deltaTime * (7.77f / Time.deltaTime)), ForceMode.Acceleration);
+                Rigidbody playerRigidbody = GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody;
+
+                playerRigidbody.AddForce(Vector3.down * 7.77f, ForceMode.Acceleration);
             }
         }
 
         public void ToggleHighGravity()
         {
-            isEnabled = !isEnabled;
+            Enabled = !Enabled;
+            Debug.Log("HighGravity Mod: " + (Enabled ? "Enabled" : "Disabled"));
         }
     }
 }
