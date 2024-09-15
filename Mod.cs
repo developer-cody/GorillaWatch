@@ -31,8 +31,8 @@ namespace TheGorillaWatch
         public static float PageCoolDown;
 
         bool IsSteamVR;
-        
-        bool ToggleModButton;
+
+        //bool ToggleModButton;
 
         bool watchOn = true;
 
@@ -63,7 +63,7 @@ namespace TheGorillaWatch
                             Page modObject = (Page)mod.AddComponent(type);
                             mods.Add(modObject);
                             mod.transform.SetParent(modHolder.transform);
-                            if(modObject.modName == "GorillaWatchMainInfoPage")
+                            if (modObject.modName == "GorillaWatchMainInfoPage")
                             {
                                 mainPageNum = mods.IndexOf(modObject);
                             }
@@ -122,16 +122,33 @@ namespace TheGorillaWatch
                     stickClickJustPressed = false;
                 }
 
+                bool ModToggleButton;
 
-                bool stickclickmods;
+                bool ConfigManagerValue;
+
+                ConfigManagerValue = ConfigManager.toggleButton.Value == true;
 
                 if (IsSteamVR)
                 {
-                    stickclickmods = ConfigManager.toggleButton.Value ? ControllerInputPoller.instance.leftControllerIndexTouch > 0.3f : SteamVR_Actions.gorillaTag_RightJoystickClick.GetState(SteamVR_Input_Sources.RightHand);
+                    if (ConfigManagerValue)
+                    {
+                        ModToggleButton = ControllerInputPoller.instance.leftControllerIndexTouch > 0.3f;
+                    }
+                    else
+                    {
+                        ModToggleButton = SteamVR_Actions.gorillaTag_RightJoystickClick.GetState(SteamVR_Input_Sources.RightHand);
+                    }
                 }
                 else
                 {
-                    stickclickmods = ConfigManager.toggleButton.Value ? ControllerInputPoller.instance.leftControllerIndexTouch > 0.3f : ControllerInputPoller.instance.rightControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out stickclickmods);
+                    if (ConfigManagerValue)
+                    {
+                        ModToggleButton = ControllerInputPoller.instance.leftControllerIndexTouch > 0.3f;
+                    }
+                    else
+                    {
+                        ModToggleButton = ControllerInputPoller.instance.rightControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out ModToggleButton);
+                    }
                 }
 
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(watchOn);
@@ -180,7 +197,7 @@ namespace TheGorillaWatch
                             string modEnabled = mods[counter].modEnabled ? "<color=green>enabled</color>" : $"<color=red>disabled</color>";
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].modName + ":\n" + modEnabled + $"\n{mods[counter].info}";
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.color = mods[counter].modEnabled ? Color.green : Color.red;
-                            if (stickclickmods && Time.time > PageCoolDown + .5)
+                            if (ModToggleButton && Time.time > PageCoolDown + .5)
                             {
                                 PageCoolDown = Time.time;
                                 if (mods[counter].modEnabled)
