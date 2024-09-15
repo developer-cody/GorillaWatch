@@ -84,6 +84,10 @@ namespace TheGorillaWatch
         void Initialized()
         {
             IsSteamVR = Traverse.Create(PlayFabAuthenticator.instance).Field("platform").GetValue().ToString().ToLower() == "steam";
+            foreach (Page page in mods)
+            {
+                page.Init();
+            }
             initialized = true;
         }
 

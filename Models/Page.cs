@@ -18,5 +18,7 @@ namespace TheGorillaWatch.Models
         public virtual void Disable() { modEnabled = false; Debug.Log($"{modName} disabled"); }
 
         public virtual void OnUpdate() {  }
+
+        public virtual void Init() { }
     }
 }
