@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using BepInEx.Configuration;
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ namespace TheGorillaWatch.Configuration
         public static void CreateConfig()
         {
             config = new ConfigFile(Path.Combine(Paths.ConfigPath, "GorillaWatch.cfg"), true);
-            toggleButton = config.Bind("Settings", "Use Trigger", false, "Whether the mod should use the trigger button on the left controller or the joystick button on the right controller to toggle mods");
+            toggleButton = config.Bind("Settings:", "\nUse Trigger", false, "\nThis allows you to choose wether the mod toggle should be your right joystick down, or your left trigger. If 'Use Trigger' is false, you use your right joystick click to toggle, if it's true, you use your left trigger!");
         }
     }
 }
