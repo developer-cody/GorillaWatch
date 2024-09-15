@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TheGorillaWatch.Models;
 using UnityEngine;
 
@@ -7,30 +8,25 @@ namespace TheGorillaWatch.Mods
     class NoGravity : Page
     {
         public override string modName => "NoGravity";
-        private bool Enabled = false;
+        public override List<string> incompatibleModNames => new List<string>() { "LowGravity", "HighGravity" };
 
-        public override void OnUpdate()
+        Vector3 ogGravity;
+        public override void Init()
         {
-            if (Enabled)
-            {
-                if (Physics.gravity != Vector3.zero)
-                {
-                    Physics.gravity = Vector3.zero;
-                }
-            }
-            else
-            {
-                if (Physics.gravity != new Vector3(0, -9.81f, 0))
-                {
-                    Physics.gravity = new Vector3(0, -9.81f, 0);
-                }
-            }
+            base.Init();
+            ogGravity = Physics.gravity;
         }
 
-        public void ToggleDhisGravThingamagig()
+        public override void Disable()
         {
-            Enabled = !Enabled;
-            Debug.Log("NoGravity Mod: " + (Enabled ? "Enabled" : "Disabled"));
+            base.Disable();
+            Physics.gravity = ogGravity;
+        }
+
+        public override void Enable()
+        {
+            base.Enable();
+            Physics.gravity = Vector3.zero;
         }
     }
 }

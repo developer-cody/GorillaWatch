@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace TheGorillaWatch.Models
 {
@@ -8,6 +9,9 @@ namespace TheGorillaWatch.Models
 
         public abstract string modName { get; }
         public virtual string info { get; set; } = "";
+
+        public virtual List<string> incompatibleModNames { get; set; } = new List<string>();
+        public virtual List<string> requiredModNames { get; set; } = new List<string>();
 
         // fuck you wryser | public virtual bool showOnMainMenu { get; set; } = true;
 

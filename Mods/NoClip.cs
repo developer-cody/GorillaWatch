@@ -9,42 +9,24 @@ namespace TheGorillaWatch.Mods
     class NoClip : Page
     {
         public override string modName => "NoClip";
-        bool resetNoClip = true;
-        List<MeshCollider> colliders = new List<MeshCollider>();
+        public override List<string> requiredModNames => new List<string>() { "Platforms" };
 
         public override void Disable()
         {
             base.Disable();
-            foreach (MeshCollider meshCollider2 in colliders)
+            foreach (MeshCollider meshCollider2 in FindObjectsOfType<MeshCollider>())
             {
                 meshCollider2.enabled = true;
             }
-            resetNoClip = false;
         }
+
+
 
         public override void OnUpdate()
         {
-            if(ControllerInputPoller.instance.leftControllerPrimaryButton)
+            foreach (MeshCollider meshCollider in FindObjectsOfType<MeshCollider>())
             {
-                MeshCollider[] array = FindObjectsOfType<MeshCollider>();
-                foreach (MeshCollider meshCollider in array)
-                {
-                    if (meshCollider.enabled)
-                    {
-                        meshCollider.enabled = false;
-                        colliders.Add(meshCollider);
-                    }
-                }
-                resetNoClip = false;
-            }
-            else if(!resetNoClip)
-            {
-                foreach (MeshCollider meshCollider2 in colliders)
-                {
-                    meshCollider2.enabled = true;
-                    colliders.Remove(meshCollider2);
-                }
-                resetNoClip = true;
+                meshCollider.enabled = false;
             }
         }
     }

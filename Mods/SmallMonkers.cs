@@ -9,6 +9,7 @@ namespace TheGorillaWatch.Mods
     class SmallMonkers : Page
     {
         public override string modName => "SmallMonkers";
+        public override List<string> incompatibleModNames => new List<string>() { "BigMonkers" };
 
         public override void OnUpdate()
         {

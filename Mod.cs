@@ -16,6 +16,7 @@ using System.Linq;
 using TheGorillaWatch.Models;
 using TheGorillaWatch.Mods;
 using System.Globalization;
+using TheGorillaWatch.Configuration;
 
 namespace TheGorillaWatch
 {
@@ -88,6 +89,7 @@ namespace TheGorillaWatch
             {
                 page.Init();
             }
+            ConfigManager.CreateConfig();
             initialized = true;
         }
 
@@ -125,11 +127,11 @@ namespace TheGorillaWatch
 
                 if (IsSteamVR)
                 {
-                    stickclickmods = SteamVR_Actions.gorillaTag_RightJoystickClick.GetState(SteamVR_Input_Sources.RightHand);
+                    stickclickmods = ConfigManager.toggleButton.Value ? ControllerInputPoller.instance.leftControllerIndexTouch > 0.3f : SteamVR_Actions.gorillaTag_RightJoystickClick.GetState(SteamVR_Input_Sources.RightHand);
                 }
                 else
                 {
-                    ControllerInputPoller.instance.rightControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out stickclickmods);
+                    stickclickmods = ConfigManager.toggleButton.Value ? ControllerInputPoller.instance.leftControllerIndexTouch > 0.3f : ControllerInputPoller.instance.rightControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out stickclickmods);
                 }
 
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(watchOn);
@@ -171,7 +173,6 @@ namespace TheGorillaWatch
                     {
                         counter = 0;
                     }
-
                     switch (mods[counter].pageType)
                     {
                         case PageType.Toggle:
@@ -184,10 +185,40 @@ namespace TheGorillaWatch
                                 PageCoolDown = Time.time;
                                 if (mods[counter].modEnabled)
                                 {
+                                    if (mods[counter].requiredModNames.Count > 0)
+                                    {
+                                        foreach (Page mod in mods)
+                                        {
+                                            if (mods[counter].requiredModNames.Contains(mod.modName))
+                                            {
+                                                mod.Disable();
+                                            }
+                                        }
+                                    }
                                     mods[counter].Disable();
                                 }
                                 else
                                 {
+                                    if (mods[counter].incompatibleModNames.Count > 0)
+                                    {
+                                        foreach (Page mod in mods)
+                                        {
+                                            if (mods[counter].incompatibleModNames.Contains(mod.modName))
+                                            {
+                                                mod.Disable();
+                                            }
+                                        }
+                                    }
+                                    if (mods[counter].requiredModNames.Count > 0)
+                                    {
+                                        foreach (Page mod in mods)
+                                        {
+                                            if (mods[counter].requiredModNames.Contains(mod.modName))
+                                            {
+                                                mod.Enable();
+                                            }
+                                        }
+                                    }
                                     mods[counter].Enable();
                                 }
                                 GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(66, true, 1f);
