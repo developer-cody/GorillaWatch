@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using TheGorillaWatch.Models;
 using UnityEngine;
 
@@ -9,20 +7,22 @@ namespace TheGorillaWatch.Mods
     class LowGravity : Page
     {
         public override string modName => "LowGravity";
-
-        private bool isEnabled = false;
+        private bool Enabled = false;
 
         public override void OnUpdate()
         {
-            if (isEnabled)
+            if (Enabled)
             {
-                GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(Vector3.up * (Time.deltaTime * (6.66f / Time.deltaTime)), ForceMode.Acceleration);
+                Rigidbody playerRigidbody = GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody;
+
+                playerRigidbody.AddForce(Vector3.up * 6.66f, ForceMode.Acceleration);
             }
         }
 
         public void ToggleLowGravity()
         {
-            isEnabled = !isEnabled;
+            Enabled = !Enabled;
+            Debug.Log("LowGravity Mod: " + (Enabled ? "Enabled" : "Disabled"));
         }
     }
 }
