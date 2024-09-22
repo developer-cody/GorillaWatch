@@ -13,6 +13,7 @@ using Valve.VR;
 using UnityEngine.XR;
 using GorillaLocomotion.Climbing;
 using Valve.VR.InteractionSystem.Sample;
+using System.Collections.Generic;
 
 namespace TheGorillaWatch
 {
@@ -22,7 +23,7 @@ namespace TheGorillaWatch
     {
         bool inRoom;
 
-        public static int counter;
+        public static int page;
 
         public static float PageCoolDown;
 
@@ -104,18 +105,23 @@ namespace TheGorillaWatch
 
         bool stickClickJustPressed;
 
+        public GorillaHuntComputer watch = null;
+
         void Start()
         {
+
             GorillaTagger.OnPlayerSpawned(Initialized);
         }
 
         void Initialized()
         {
+            watch = GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>();
             IsSteamVR = Traverse.Create(PlayFabAuthenticator.instance).Field("platform").GetValue().ToString().ToLower() == "steam";
         }
 
         void Update()
         {
+            
             inRoom = PhotonNetwork.CurrentRoom.CustomProperties["gameMode"].ToString().Contains("MODDED") && PhotonNetwork.CurrentRoom.CustomProperties["gameMode"].ToString().Contains("HUNT");
             if (inRoom || !PhotonNetwork.InRoom)
             {
@@ -166,28 +172,29 @@ namespace TheGorillaWatch
                     if (ControllerInputPoller.instance.leftControllerPrimaryButton && Time.time > PageCoolDown + 0.5)
                     {
                         PageCoolDown = Time.time;
-                        counter--;
+                        page--;
                         GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                     }
                     if (ControllerInputPoller.instance.leftControllerSecondaryButton && Time.time > PageCoolDown + 0.5f)
                     {
                         PageCoolDown = Time.time;
-                        counter++;
+                        page++;
                         GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                     }
-                    if (counter < 0)
+                    if (page < 0)
                     {
-                        counter = 17;
+                        page = 17;
                     }
-                    if (counter > 17)
+                    if (page > 17)
                     {
-                        counter = 0;
+                        page = 0;
                     }
-                    if (counter == 0)
+                    
+                    if (page == 0)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "<color=black>Gorilla</color>Watch!\nMade by:\n<color=blue>Cody</color> n' <color=red>Ty</color>";
                     }
-                    if (counter == 1)
+                    if (page == 1)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "PlatformGuy--" + ToggleMod1.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -197,7 +204,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 2)
+                    if (page == 2)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "FrozoneGuy--" + ToggleMod12.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -207,7 +214,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 3)
+                    if (page == 3)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "DrawingGuy-- " + ToggleMod13.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -217,7 +224,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 4)
+                    if (page == 4)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "VelocityFly-- " + ToggleMod2.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -227,7 +234,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 5)
+                    if (page == 5)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "IronMonke-- " + ToggleMod6.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -237,7 +244,7 @@ namespace TheGorillaWatch
                             ToggleMod6 = !ToggleMod6;
                         }
                     }
-                    if (counter == 6)
+                    if (page == 6)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "NoClip-- " + ToggleMod8.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -247,7 +254,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 7)
+                    if (page == 7)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "SpeedyMonk-- " + ToggleMod8.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -257,7 +264,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 8)
+                    if (page == 8)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "HighGravity-- " + ToggleMod11.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -267,7 +274,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 9)
+                    if (page == 9)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "LowGravity-- " + ToggleMod10.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -277,7 +284,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 10)
+                    if (page == 10)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "NoGravity-- " + ToggleMod5.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -287,7 +294,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 11)
+                    if (page == 11)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "BigMonkers---" + ToggleMod3.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -297,7 +304,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 12)
+                    if (page == 12)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "SmallMonkers-" + ToggleMod4.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -307,7 +314,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 13)
+                    if (page == 13)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "MonkePunch-- " + ToggleMod15.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -317,7 +324,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 14)
+                    if (page == 14)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "MonkeWalker-- " + ToggleMod16.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -327,7 +334,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                         }
                     }
-                    if (counter == 15)
+                    if (page == 15)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "MonkeBoing-- " + ToggleMod9.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -338,7 +345,7 @@ namespace TheGorillaWatch
                         }
                     }
 
-                    if (counter == 17)
+                    if (page == 17)
                     {
                         GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = "AirSwim-- " + ToggleMod14.ToString();
                         if (stickclickmods && Time.time > PageCoolDown + .5)
@@ -349,7 +356,7 @@ namespace TheGorillaWatch
                         }
                     }
                 }
-
+                
                 if (ToggleMod1)
                 {
                     Vector3 leftOffset = new Vector3(0f, -0.06f, 0f);
@@ -498,16 +505,6 @@ namespace TheGorillaWatch
 
                     if (ControllerInputPoller.instance.leftGrab)
                     {
-                        /*Frozone = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        Frozone.transform.position = GorillaLocomotion.Player.Instance.leftControllerTransform.position + leftOffset;
-                        Frozone.transform.rotation = GorillaLocomotion.Player.Instance.leftControllerTransform.rotation;
-                        Frozone.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
-                        Frozone.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
-                        Frozone.GetComponent<Renderer>().material.color = Color.cyan;
-                        Frozone.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
-                        GameObject.Destroy(Frozone.GetComponent<Rigidbody>());
-                        GameObject.Destroy(Frozone, .2f);
-                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(AddForceStuff);*/
                         Frozone = GameObject.CreatePrimitive(PrimitiveType.Cube);
                         Frozone.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
                         Frozone.transform.position = GorillaTagger.Instance.leftHandTransform.position + leftOffset;
@@ -520,16 +517,6 @@ namespace TheGorillaWatch
 
                     if (ControllerInputPoller.instance.rightGrab)
                     {
-                        /*FrozoneR = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        FrozoneR.transform.position = GorillaLocomotion.Player.Instance.rightControllerTransform.position + rightOffset;
-                        FrozoneR.transform.rotation = GorillaLocomotion.Player.Instance.rightControllerTransform.rotation;
-                        FrozoneR.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
-                        FrozoneR.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
-                        FrozoneR.GetComponent<Renderer>().material.color = Color.cyan;
-                        FrozoneR.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
-                        GameObject.Destroy(FrozoneR.GetComponent<Rigidbody>());
-                        GameObject.Destroy(FrozoneR, .2f);
-                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().AddForce(AddForceStuff);*/
                         FrozoneR = GameObject.CreatePrimitive(PrimitiveType.Cube);
                         FrozoneR.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
                         FrozoneR.transform.position = GorillaTagger.Instance.rightHandTransform.position + rightOffset;
