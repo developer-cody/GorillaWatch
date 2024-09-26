@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -7,14 +7,14 @@ using UnityEngine;
 
 namespace TheGorillaWatch.Mods
 {
-    class MonkeDown : Page
+    class MonkeFlipped : Page
     {
         public override string modName => "MonkeFlipped";
-        GameObject Swim = null;
 
         public override void Enable()
         {
             base.Enable();
+            GorillaTagger.Instance.transform.eulerAngles = new Vector3(0, 0, 180);
             GorillaLocomotion.Player.Instance.rightControllerTransform.parent.eulerAngles = new Vector3(GorillaLocomotion.Player.Instance.rightControllerTransform.parent.eulerAngles.x, GorillaLocomotion.Player.Instance.rightControllerTransform.parent.eulerAngles.y, 180);
             Physics.gravity *= -1;
         }
@@ -22,6 +22,7 @@ namespace TheGorillaWatch.Mods
         public override void Disable()
         {
             base.Disable();
+            GorillaTagger.Instance.transform.eulerAngles = new Vector3(0, 0, 0);
             GorillaLocomotion.Player.Instance.rightControllerTransform.parent.eulerAngles = new Vector3(GorillaLocomotion.Player.Instance.rightControllerTransform.parent.eulerAngles.x, GorillaLocomotion.Player.Instance.rightControllerTransform.parent.eulerAngles.y, 0);
             Physics.gravity = new Vector3(0f, -9.807f, 0f);
         }
