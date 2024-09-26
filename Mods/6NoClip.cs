@@ -8,7 +8,7 @@ namespace TheGorillaWatch.Mods
 {
     class NoClip : Page
     {
-        public override string modName => "NoClip";
+        public override string modName => "8) NoClip";
         bool resetNoClip = true;
         List<MeshCollider> colliders = new List<MeshCollider>();
 

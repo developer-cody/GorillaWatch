@@ -9,7 +9,7 @@ namespace TheGorillaWatch.Mods
 {
     class Drawing : Page
     {
-        public override string modName => "DrawingGuy";
+        public override string modName => "3) DrawingGuy";
 
         GameObject DrawL;
         GameObject DrawR;

@@ -8,7 +8,7 @@ namespace TheGorillaWatch.Mods
 {
     class Frozone : Page
     {
-        public override string modName => "Frozone";
+        public override string modName => "2) Frozone";
 
         GameObject FrozoneL;
         GameObject FrozoneR;

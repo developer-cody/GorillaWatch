@@ -11,7 +11,7 @@ namespace TheGorillaWatch.Mods
     {
         bool isZeroGravity = false;
 
-        public override string modName => "NoGravity";
+        public override string modName => "11) NoGravity";
 
 
         public override void Enable()

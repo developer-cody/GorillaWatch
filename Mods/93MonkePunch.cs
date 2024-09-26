@@ -8,7 +8,7 @@ namespace TheGorillaWatch.Mods
 {
     class MonkePunch : Page
     {
-        public override string modName => "MonkePunch";
+        public override string modName => "14) MonkePunch";
         public static Vector3[] lastLeft = new Vector3[] { Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero };
 
         public static Vector3[] lastRight = new Vector3[] { Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero };

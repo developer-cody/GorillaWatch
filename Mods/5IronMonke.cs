@@ -8,7 +8,7 @@ namespace TheGorillaWatch.Mods
 {
     class IronMonke : Page
     {
-        public override string modName => "IronMonke";
+        public override string modName => "6) IronMonke";
 
         public override void OnUpdate()
         {

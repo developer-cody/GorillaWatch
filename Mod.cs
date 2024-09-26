@@ -19,24 +19,24 @@ namespace TheGorillaWatch
     [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.4.6")]
     public class Mod : BaseUnityPlugin
     {
+        //bools
         bool inRoom;
-
-        public static int counter;
-
-        public static float PageCoolDown;
-
         bool IsSteamVR;
-
         bool watchOn = true;
-
         bool stickClickJustPressed;
-
-        public static List<Page> mods = new List<Page>();
-
         bool reset = true;
-
         bool initialized = false;
 
+        //Ints
+        public static int counter;
+
+        //floats
+        public static float PageCoolDown;
+
+        //list
+        public static List<Page> mods = new List<Page>();
+
+        //Vectors
         Vector3 ogGravity;
 
         void Start()
@@ -80,19 +80,26 @@ namespace TheGorillaWatch
 
         void Initialized()
         {
+            //cheks that you're on steam, or not
             IsSteamVR = Traverse.Create(PlayFabAuthenticator.instance).Field("platform").GetValue().ToString().ToLower() == "steam";
+
+            //Makes it accually Initialized
             initialized = true;
+
             foreach (Page page in mods)
             {
                 page.Init();
             }
         }
+
         void Update()
         {
             if (!initialized)
             {
                 return;
             }
+
+            //Checks if you're in a modded room
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.CustomProperties["gameMode"].ToString().Contains("MODDED") && !PhotonNetwork.CurrentRoom.CustomProperties["gameMode"].ToString().Contains("HUNT"))
             {
                 reset = false;
@@ -101,6 +108,7 @@ namespace TheGorillaWatch
 
                 bool rightStickClick;
 
+                //Joysick buttons whether you're on SteamVR or not
                 if (IsSteamVR)
                 {
                     rightStickClick = SteamVR_Actions.gorillaTag_LeftJoystickClick.GetState(SteamVR_Input_Sources.RightHand);
@@ -123,6 +131,7 @@ namespace TheGorillaWatch
                     stickClickJustPressed = false;
                 }
 
+                //Enabled the hunt watch, and gets rid of he bage, left hand cosmetic, right hand cosmetic, hat, and the face cosmetic.
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(watchOn);
                 GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().enabled = false;
                 GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().badge.gameObject.SetActive(false);
@@ -139,20 +148,26 @@ namespace TheGorillaWatch
                     }
                 }
 
+                //if the watch is on:
                 if (watchOn)
                 {
+                    //buttons
                     if (ControllerInputPoller.instance.leftControllerSecondaryButton && Time.time > PageCoolDown + 0.5)
                     {
                         PageCoolDown = Time.time;
                         counter++;
                         GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                     }
+
+                    //Still buttons
                     if (ControllerInputPoller.instance.leftControllerPrimaryButton && Time.time > PageCoolDown + 0.5f)
                     {
                         PageCoolDown = Time.time;
                         counter--;
                         GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                     }
+
+                    //Caps pages
                     if (counter < 0)
                     {
                         counter = mods.Count - 1;
@@ -193,11 +208,16 @@ namespace TheGorillaWatch
             }
             else if (!reset)
             {
+                //Normal gravity
                 Physics.gravity = new Vector3(0f, -9.807f, 0f);
+
+                //Disables all the mods when you leave
                 foreach (Page mod in mods)
                 {
                     mod.Disable();
                 }
+
+                //Disables the hunt watch when you leave
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(false);
                 GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().enabled = true;
                 GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.gameObject.SetActive(true);

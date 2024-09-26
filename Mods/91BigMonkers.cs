@@ -8,7 +8,7 @@ namespace TheGorillaWatch.Mods
 {
     class BigMonkers : Page
     {
-        public override string modName => "BigMonkers";
+        public override string modName => "12) BigMonkers";
 
         public override void OnUpdate()
         {

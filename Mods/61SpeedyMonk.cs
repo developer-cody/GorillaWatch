@@ -8,7 +8,7 @@ namespace TheGorillaWatch.Mods
 {
     class SpeedyMonk : Page
     {
-        public override string modName => "SpeedyMonk";
+        public override string modName => "7) SpeedyMonk";
 
         public override void Enable()
         {
