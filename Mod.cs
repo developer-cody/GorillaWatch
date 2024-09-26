@@ -16,7 +16,7 @@ using TheGorillaWatch.Mods;
 namespace TheGorillaWatch
 {
 
-    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.4.5")]
+    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.4.6")]
     public class Mod : BaseUnityPlugin
     {
         bool inRoom;
