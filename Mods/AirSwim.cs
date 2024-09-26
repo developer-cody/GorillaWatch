@@ -9,7 +9,7 @@ namespace TheGorillaWatch.Mods
 {
     class AirSwim : Page
     {
-        public override string modName => "18) AirSwim";
+        public override string modName => "AirSwim";
         GameObject Swim = null;
 
         public override void Disable()

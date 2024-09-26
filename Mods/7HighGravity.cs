@@ -8,7 +8,7 @@ namespace TheGorillaWatch.Mods
 {
     class HighGravity : Page
     {
-        public override string modName => "9) HighGravity";
+        public override string modName => "HighGravity";
 
         bool isHighGravity;
 

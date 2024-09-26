@@ -16,7 +16,7 @@ using TheGorillaWatch.Mods;
 namespace TheGorillaWatch
 {
 
-    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.4.6")]
+    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.5.8")]
     public class Mod : BaseUnityPlugin
     {
         //bools
@@ -36,12 +36,8 @@ namespace TheGorillaWatch
         //list
         public static List<Page> mods = new List<Page>();
 
-        //Vectors
-        Vector3 ogGravity;
-
         void Start()
         {
-            ogGravity = Physics.gravity;
             GorillaTagger.OnPlayerSpawned(Initialized);
             GameObject modHolder = new GameObject("GorillaWatch Mod Holder");
             int mainPageNum = 0;

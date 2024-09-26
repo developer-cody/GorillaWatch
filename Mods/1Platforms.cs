@@ -8,7 +8,7 @@ namespace TheGorillaWatch.Mods
 {
     class Platforms : Page
     {
-        public override string modName => "1) PlatformGuy";
+        public override string modName => "PlatformGuy";
 
         GameObject leftplat;
         GameObject rightplat;

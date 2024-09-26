@@ -8,7 +8,7 @@ namespace TheGorillaWatch.Mods
 {
     class Fly : Page
     {
-        public override string modName => "4) VelocityFly";
+        public override string modName => "VelocityFly";
 
         public override void OnUpdate()
         {

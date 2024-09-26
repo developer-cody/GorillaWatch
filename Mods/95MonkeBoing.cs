@@ -9,7 +9,7 @@ namespace TheGorillaWatch.Mods
 {
     class MonkeBoing : Page
     {
-        public override string modName => "16) MonkeBoing";
+        public override string modName => "MonkeBoing";
 
         float bounce;
         PhysicMaterialCombine PMCombine;

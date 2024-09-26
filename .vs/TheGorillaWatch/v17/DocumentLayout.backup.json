@@ -3,16 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\99monkeupsidedown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\99monkeupsidedown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\1platforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\1platforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\airswim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\airswim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\models\\page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:models\\page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\2frozone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\2frozone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\99monkeupsidedown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\99monkeupsidedown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\95monkeboing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\95monkeboing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\94monkewalker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\94monkewalker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\93monkepunch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\93monkepunch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\92smallmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\92smallmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\91bigmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\91bigmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\90nogravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\90nogravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\8lowgravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\8lowgravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\7highgravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\7highgravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\6noclip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,36 +75,16 @@
       "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\5ironmonke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\7highgravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\7highgravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\51dashmonk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\51dashmonk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\8lowgravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\8lowgravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\4fly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\4fly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\90nogravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\90nogravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\92smallmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\92smallmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\93monkepunch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\93monkepunch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\94monkewalker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\94monkewalker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\95monkeboing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\95monkeboing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\airswim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\airswim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\thegorillawatch\\gorillawatch\\mods\\3drawing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\3drawing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,115 +94,140 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "6NoClip.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\6NoClip.cs",
-              "RelativeDocumentMoniker": "Mods\\6NoClip.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\6NoClip.cs",
-              "RelativeToolTip": "Mods\\6NoClip.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T00:32:51.798Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "7HighGravity.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\7HighGravity.cs",
-              "RelativeDocumentMoniker": "Mods\\7HighGravity.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\7HighGravity.cs",
-              "RelativeToolTip": "Mods\\7HighGravity.cs",
+              "Title": "Page.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Models\\Page.cs",
+              "RelativeDocumentMoniker": "Models\\Page.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Models\\Page.cs",
+              "RelativeToolTip": "Models\\Page.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T00:32:51.309Z"
+              "WhenOpened": "2024-09-26T13:39:31.253Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "8LowGravity.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\8LowGravity.cs",
-              "RelativeDocumentMoniker": "Mods\\8LowGravity.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\8LowGravity.cs",
-              "RelativeToolTip": "Mods\\8LowGravity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "91BigMonkers.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\91BigMonkers.cs",
+              "RelativeDocumentMoniker": "Mods\\91BigMonkers.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\91BigMonkers.cs",
+              "RelativeToolTip": "Mods\\91BigMonkers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T00:32:50.718Z"
+              "WhenOpened": "2024-09-26T13:27:43.432Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "90NoGravity.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\90NoGravity.cs",
-              "RelativeDocumentMoniker": "Mods\\90NoGravity.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\90NoGravity.cs",
-              "RelativeToolTip": "Mods\\90NoGravity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T00:32:48.349Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "92SmallMonkers.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\92SmallMonkers.cs",
               "RelativeDocumentMoniker": "Mods\\92SmallMonkers.cs",
               "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\92SmallMonkers.cs",
               "RelativeToolTip": "Mods\\92SmallMonkers.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T00:32:47.468Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "93MonkePunch.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\93MonkePunch.cs",
               "RelativeDocumentMoniker": "Mods\\93MonkePunch.cs",
               "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\93MonkePunch.cs",
               "RelativeToolTip": "Mods\\93MonkePunch.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T00:32:46.925Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "94MonkeWalker.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\94MonkeWalker.cs",
               "RelativeDocumentMoniker": "Mods\\94MonkeWalker.cs",
               "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\94MonkeWalker.cs",
               "RelativeToolTip": "Mods\\94MonkeWalker.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T00:32:45.453Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 7,
               "Title": "95MonkeBoing.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\95MonkeBoing.cs",
               "RelativeDocumentMoniker": "Mods\\95MonkeBoing.cs",
               "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\95MonkeBoing.cs",
               "RelativeToolTip": "Mods\\95MonkeBoing.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T00:32:44.981Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "99MonkeUpsideDown.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\99MonkeUpsideDown.cs",
+              "RelativeDocumentMoniker": "Mods\\99MonkeUpsideDown.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\99MonkeUpsideDown.cs",
+              "RelativeToolTip": "Mods\\99MonkeUpsideDown.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T00:23:48.469Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AirSwim.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\AirSwim.cs",
+              "RelativeDocumentMoniker": "Mods\\AirSwim.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\AirSwim.cs",
+              "RelativeToolTip": "Mods\\AirSwim.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T00:32:42.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Mod.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mod.cs",
               "RelativeDocumentMoniker": "Mod.cs",
               "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mod.cs",
               "RelativeToolTip": "Mod.cs",
-              "ViewState": "AgIAALUAAAAAAAAAAAAAANUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANsAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T00:19:23.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "1Platforms.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\1Platforms.cs",
+              "RelativeDocumentMoniker": "Mods\\1Platforms.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\1Platforms.cs*",
+              "RelativeToolTip": "Mods\\1Platforms.cs*",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD8AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T13:25:41.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "2Frozone.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\2Frozone.cs",
+              "RelativeDocumentMoniker": "Mods\\2Frozone.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\2Frozone.cs",
+              "RelativeToolTip": "Mods\\2Frozone.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T13:25:54.748Z"
             },
             {
               "$type": "Document",
@@ -186,57 +239,115 @@
               "RelativeToolTip": "Mods\\MainPage.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAACJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T00:25:33.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-26T00:25:33.426Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "99MonkeUpsideDown.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\99MonkeUpsideDown.cs",
-              "RelativeDocumentMoniker": "Mods\\99MonkeUpsideDown.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\99MonkeUpsideDown.cs",
-              "RelativeToolTip": "Mods\\99MonkeUpsideDown.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAmAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "8LowGravity.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\8LowGravity.cs",
+              "RelativeDocumentMoniker": "Mods\\8LowGravity.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\8LowGravity.cs",
+              "RelativeToolTip": "Mods\\8LowGravity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T00:23:48.469Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-26T00:32:50.718Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
+              "Title": "7HighGravity.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\7HighGravity.cs",
+              "RelativeDocumentMoniker": "Mods\\7HighGravity.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\7HighGravity.cs",
+              "RelativeToolTip": "Mods\\7HighGravity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T00:32:51.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "6NoClip.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\6NoClip.cs",
+              "RelativeDocumentMoniker": "Mods\\6NoClip.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\6NoClip.cs",
+              "RelativeToolTip": "Mods\\6NoClip.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T00:32:51.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "61SpeedyMonk.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\61SpeedyMonk.cs",
               "RelativeDocumentMoniker": "Mods\\61SpeedyMonk.cs",
               "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\61SpeedyMonk.cs",
               "RelativeToolTip": "Mods\\61SpeedyMonk.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T00:32:52.43Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 17,
               "Title": "5IronMonke.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\5IronMonke.cs",
               "RelativeDocumentMoniker": "Mods\\5IronMonke.cs",
               "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\5IronMonke.cs",
               "RelativeToolTip": "Mods\\5IronMonke.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T00:32:52.831Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AirSwim.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\AirSwim.cs",
-              "RelativeDocumentMoniker": "Mods\\AirSwim.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\AirSwim.cs",
-              "RelativeToolTip": "Mods\\AirSwim.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "51DashMonk.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\51DashMonk.cs",
+              "RelativeDocumentMoniker": "Mods\\51DashMonk.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\51DashMonk.cs",
+              "RelativeToolTip": "Mods\\51DashMonk.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T00:32:42.037Z"
+              "WhenOpened": "2024-09-26T13:26:15.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "4Fly.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\4Fly.cs",
+              "RelativeDocumentMoniker": "Mods\\4Fly.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\4Fly.cs",
+              "RelativeToolTip": "Mods\\4Fly.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T13:26:10.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "3Drawing.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\3Drawing.cs",
+              "RelativeDocumentMoniker": "Mods\\3Drawing.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\3Drawing.cs",
+              "RelativeToolTip": "Mods\\3Drawing.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T13:26:04.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "90NoGravity.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\90NoGravity.cs",
+              "RelativeDocumentMoniker": "Mods\\90NoGravity.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\TheGorillaWatch\\GorillaWatch\\Mods\\90NoGravity.cs",
+              "RelativeToolTip": "Mods\\90NoGravity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T00:32:48.349Z"
             },
             {
               "$type": "Bookmark",

@@ -9,7 +9,7 @@ namespace TheGorillaWatch.Mods
 {
     class MonkeFlipped : Page
     {
-        public override string modName => "17) MonkeFlipped";
+        public override string modName => "MonkeFlipped";
 
         public override void Enable()
         {

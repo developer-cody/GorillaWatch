@@ -9,7 +9,7 @@ namespace TheGorillaWatch.Mods
 {
     class MonkeWalker : Page
     {
-        public override string modName => "15) MonkeWalker";
+        public override string modName => "MonkeWalker";
 
         private GameObject playerColliderParent;
 

@@ -8,7 +8,7 @@ namespace TheGorillaWatch.Mods
 {
     class DashMonk : Page
     {
-        public override string modName => "5) DashMonk";
+        public override string modName => "DashMonk";
 
         bool holding;
 
