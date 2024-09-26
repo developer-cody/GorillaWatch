@@ -3,10 +3,7 @@ using System;
 using TheGorillaWatch.Patches;
 using UnityEngine;
 using GorillaNetworking;
-using GorillaLocomotion;
-using CjLib;
 using UnityEngine.XR.LegacyInputHelpers;
-using System.Collections;
 using Photon.Pun;
 using HarmonyLib;
 using Valve.VR;
@@ -15,7 +12,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TheGorillaWatch.Models;
 using TheGorillaWatch.Mods;
-using System.Globalization;
 
 namespace TheGorillaWatch
 {
@@ -36,12 +32,12 @@ namespace TheGorillaWatch
         bool stickClickJustPressed;
 
         public static List<Page> mods = new List<Page>();
+
         bool reset = true;
 
         bool initialized = false;
 
         Vector3 ogGravity;
-
 
         void Start()
         {
@@ -91,7 +87,6 @@ namespace TheGorillaWatch
                 page.Init();
             }
         }
-
         void Update()
         {
             if (!initialized)
@@ -130,7 +125,6 @@ namespace TheGorillaWatch
 
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(watchOn);
                 GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().enabled = false;
-                //GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.gameObject.SetActive(false);
                 GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().badge.gameObject.SetActive(false);
                 GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().leftHand.gameObject.SetActive(false);
                 GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().rightHand.gameObject.SetActive(false);
