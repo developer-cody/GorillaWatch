@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GorillaLocomotion;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using TheGorillaWatch.Models;
@@ -19,7 +20,7 @@ namespace TheGorillaWatch.Mods
             if (ControllerInputPoller.instance.rightControllerPrimaryButton && !holding)
             {
                 holding = true;
-                GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(GorillaLocomotion.Player.Instance.headCollider.transform.forward * 10, UnityEngine.ForceMode.VelocityChange);
+                Player.Instance.bodyCollider.attachedRigidbody.AddForce(Player.Instance.headCollider.transform.forward * 10, ForceMode.VelocityChange);
             }
             else if (!ControllerInputPoller.instance.rightControllerPrimaryButton && holding)
             {

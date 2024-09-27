@@ -10,11 +10,11 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "SpeedyMonk";
 
-        public override void Enable()
+        public override void OnUpdate()
         {
-            base.Enable();
-            GorillaLocomotion.Player.Instance.jumpMultiplier = 1.2f;
-            GorillaLocomotion.Player.Instance.maxJumpSpeed = 8f;
+            base.OnUpdate();
+            GorillaLocomotion.Player.Instance.jumpMultiplier = 1.3f * GorillaLocomotion.Player.Instance.scale;
+            GorillaLocomotion.Player.Instance.maxJumpSpeed = 8.5f * GorillaLocomotion.Player.Instance.scale;
         }
         
         public override void Disable()
