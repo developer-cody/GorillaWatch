@@ -15,7 +15,7 @@ namespace TheGorillaWatch.Mods
         public override void Enable()
         {
             base.Enable();
-            Physics.gravity = new Vector3(0, -14f, 0);
+            Physics.gravity = new Vector3(0, -14.5f, 0);
         }
 
         public override void Disable()

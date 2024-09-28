@@ -4,16 +4,12 @@ using System.Reflection;
 
 namespace TheGorillaWatch.Patches
 {
-    /// <summary>
-    /// This class handles applying harmony patches to the game.
-    /// You should not need to modify this class.
-    /// </summary>
     public class HarmonyPatches
     {
         private static Harmony instance;
 
         public static bool IsPatched { get; private set; }
-        public const string InstanceId = "1.5.8";
+        public const string InstanceId = "1.5.9";
 
         internal static void ApplyHarmonyPatches()
         {

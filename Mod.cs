@@ -16,7 +16,7 @@ using TheGorillaWatch.Mods;
 namespace TheGorillaWatch
 {
 
-    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.5.8")]
+    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.5.9")]
     public class Mod : BaseUnityPlugin
     {
         //bools
