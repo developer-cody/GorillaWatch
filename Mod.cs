@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TheGorillaWatch.Models;
 using TheGorillaWatch.Mods;
+using Utilla;
 
 namespace TheGorillaWatch
 {
@@ -86,6 +87,13 @@ namespace TheGorillaWatch
             {
                 page.Init();
             }
+
+            var hash = new ExitGames.Client.Photon.Hashtable();
+            hash.Add("GorillaWatch", "1.5.9");
+            hash.Add("size", 1f);
+            PhotonNetwork.LocalPlayer.CustomProperties = hash;
+            PhotonNetwork.SetPlayerCustomProperties(hash);
+            gameObject.AddComponent<NetworkingManager>();
         }
 
         void Update()
