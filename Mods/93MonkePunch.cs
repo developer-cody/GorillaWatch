@@ -26,18 +26,18 @@ namespace TheGorillaWatch.Mods
                     Vector3 notthem = GorillaTagger.Instance.offlineVRRig.head.rigTarget.position;
                     float distance = Vector3.Distance(they, notthem);
             
-                    if (distance < 0.25)
+                    if (distance < .3)
                     {
-                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity += Vector3.Normalize(vrrig.rightHandTransform.position - lastRight[index]) * 10f;
+                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity += Vector3.Normalize(vrrig.rightHandTransform.position - lastRight[index]) * 5f;
                     }
                     lastRight[index] = vrrig.rightHandTransform.position;
             
                     they = vrrig.leftHandTransform.position;
                     distance = Vector3.Distance(they, notthem);
             
-                    if (distance < 0.25)
+                    if (distance < .3)
                     {
-                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity += Vector3.Normalize(vrrig.leftHandTransform.position - lastLeft[index]) * 10f;
+                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity += Vector3.Normalize(vrrig.leftHandTransform.position - lastLeft[index]) * 5f;
                     }
                     lastLeft[index] = vrrig.leftHandTransform.position;
                 }

@@ -180,6 +180,7 @@ namespace TheGorillaWatch
                             string modEnabled = mods[counter].modEnabled ? "<color=green>enabled</color>" : $"<color=red>disabled</color>";
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].modName + ":\n" + modEnabled + $"\n{mods[counter].info}";
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.color = mods[counter].modEnabled ? Color.green : Color.red;
+
                             if (leftStickClick && Time.time > PageCoolDown + .5)
                             {
                                 GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(66, true, 1f);

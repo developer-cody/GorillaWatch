@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GorillaLocomotion;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -32,7 +33,7 @@ namespace TheGorillaWatch.Mods
             }
             else
             {
-                GorillaLocomotion.Player.Instance.audioManager.UnsetMixerSnapshot(0.1f);
+                Player.Instance.audioManager.UnsetMixerSnapshot(0.1f);
                 Swim.transform.position = GorillaTagger.Instance.headCollider.transform.position + new Vector3(0f, 200f, 0f);
             }
         }

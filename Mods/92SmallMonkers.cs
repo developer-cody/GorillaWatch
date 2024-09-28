@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GorillaLocomotion;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using TheGorillaWatch.Models;
@@ -12,7 +13,7 @@ namespace TheGorillaWatch.Mods
 
         public override void OnUpdate()
         {
-            GorillaLocomotion.Player.Instance.scale = .2f;
+            Player.Instance.scale = .2f;
         }
     }
 }

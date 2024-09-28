@@ -7,6 +7,7 @@ namespace TheGorillaWatch.Models
         public virtual bool modEnabled {  get; set; }
 
         public abstract string modName { get; }
+
         public virtual string info { get; set; } = "";
 
         public virtual PageType pageType { get; } = PageType.Toggle;
@@ -16,6 +17,7 @@ namespace TheGorillaWatch.Models
         public virtual void Disable() { modEnabled = false; Debug.Log($"{modName} disabled"); }
 
         public virtual void OnUpdate() {  }
+
         public virtual void Init() { }
     }
 }
