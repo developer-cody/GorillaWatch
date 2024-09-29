@@ -67,11 +67,23 @@ namespace TheGorillaWatch.Models
             if (PlayerList.ContainsKey(otherPlayer))
             {
                 Destroy(PlayerList[otherPlayer].gameObject);
+                if (PlayerList.ContainsKey(otherPlayer))
+                {
+                    PlayerList[otherPlayer].transform.localScale = new Vector3(1, 1, 1);
+                    PlayerList.Remove(otherPlayer);
+                }
             }
+
             
         }
         public override void OnLeftRoom()
         {
+            foreach (Player p in PlayerList.Keys)
+            {
+                PlayerList[p].transform.localScale = new Vector3(1, 1, 1);
+        
+            }
+
             foreach (GameObject Watch in PlayerList.Values)
             {
                 Destroy(Watch);

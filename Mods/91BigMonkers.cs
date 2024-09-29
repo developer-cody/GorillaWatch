@@ -22,7 +22,7 @@ namespace TheGorillaWatch.Mods
         public override void Disable()
         {
             var hash2 = new ExitGames.Client.Photon.Hashtable();
-            hash2.AddOrUpdate("size", 1);
+            hash2.AddOrUpdate("size", 1f);
             PhotonNetwork.SetPlayerCustomProperties(hash2);
         }
         public override void OnUpdate()
