@@ -14,6 +14,16 @@ namespace TheGorillaWatch.Models
 
         //fuk u striker && love ya ty :3
 
+        //:3
+
+        //:3
+
+        //:3
+
+        //:3
+
+        //:3
+
         public Dictionary<Player, GameObject> PlayerList = new Dictionary<Player, GameObject>();
 
         public override void OnJoinedRoom()

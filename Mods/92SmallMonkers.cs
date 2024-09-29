@@ -16,6 +16,7 @@ namespace TheGorillaWatch.Mods
         public override void Enable()
         {
             base.Enable();
+            //STRIKER REMEMBER YOUR BASES
             var hash1 = new ExitGames.Client.Photon.Hashtable();
             hash1.AddOrUpdate("size", .2f);
             PhotonNetwork.SetPlayerCustomProperties(hash1);
@@ -23,6 +24,7 @@ namespace TheGorillaWatch.Mods
         public override void Disable()
         {
             base.Disable();
+            //STRIKER REMEMBER YOUR BASES
             var hash2 = new ExitGames.Client.Photon.Hashtable();
             hash2.AddOrUpdate("size", 1f);
             PhotonNetwork.SetPlayerCustomProperties(hash2);
