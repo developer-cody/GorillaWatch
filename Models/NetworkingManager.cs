@@ -11,7 +11,11 @@ namespace TheGorillaWatch.Models
     public class NetworkingManager : MonoBehaviourPunCallbacks
     {
         //striker did this meanie heads
+
+        //fuk u striker && love ya ty :3
+
         public Dictionary<Player, GameObject> PlayerList = new Dictionary<Player, GameObject>();
+
         public override void OnJoinedRoom()
         {
             foreach(Player p in PhotonNetwork.PlayerListOthers)
@@ -22,6 +26,7 @@ namespace TheGorillaWatch.Models
                 }
             }
         }
+
         IEnumerator WaitForInit(Player p)
         {
             yield return new WaitForSeconds(0.7f);
@@ -36,7 +41,6 @@ namespace TheGorillaWatch.Models
         {
             if (newPlayer.CustomProperties.ContainsKey("GorillaWatch"))
             {
-                
                 var rig = GorillaGameManager.instance.FindPlayerVRRig(newPlayer);
                 var huntwatch = GameObject.Instantiate(GorillaTagger.Instance.offlineVRRig.huntComputer);
                 huntwatch.transform.parent = rig.leftHandTransform;
@@ -60,8 +64,8 @@ namespace TheGorillaWatch.Models
             {
                 Debug.Log(targetPlayer.NickName);
             }
-            
         }
+
         public override void OnPlayerLeftRoom(Player otherPlayer)
         {
             if (PlayerList.ContainsKey(otherPlayer))
@@ -69,14 +73,11 @@ namespace TheGorillaWatch.Models
                 Destroy(PlayerList[otherPlayer].gameObject);
                 PlayerList[otherPlayer].transform.GetComponentInParent<VRRig>().transform.localScale = new Vector3(1f, 1f, 1f);
                 PlayerList.Remove(otherPlayer);
-                
             }
-
-            
         }
+
         public override void OnLeftRoom()
         {
-
             foreach (GameObject Watch in PlayerList.Values)
             {
                 Watch.transform.GetComponentInParent<VRRig>().transform.localScale = new Vector3(1f, 1f, 1f);

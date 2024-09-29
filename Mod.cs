@@ -17,7 +17,7 @@ using Utilla;
 namespace TheGorillaWatch
 {
 
-    [BepInPlugin("com.ArtificialGorillas.gorillatag.GorillaWatch", "GorillaWatch", "1.5.9")]
+    [BepInPlugin(ModInfo.GUID, ModInfo.Name, ModInfo.Version)]
     public class Mod : BaseUnityPlugin
     {
         //bools
@@ -39,6 +39,8 @@ namespace TheGorillaWatch
 
         void Start()
         {
+            Debug.Log("Rizzy Sigma Gyat, it's working");
+
             GorillaTagger.OnPlayerSpawned(Initialized);
             GameObject modHolder = new GameObject("GorillaWatch Mod Holder");
             int mainPageNum = 0;

@@ -11,6 +11,7 @@
         "dependencies": {
           "0Harmony": "2.9.0.0",
           "AA.Mothership": "0.0.0.0",
+          "ALINE": "0.0.0.0",
           "andywiecko.BurstTriangulator": "0.0.0.0",
           "Assembly-CSharp-firstpass": "0.0.0.0",
           "Assembly-CSharp": "0.0.0.0",
@@ -26,9 +27,11 @@
           "Facebook.Wit.Dictation": "0.0.0.0",
           "FbxBuildTestAssets": "0.0.0.0",
           "Fusion.Common": "2.0.0.0",
+          "Fusion.Log": "2.0.0.0",
           "Fusion.Realtime": "2.0.0.0",
           "Fusion.Runtime": "2.0.0.0",
           "Fusion.Sockets": "2.0.0.0",
+          "Fusion.Unity": "0.0.0.0",
           "geometry3Sharp": "0.0.0.0",
           "HarmonyXInterop": "1.0.0.0",
           "KID": "0.0.0.0",
@@ -85,12 +88,6 @@
           "Sirenix.OdinInspector.Modules.Unity.Addressables": "0.0.0.0",
           "SteamVR": "0.0.0.0",
           "SteamVR_Actions": "0.0.0.0",
-          "System.Configuration": "4.0.0.0",
-          "System.Data.DataSetExtensions": "4.0.0.0",
-          "System.EnterpriseServices": "4.0.0.0",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0.0",
-          "System.Security": "4.0.0.0",
-          "System.ServiceModel.Internals": "0.0.0.0",
           "TechniePhysicsCreator": "0.0.0.0",
           "Unity.Addressables": "0.0.0.0",
           "Unity.AI.Navigation": "0.0.0.0",
@@ -118,13 +115,13 @@
           "Unity.RenderPipelines.Universal.Shaders": "0.0.0.0",
           "Unity.ResourceManager": "0.0.0.0",
           "Unity.ScriptableBuildPipeline": "0.0.0.0",
+          "Unity.Splines": "0.0.0.0",
           "Unity.TextMeshPro": "0.0.0.0",
           "Unity.Timeline": "1.0.0.0",
           "Unity.XR.CoreUtils": "0.0.0.0",
           "Unity.XR.Interaction.Toolkit": "0.0.0.0",
           "Unity.XR.Management": "0.0.0.0",
           "Unity.XR.Oculus": "0.0.0.0",
-          "Unity.XR.OpenVR": "0.0.0.0",
           "UnityEngine.AccessibilityModule": "0.0.0.0",
           "UnityEngine.AIModule": "0.0.0.0",
           "UnityEngine.AndroidJNIModule": "0.0.0.0",
@@ -219,6 +216,14 @@
       "AA.Mothership/0.0.0.0": {
         "runtime": {
           "AA.Mothership.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "ALINE/0.0.0.0": {
+        "runtime": {
+          "ALINE.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -344,6 +349,14 @@
           }
         }
       },
+      "Fusion.Log/2.0.0.0": {
+        "runtime": {
+          "Fusion.Log.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
       "Fusion.Realtime/2.0.0.0": {
         "runtime": {
           "Fusion.Realtime.dll": {
@@ -365,6 +378,14 @@
           "Fusion.Sockets.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.0.807"
+          }
+        }
+      },
+      "Fusion.Unity/0.0.0.0": {
+        "runtime": {
+          "Fusion.Unity.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -816,54 +837,6 @@
           }
         }
       },
-      "System.Configuration/4.0.0.0": {
-        "runtime": {
-          "System.Configuration.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.57.0"
-          }
-        }
-      },
-      "System.Data.DataSetExtensions/4.0.0.0": {
-        "runtime": {
-          "System.Data.DataSetExtensions.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.57.0"
-          }
-        }
-      },
-      "System.EnterpriseServices/4.0.0.0": {
-        "runtime": {
-          "System.EnterpriseServices.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.57.0"
-          }
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0.0": {
-        "runtime": {
-          "System.Runtime.CompilerServices.Unsafe.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
-          }
-        }
-      },
-      "System.Security/4.0.0.0": {
-        "runtime": {
-          "System.Security.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.57.0"
-          }
-        }
-      },
-      "System.ServiceModel.Internals/0.0.0.0": {
-        "runtime": {
-          "System.ServiceModel.Internals.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "4.6.57.0"
-          }
-        }
-      },
       "TechniePhysicsCreator/0.0.0.0": {
         "runtime": {
           "TechniePhysicsCreator.dll": {
@@ -1080,6 +1053,14 @@
           }
         }
       },
+      "Unity.Splines/0.0.0.0": {
+        "runtime": {
+          "Unity.Splines.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Unity.TextMeshPro/0.0.0.0": {
         "runtime": {
           "Unity.TextMeshPro.dll": {
@@ -1123,14 +1104,6 @@
       "Unity.XR.Oculus/0.0.0.0": {
         "runtime": {
           "Unity.XR.Oculus.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Unity.XR.OpenVR/0.0.0.0": {
-        "runtime": {
-          "Unity.XR.OpenVR.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1760,35 +1733,11 @@
           }
         }
       },
-      "ALINE/0.0.0.0": {
+      "System.Runtime.CompilerServices.Unsafe/6.0.0.0": {
         "runtime": {
-          "ALINE.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Unity.Splines/0.0.0.0": {
-        "runtime": {
-          "Unity.Splines.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Fusion.Unity/0.0.0.0": {
-        "runtime": {
-          "Fusion.Unity.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Fusion.Log/2.0.0.0": {
-        "runtime": {
-          "Fusion.Log.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
+          "System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
           }
         }
       }
@@ -1806,6 +1755,11 @@
       "sha512": ""
     },
     "AA.Mothership/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ALINE/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1885,6 +1839,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Fusion.Log/2.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Fusion.Realtime/2.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -1896,6 +1855,11 @@
       "sha512": ""
     },
     "Fusion.Sockets/2.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Fusion.Unity/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2180,36 +2144,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Configuration/4.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Data.DataSetExtensions/4.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.EnterpriseServices/4.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Runtime.CompilerServices.Unsafe/6.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Security/4.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.ServiceModel.Internals/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "TechniePhysicsCreator/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -2345,6 +2279,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Unity.Splines/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Unity.TextMeshPro/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -2371,11 +2310,6 @@
       "sha512": ""
     },
     "Unity.XR.Oculus/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Unity.XR.OpenVR/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2770,22 +2704,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ALINE/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Unity.Splines/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Fusion.Unity/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Fusion.Log/2.0.0.0": {
+    "System.Runtime.CompilerServices.Unsafe/6.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

@@ -1,5 +1,4 @@
-﻿using Steamworks;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using TheGorillaWatch.Models;
@@ -12,7 +11,6 @@ namespace TheGorillaWatch.Mods
         bool isZeroGravity = false;
 
         public override string modName => "NoGravity";
-
 
         public override void Enable()
         {

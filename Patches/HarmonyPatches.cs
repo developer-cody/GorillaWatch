@@ -9,7 +9,7 @@ namespace TheGorillaWatch.Patches
         private static Harmony instance;
 
         public static bool IsPatched { get; private set; }
-        public const string InstanceId = "1.5.9";
+        public const string InstanceId = ModInfo.Version;
 
         internal static void ApplyHarmonyPatches()
         {
