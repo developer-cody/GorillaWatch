@@ -15,12 +15,9 @@ namespace TheGorillaWatch.Mods
         public override void Disable()
         {
             base.Disable();
-            foreach (GameObject obj in FindObjectsOfType<GameObject>())
+            foreach (MeshCollider meshCollider2 in colliders)
             {
-                if (obj.GetComponent<MeshCollider>() != null && obj.GetComponent<GorillaLocomotion.Swimming.WaterVolume>() == null)
-                {
-                    obj.GetComponent<MeshCollider>().enabled = true;
-                }
+                meshCollider2.enabled = true;
             }
             resetNoClip = false;
         }
@@ -29,11 +26,13 @@ namespace TheGorillaWatch.Mods
         {
             if (ControllerInputPoller.instance.rightControllerPrimaryButton)
             {
-                foreach (GameObject obj in FindObjectsOfType<GameObject>())
+                MeshCollider[] array = FindObjectsOfType<MeshCollider>();
+                foreach (MeshCollider meshCollider in array)
                 {
-                    if (obj.GetComponent<MeshCollider>() != null && obj.GetComponent<GorillaLocomotion.Swimming.WaterVolume>() == null && ControllerInputPoller.instance.rightControllerIndexFloat > 0.3f)
+                    if (meshCollider.enabled)
                     {
-                        obj.GetComponent<MeshCollider>().enabled = false;
+                        meshCollider.enabled = false;
+                        colliders.Add(meshCollider);
                     }
                 }
                 resetNoClip = false;
