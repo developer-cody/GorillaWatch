@@ -25,10 +25,11 @@ namespace TheGorillaWatch.Models
         //:3
 
         public Dictionary<Player, GameObject> PlayerList = new Dictionary<Player, GameObject>();
+        public Dictionary<Player, GameObject> Riglist = new Dictionary<Player, GameObject>();
 
         public override void OnJoinedRoom()
         {
-            foreach(Player p in PhotonNetwork.PlayerListOthers)
+            foreach (Player p in PhotonNetwork.PlayerListOthers)
             {
                 if (p.CustomProperties.ContainsKey("GorillaWatch"))
                 {
@@ -46,6 +47,7 @@ namespace TheGorillaWatch.Models
             huntwatch.transform.localPosition = new Vector3(-0.5737f, 0.5827f, 0.0353f);
             huntwatch.transform.localRotation = GorillaTagger.Instance.offlineVRRig.huntComputer.transform.localRotation;
             PlayerList.Add(p, huntwatch);
+            Riglist.Add(p, rig.gameObject);
         }
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
@@ -57,6 +59,7 @@ namespace TheGorillaWatch.Models
                 huntwatch.transform.localPosition = new Vector3(-0.5737f, 0.5827f, 0.0353f);
                 huntwatch.transform.localRotation = GorillaTagger.Instance.offlineVRRig.huntComputer.transform.localRotation;
                 PlayerList.Add(newPlayer, huntwatch);
+                Riglist.Add(newPlayer, rig.gameObject);
             }
         }
 
@@ -80,20 +83,25 @@ namespace TheGorillaWatch.Models
         {
             if (PlayerList.ContainsKey(otherPlayer))
             {
+                Riglist[otherPlayer].transform.localScale = new Vector3(1f, 1f, 1f);
                 Destroy(PlayerList[otherPlayer].gameObject);
-                PlayerList[otherPlayer].transform.GetComponentInParent<VRRig>().transform.localScale = new Vector3(1f, 1f, 1f);
                 PlayerList.Remove(otherPlayer);
+                Riglist.Remove(otherPlayer);
             }
         }
 
         public override void OnLeftRoom()
         {
+            foreach (Player rig in Riglist.Keys)
+            {
+                Riglist[rig].transform.localScale = new Vector3(1f, 1f, 1f);
+            }
             foreach (GameObject Watch in PlayerList.Values)
             {
-                Watch.transform.GetComponentInParent<VRRig>().transform.localScale = new Vector3(1f, 1f, 1f);
                 Destroy(Watch);
             }
             PlayerList.Clear();
+            Riglist.Clear();
         }
     }
 }

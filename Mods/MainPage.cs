@@ -10,7 +10,7 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "GorillaWatchMainInfoPageWABSHUWAJSD";
 
-        public override string info => "<color=black>Gorilla</color>Watch!\nMade by:\n<color=yellow>Cody</color>, <color=red>Ty</color>\nand <color=blue>Wryser</color>!";
+        public override string info => "<color=black>Gorilla</color>Watch!\nMade by:<color=yellow>Cody</color>,\n<color=red>Ty</color>, <color=blue>Wryser</color> and <color=red>Striker</color>!";
 
         public override PageType pageType => PageType.Information;
     }

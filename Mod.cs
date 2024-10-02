@@ -13,6 +13,7 @@ using System.Linq;
 using TheGorillaWatch.Models;
 using TheGorillaWatch.Mods;
 using Utilla;
+using TheGorillaWatch.Configuration;
 
 namespace TheGorillaWatch
 {
@@ -27,6 +28,9 @@ namespace TheGorillaWatch
         bool stickClickJustPressed;
         bool reset = true;
         bool initialized = false;
+        bool useLeftTriggerToToggleMod;
+        bool useRightTriggerToToggleWatch;
+        bool toggleableWatch;
 
         //Ints
         public static int counter;
@@ -40,6 +44,8 @@ namespace TheGorillaWatch
         void Start()
         {
             Debug.Log("Rizzy Sigma Gyat, it's working");
+
+            ConfigManager.CreateConfig();
 
             GorillaTagger.OnPlayerSpawned(Initialized);
             GameObject modHolder = new GameObject("GorillaWatch Mod Holder");
@@ -110,12 +116,12 @@ namespace TheGorillaWatch
             {
                 reset = false;
 
-                bool leftStickClick;
+                bool ToggleMod;
 
-                bool rightStickClick;
+                bool ToggleWatch;
 
                 //Joysick buttons whether you're on SteamVR or not
-                if (IsSteamVR)
+                /*if (IsSteamVR)
                 {
                     rightStickClick = SteamVR_Actions.gorillaTag_LeftJoystickClick.GetState(SteamVR_Input_Sources.RightHand);
                     leftStickClick = SteamVR_Actions.gorillaTag_RightJoystickClick.GetState(SteamVR_Input_Sources.LeftHand);
@@ -125,14 +131,52 @@ namespace TheGorillaWatch
                     ControllerInputPoller.instance.leftControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out leftStickClick);
 
                     ControllerInputPoller.instance.rightControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out rightStickClick);
+                }*/
+
+                useLeftTriggerToToggleMod = ConfigManager.toggleModButton.Value;
+
+                useRightTriggerToToggleWatch = ConfigManager.toggleWatchButton.Value;
+
+                if (!useLeftTriggerToToggleMod)
+                {
+                    if (IsSteamVR)
+                    {
+                        ToggleMod = SteamVR_Actions.gorillaTag_RightJoystickClick.GetState(SteamVR_Input_Sources.LeftHand);
+                    }
+                    else
+                    {
+                        ControllerInputPoller.instance.leftControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out ToggleMod);
+                    }
+                }
+                else
+                {
+                    ToggleMod = ControllerInputPoller.instance.leftControllerIndexFloat > 0.5f;
+                }
+                
+                if (!useRightTriggerToToggleWatch)
+                {
+                    if (IsSteamVR)
+                    {
+                        ToggleWatch = SteamVR_Actions.gorillaTag_LeftJoystickClick.GetState(SteamVR_Input_Sources.RightHand);
+                    }
+                    else
+                    {
+                        ControllerInputPoller.instance.rightControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out ToggleWatch);
+                    }
+                }
+                else
+                {
+                    ToggleWatch = ControllerInputPoller.instance.rightControllerIndexFloat > 0.5f;
                 }
 
-                if (rightStickClick && !stickClickJustPressed)
+                toggleableWatch = ConfigManager.toggleableWatch.Value;
+
+                if (ToggleWatch && !stickClickJustPressed && toggleableWatch)
                 {
                     watchOn = !watchOn;
                     stickClickJustPressed = true;
                 }
-                else if (!rightStickClick)
+                else if (!ToggleWatch)
                 {
                     stickClickJustPressed = false;
                 }
@@ -191,7 +235,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].modName + ":\n" + modEnabled + $"\n{mods[counter].info}";
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.color = mods[counter].modEnabled ? Color.green : Color.red;
 
-                            if (leftStickClick && Time.time > PageCoolDown + .5)
+                            if (ToggleMod && Time.time > PageCoolDown + .5)
                             {
                                 GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(66, true, 1f);
 
