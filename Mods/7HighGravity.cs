@@ -10,8 +10,6 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "HighGravity";
 
-        bool isHighGravity;
-
         public override void Enable()
         {
             base.Enable();

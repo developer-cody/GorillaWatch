@@ -10,8 +10,6 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "LowGravity";
 
-        bool isLowGarvity;
-
         public override void Enable()
         {
             base.Enable();

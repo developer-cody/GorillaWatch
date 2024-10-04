@@ -10,20 +10,6 @@ namespace TheGorillaWatch.Models
 {
     public class NetworkingManager : MonoBehaviourPunCallbacks
     {
-        //striker did this meanie heads
-
-        //fuk u striker && love ya ty :3
-
-        //:3
-
-        //:3
-
-        //:3
-
-        //:3
-
-        //:3
-
         public Dictionary<Player, GameObject> PlayerList = new Dictionary<Player, GameObject>();
         public Dictionary<Player, GameObject> Riglist = new Dictionary<Player, GameObject>();
 

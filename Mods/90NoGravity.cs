@@ -8,8 +8,6 @@ namespace TheGorillaWatch.Mods
 {
     class NoGravity : Page
     {
-        bool isZeroGravity = false;
-
         public override string modName => "NoGravity";
 
         public override void Enable()
