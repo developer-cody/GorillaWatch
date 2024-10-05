@@ -13,8 +13,8 @@ using TheGorillaWatch.Configuration;
 
 namespace TheGorillaWatch
 {
-
     [BepInPlugin(ModInfo.GUID, ModInfo.Name, ModInfo.Version)]
+
     public class Mod : BaseUnityPlugin
     {
         bool IsSteamVR;
@@ -127,7 +127,7 @@ namespace TheGorillaWatch
                 {
                     ToggleMod = ControllerInputPoller.instance.leftControllerIndexFloat > 0.5f;
                 }
-                
+
                 if (!useRightTriggerToToggleWatch)
                 {
                     if (IsSteamVR)

@@ -15,13 +15,14 @@ namespace TheGorillaWatch.Mods
         {
             if (ControllerInputPoller.instance.leftGrab)
             {
-                GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(10 * -GorillaTagger.Instance.leftHandTransform.right, ForceMode.Acceleration);
-                GorillaTagger.Instance.StartVibration(true, GorillaTagger.Instance.tapHapticStrength / 50f * GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
+                Player.Instance.bodyCollider.attachedRigidbody.AddForce(10 * Player.Instance.scale * -GorillaTagger.Instance.leftHandTransform.right, ForceMode.Acceleration);
+                GorillaTagger.Instance.StartVibration(true, GorillaTagger.Instance.tapHapticStrength / 50f * Player.Instance.bodyCollider.attachedRigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
             }
+
             if (ControllerInputPoller.instance.rightGrab)
             {
-                GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(10 * -GorillaTagger.Instance.rightHandTransform.right, ForceMode.Acceleration);
-                GorillaTagger.Instance.StartVibration(true, GorillaTagger.Instance.tapHapticStrength / 50f * GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
+                Player.Instance.bodyCollider.attachedRigidbody.AddForce(10 * Player.Instance.scale * GorillaTagger.Instance.rightHandTransform.right, ForceMode.Acceleration);
+                GorillaTagger.Instance.StartVibration(false, GorillaTagger.Instance.tapHapticStrength / 50f * Player.Instance.bodyCollider.attachedRigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
             }
         }
     }
