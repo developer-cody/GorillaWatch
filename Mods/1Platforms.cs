@@ -27,7 +27,6 @@ namespace TheGorillaWatch.Mods
             base.Enable();
         }
 
-
         public override void OnUpdate()
         {
             Color playerColor = GorillaTagger.Instance.offlineVRRig.mainSkin.material.color;

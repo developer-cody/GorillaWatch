@@ -12,9 +12,9 @@ namespace TheGorillaWatch.Models
 
         public virtual PageType pageType { get; } = PageType.Toggle;
 
-        public virtual void Enable() { modEnabled = true; Debug.Log($"{modName} enabled"); }
+        public virtual void Enable() { modEnabled = true; }
                
-        public virtual void Disable() { modEnabled = false; Debug.Log($"{modName} disabled"); }
+        public virtual void Disable() { modEnabled = false; }
 
         public virtual void OnUpdate() {  }
 
