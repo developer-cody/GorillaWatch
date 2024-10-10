@@ -7,10 +7,14 @@ namespace TheGorillaWatch.Configuration
     class ConfigManager
     {
         public static ConfigEntry<bool> toggleModButton;
-        
+
         public static ConfigEntry<bool> toggleWatchButton;
 
         public static ConfigEntry<bool> toggleableWatch;
+
+        public static ConfigEntry<float> BigMonkersSize;
+
+        public static ConfigEntry<float> SmallMonkersSize;
 
         static ConfigFile config;
 
@@ -18,17 +22,25 @@ namespace TheGorillaWatch.Configuration
         {
             config = new ConfigFile(Path.Combine(Paths.ConfigPath, "GorillaWatch.cfg"), true);
 
-            toggleModButton = config.Bind("Settings", "Use Left Trigger For Mod Toggle", false,
-                "This allows you to choose whether the mod toggle should be your left joystick down, or your left trigger. " +
-                "If it's false, you use your right joystick click to toggle. If it's true, you use your left trigger.");
+            toggleModButton = config.Bind("Settings", "Use Left Trigger for Mod Toggle", false,
+                "Choose whether to use your left joystick down or your left trigger to toggle the mod. " +
+                "If false, you will use your right joystick click to toggle. If true, you will use your left trigger.");
 
-            toggleWatchButton = config.Bind("Settings", "Use Right Trigger For Watch Toggle", false,
-                "This allows you to choose whether the watch toggle should be your right joystick down, or your right trigger. " +
-                "If it's false, you use your right joystick click to toggle. If it's true, you use your right trigger.");
-            
-            toggleableWatch = config.Bind("Settings", "Do you want your watch to be toggleable?", true,
-                "This allows you to choose wether you want your watch to be toggleable with either your right joystick or trigger!" +
-                "If it's false, you can't toggle the watch, if it's true, you can toggle it with either your right joystick or trigger!");
+            toggleWatchButton = config.Bind("Settings", "Use Right Trigger for Watch Toggle", false,
+                "Choose whether to use your right joystick down or your right trigger to toggle the watch. " +
+                "If false, you will use your right joystick click to toggle. If true, you will use your right trigger.");
+
+            toggleableWatch = config.Bind("Settings", "Do You Want Your Watch to be Toggleable?", true,
+                "Choose whether you want your watch to be toggleable with either your right joystick or trigger. " +
+                "If false, you cannot toggle the watch. If true, you can toggle it with either your right joystick or trigger!");
+
+            BigMonkersSize = config.Bind("Settings", "How Big Do You Want BigMonkers to Be?", 2f,
+                "Choose how big you want the scale to be when BigMonkers is enabled. " +
+                "Technically, you can set it to 0.5 to make it smaller, but I won't be fixing that.");
+
+            SmallMonkersSize = config.Bind("Settings", "How Small Do You Want SmallMonkers to Be?", 0.1f,
+                "Choose how small you want the scale to be when SmallMonkers is enabled. " +
+                "Technically, you can set it to 2 to make it larger, but I won't be fixing that.");
         }
     }
 }

@@ -4,6 +4,7 @@ using Photon.Pun;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TheGorillaWatch.Configuration;
 using TheGorillaWatch.Models;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ namespace TheGorillaWatch.Mods
         {
             base.Enable();
             var hash1 = new ExitGames.Client.Photon.Hashtable();
-            hash1.AddOrUpdate("size", 2f);
+            hash1.AddOrUpdate("size", ConfigManager.BigMonkersSize.Value);
             PhotonNetwork.SetPlayerCustomProperties(hash1);
         }
         public override void Disable()
@@ -29,7 +30,7 @@ namespace TheGorillaWatch.Mods
         }
         public override void OnUpdate()
         {
-            Player.Instance.scale = 2f;
+            Player.Instance.scale = ConfigManager.BigMonkersSize.Value;
         }
     }
 }
