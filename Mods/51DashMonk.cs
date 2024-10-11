@@ -27,5 +27,8 @@ namespace TheGorillaWatch.Mods
                 holding = false;
             }
         }
+
+        public override PageType pageType => PageType.Toggle;
+
     }
 }

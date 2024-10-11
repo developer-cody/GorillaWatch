@@ -25,5 +25,7 @@ namespace TheGorillaWatch.Mods
                 GorillaTagger.Instance.StartVibration(false, GorillaTagger.Instance.tapHapticStrength / 50f * Player.Instance.bodyCollider.attachedRigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
             }
         }
+        public override PageType pageType => PageType.Toggle;
+
     }
 }

@@ -54,5 +54,7 @@ namespace TheGorillaWatch.Mods
                 GameObject.Destroy(FrozoneR, .1f);
             }
         }
+        public override PageType pageType => PageType.Toggle;
+
     }
 }

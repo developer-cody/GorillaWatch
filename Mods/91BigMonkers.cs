@@ -32,5 +32,7 @@ namespace TheGorillaWatch.Mods
         {
             Player.Instance.scale = ConfigManager.BigMonkersSize.Value;
         }
+        public override PageType pageType => PageType.Toggle;
+
     }
 }

@@ -21,5 +21,7 @@ namespace TheGorillaWatch.Mods
             base.Disable();
             Physics.gravity = new Vector3(0f, -9.807f, 0f);
         }
+        public override PageType pageType => PageType.Toggle;
+
     }
 }

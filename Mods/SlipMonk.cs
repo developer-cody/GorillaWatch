@@ -36,6 +36,9 @@ namespace TheGorillaWatch.Mods
                     Destroy(surfaceOverride);
                 }
             }
+
         }
+        public override PageType pageType => PageType.Toggle;
+
     }
 }

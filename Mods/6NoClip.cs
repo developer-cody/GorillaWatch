@@ -53,5 +53,7 @@ namespace TheGorillaWatch.Mods
             }
             colliders.Clear();
         }
+        public override PageType pageType => PageType.Toggle;
+
     }
 }

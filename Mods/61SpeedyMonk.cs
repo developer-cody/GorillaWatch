@@ -24,5 +24,7 @@ namespace TheGorillaWatch.Mods
             Player.Instance.jumpMultiplier = 1.1f;
             Player.Instance.maxJumpSpeed = 6.5f;
         }
+        public override PageType pageType => PageType.Toggle;
+
     }
 }

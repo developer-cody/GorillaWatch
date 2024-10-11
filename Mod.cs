@@ -87,7 +87,7 @@ namespace TheGorillaWatch
             }
 
             var hash = new ExitGames.Client.Photon.Hashtable();
-            hash.Add("GorillaWatch", "1.5.9");
+            hash.Add(ModInfo.Name, ModInfo.Version);
             hash.Add("size", 1f);
             PhotonNetwork.LocalPlayer.CustomProperties = hash;
             PhotonNetwork.SetPlayerCustomProperties(hash);

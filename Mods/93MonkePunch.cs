@@ -43,6 +43,9 @@ namespace TheGorillaWatch.Mods
                     lastLeft[index] = vrrig.leftHandTransform.position;
                 }
             }
+
         }
+        public override PageType pageType => PageType.Toggle;
+
     }
 }

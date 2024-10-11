@@ -26,7 +26,6 @@ namespace TheGorillaWatch.Mods
             base.Enable();
         }
 
-
         public override void OnUpdate()
         {
             if (ControllerInputPoller.instance.leftGrab)
@@ -55,5 +54,7 @@ namespace TheGorillaWatch.Mods
                 GameObject.Destroy(DrawR, 10f);
             }
         }
+        public override PageType pageType => PageType.Toggle;
+
     }
 }
