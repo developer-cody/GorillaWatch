@@ -230,7 +230,7 @@ namespace TheGorillaWatch
             }
             else if (!reset)
             {
-                Physics.gravity = new Vector3(0f, -9.807f, 0f);
+                Physics.gravity = new Vector3(0f, -9.8f, 0f);
 
                 foreach (Page mod in mods)
                 {

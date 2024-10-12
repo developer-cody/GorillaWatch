@@ -30,11 +30,12 @@ namespace TheGorillaWatch.Models
             var rig = GorillaGameManager.instance.FindPlayerVRRig(p);
             var huntwatch = GameObject.Instantiate(GorillaTagger.Instance.offlineVRRig.huntComputer);
             huntwatch.transform.parent = rig.leftHandTransform;
-            huntwatch.transform.localPosition = new Vector3(-0.5737f, 0.5827f, 0.0353f);
+            huntwatch.transform.localPosition = new Vector3(-0.6364f, 0.6427f, 0.0153f);
             huntwatch.transform.localRotation = GorillaTagger.Instance.offlineVRRig.huntComputer.transform.localRotation;
             PlayerList.Add(p, huntwatch);
             Riglist.Add(p, rig.gameObject);
         }
+
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
             if (newPlayer.CustomProperties.ContainsKey("GorillaWatch"))
@@ -42,7 +43,7 @@ namespace TheGorillaWatch.Models
                 var rig = GorillaGameManager.instance.FindPlayerVRRig(newPlayer);
                 var huntwatch = GameObject.Instantiate(GorillaTagger.Instance.offlineVRRig.huntComputer);
                 huntwatch.transform.parent = rig.leftHandTransform;
-                huntwatch.transform.localPosition = new Vector3(-0.5737f, 0.5827f, 0.0353f);
+                huntwatch.transform.localPosition = new Vector3(-0.6364f, 0.6427f, 0.0153f);
                 huntwatch.transform.localRotation = GorillaTagger.Instance.offlineVRRig.huntComputer.transform.localRotation;
                 PlayerList.Add(newPlayer, huntwatch);
                 Riglist.Add(newPlayer, rig.gameObject);
@@ -69,7 +70,7 @@ namespace TheGorillaWatch.Models
         {
             if (PlayerList.ContainsKey(otherPlayer))
             {
-                Riglist[otherPlayer].transform.localScale = new Vector3(1f, 1f, 1f);
+                Riglist[otherPlayer].transform.localScale = Vector3.one;
                 Destroy(PlayerList[otherPlayer].gameObject);
                 PlayerList.Remove(otherPlayer);
                 Riglist.Remove(otherPlayer);
@@ -80,7 +81,7 @@ namespace TheGorillaWatch.Models
         {
             foreach (Player rig in Riglist.Keys)
             {
-                Riglist[rig].transform.localScale = new Vector3(1f, 1f, 1f);
+                Riglist[rig].transform.localScale = Vector3.one;
             }
             foreach (GameObject Watch in PlayerList.Values)
             {

@@ -14,6 +14,7 @@ namespace TheGorillaWatch.Mods
         public override void OnUpdate()
         {
             Physics.gravity = Vector3.zero;
+
             if (ControllerInputPoller.instance.rightGrab)
             {
                 Player.Instance.GetComponent<Rigidbody>().velocity = Player.Instance.headCollider.transform.forward * Time.deltaTime * 1000f;
