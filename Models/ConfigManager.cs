@@ -7,13 +7,9 @@ namespace TheGorillaWatch.Configuration
     class ConfigManager
     {
         public static ConfigEntry<bool> toggleModButton;
-
         public static ConfigEntry<bool> toggleWatchButton;
-
         public static ConfigEntry<bool> toggleableWatch;
-
         public static ConfigEntry<float> BigMonkersSize;
-
         public static ConfigEntry<float> SmallMonkersSize;
 
         static ConfigFile config;
@@ -35,12 +31,18 @@ namespace TheGorillaWatch.Configuration
                 "If false, you cannot toggle the watch. If true, you can toggle it with either your right joystick or trigger!");
 
             BigMonkersSize = config.Bind("Settings", "How Big Do You Want BigMonkers to Be?", 2f,
-                "Choose how big you want the scale to be when BigMonkers is enabled. " +
-                "Technically, you can set it to 0.5 to make it smaller, but I won't be fixing that.");
+                "Choose how big you want the scale to be when BigMonkers is enabled. ");
+            if (BigMonkersSize.Value <= 1f)
+            {
+                BigMonkersSize.Value = 2f;
+            }
 
             SmallMonkersSize = config.Bind("Settings", "How Small Do You Want SmallMonkers to Be?", 0.1f,
-                "Choose how small you want the scale to be when SmallMonkers is enabled. " +
-                "Technically, you can set it to 2 to make it larger, but I won't be fixing that.");
+                "Choose how small you want the scale to be when SmallMonkers is enabled. ");
+            if (SmallMonkersSize.Value >= 1f)
+            {
+                SmallMonkersSize.Value = .1f;
+            }
         }
     }
 }

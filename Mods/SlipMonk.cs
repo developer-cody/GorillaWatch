@@ -1,4 +1,4 @@
-﻿using GorillaLocomotion;
+﻿using System;
 using System.Collections.Generic;
 using TheGorillaWatch.Models;
 using UnityEngine;
@@ -7,51 +7,35 @@ namespace TheGorillaWatch.Mods
 {
     class SlipMonk : Page
     {
-        public override string modName => "SlipMonk";
-        private List<MeshCollider> colliders = new List<MeshCollider>();
-
-        public override void Enable()
-        {
-            base.Enable();
-
-            foreach (MeshCollider meshCollider in colliders)
-            {
-                meshCollider.GetComponent<GorillaSurfaceOverride>().overrideIndex = 61;
-            }
-
-            //Collider[] gameObjects = GameObject.Find("Level").GetComponentsInChildren<Collider>();
-
-            /*for (int i = 0; i < gameObjects.Length; i++)
-            {
-                gameObject[i].
-
-                int currentOverrideIndex = gameObjects[i].transform.gameObject.GetComponent<GorillaSurfaceOverride>().overrideIndex;
-                Destroy(gameObjects[i].transform.gameObject.GetComponent<GorillaSurfaceOverride>());
-
-                GorillaSurfaceOverride newSurfaceOverride = gameObjects[i].transform.gameObject.AddComponent<GorillaSurfaceOverride>();
-                newSurfaceOverride.overrideIndex = currentOverrideIndex;
-            }*/
-        }
+        public override string modName => "NoClip";
+        List<MeshCollider> colliders = new List<MeshCollider>();
 
         public override void Disable()
         {
-            base.Disable();
-
-            foreach (MeshCollider meshCollider in colliders)
+            foreach (MeshCollider meshcollider2 in colliders)
             {
-                meshCollider.GetComponent<GorillaSurfaceOverride>().overrideIndex = 0;
+                meshcollider2.AddComponent<GorillaSurfaceOverride>().enabled = false;
             }
+        }
 
-            /*Collider[] gameObjects = GameObject.Find("Level").GetComponentsInChildren<Collider>();
-
-            foreach (var collider in gameObjects)
+        public override void OnUpdate()
+        {
+            try
             {
-                var surfaceOverride = collider.transform.gameObject.GetComponent<GorillaSurfaceOverride>();
-                if (surfaceOverride != null)
+                MeshCollider[] array = FindObjectsOfType<MeshCollider>();
+                foreach (MeshCollider meshCollider in array)
                 {
-                    Destroy(surfaceOverride);
+                    if (meshCollider.enabled)
+                    {
+                        meshCollider.AddComponent<GorillaSurfaceOverride>().enabled = true;
+                        meshCollider.AddComponent<GorillaSurfaceOverride>().overrideIndex = 51;
+                    }
                 }
-            }*/
+            }
+            catch (Exception e)
+            {
+                Debug.Log($"Error with SlipMonk: {e.Message}");
+            }
         }
 
         public override PageType pageType => PageType.Toggle;

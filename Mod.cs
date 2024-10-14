@@ -22,23 +22,17 @@ namespace TheGorillaWatch
         bool watchOn = true;
         bool stickClickJustPressed;
         bool reset = true;
-        bool initialized = false;
+        bool initialized;
         bool useLeftTriggerToToggleMod;
         bool useRightTriggerToToggleWatch;
         bool toggleableWatch;
-
         public static int counter;
-
         public static float PageCoolDown;
-
         public static List<Page> mods = new List<Page>();
 
         void Start()
         {
-            Debug.Log("Rizzy Sigma Gyat, it's working");
-
             ConfigManager.CreateConfig();
-
             GorillaTagger.OnPlayerSpawned(Initialized);
             GameObject modHolder = new GameObject("GorillaWatch Mod Holder");
             int mainPageNum = 0;
@@ -117,7 +111,7 @@ namespace TheGorillaWatch
                 {
                     if (IsSteamVR)
                     {
-                        ToggleMod = SteamVR_Actions.gorillaTag_RightJoystickClick.GetState(SteamVR_Input_Sources.LeftHand);
+                        ToggleMod = SteamVR_Actions.gorillaTag_LeftJoystickClick.GetState(SteamVR_Input_Sources.LeftHand);
                     }
                     else
                     {
@@ -133,7 +127,7 @@ namespace TheGorillaWatch
                 {
                     if (IsSteamVR)
                     {
-                        ToggleWatch = SteamVR_Actions.gorillaTag_LeftJoystickClick.GetState(SteamVR_Input_Sources.RightHand);
+                        ToggleWatch = SteamVR_Actions.gorillaTag_RightJoystickClick.GetState(SteamVR_Input_Sources.RightHand);
                     }
                     else
                     {

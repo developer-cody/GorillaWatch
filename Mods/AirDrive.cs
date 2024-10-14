@@ -17,12 +17,14 @@ namespace TheGorillaWatch.Mods
 
             if (ControllerInputPoller.instance.rightGrab)
             {
-                Player.Instance.GetComponent<Rigidbody>().velocity = Player.Instance.headCollider.transform.forward * Time.deltaTime * 1000f;
+                Vector3 forceDirection = new Vector3(0, 10, 0);
+                GorillaLocomotion.Player.Instance.headCollider.GetComponent<Rigidbody>().AddForce(forceDirection, ForceMode.Acceleration);
             }
 
             if (ControllerInputPoller.instance.leftGrab)
             {
-                Player.Instance.GetComponent<Rigidbody>().velocity = Player.Instance.headCollider.transform.forward * Time.deltaTime * -1000f;
+                Vector3 forceDirection = new Vector3(0, -10, 0);
+                GorillaLocomotion.Player.Instance.headCollider.GetComponent<Rigidbody>().AddForce(forceDirection, ForceMode.Acceleration);
             }
         }
 
@@ -32,6 +34,5 @@ namespace TheGorillaWatch.Mods
             Physics.gravity = new Vector3(0f, -9.807f, 0f);
         }
         public override PageType pageType => PageType.Toggle;
-
     }
 }

@@ -62,7 +62,7 @@ namespace TheGorillaWatch.Models
             }
             catch (Exception e)
             {
-                Debug.Log(targetPlayer.NickName);
+                Debug.Log($"Error with player {targetPlayer.NickName}: {e.Message}");
             }
         }
 

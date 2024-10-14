@@ -8,51 +8,51 @@ namespace TheGorillaWatch.Mods
     class NoClip : Page
     {
         public override string modName => "NoClip";
-        private bool resetNoClip = true;
-        private List<MeshCollider> colliders = new List<MeshCollider>();
+        bool resetNoclip = true;
+        List<MeshCollider> colliders = new List<MeshCollider>();
 
         public override void Disable()
         {
-            base.Disable();
-            EnableAllColliders();
-            resetNoClip = false;
+            foreach (MeshCollider meshcollider2 in colliders)
+            {
+                meshcollider2.enabled = false;
+            }
+            resetNoclip = false;
         }
 
         public override void OnUpdate()
         {
-            if (ControllerInputPoller.instance.rightControllerPrimaryButton)
+            try
             {
-                DisableColliders();
-                resetNoClip = false;
-            }
-            else if (!resetNoClip)
-            {
-                EnableAllColliders();
-                resetNoClip = true;
-            }
-        }
-
-        private void DisableColliders()
-        {
-            MeshCollider[] array = FindObjectsOfType<MeshCollider>();
-            foreach (MeshCollider meshCollider in array)
-            {
-                if (meshCollider.enabled)
+                if (ControllerInputPoller.instance.rightControllerPrimaryButton)
                 {
-                    meshCollider.enabled = false;
-                    colliders.Add(meshCollider);
+                    MeshCollider[] array = FindObjectsOfType<MeshCollider>();
+                    foreach (MeshCollider meshCollider in array)
+                    {
+                        if (meshCollider.enabled)
+                        {
+                            meshCollider.enabled = false;
+                            colliders.Add(meshCollider);
+                        }
+                    }
+                    resetNoclip = false;
+                }
+                else if (!resetNoclip)
+                {
+                    foreach (MeshCollider meshCollider2 in colliders)
+                    {
+                        meshCollider2.enabled = true;
+                        colliders.Remove(meshCollider2);
+                    }
+                    resetNoclip = true;
                 }
             }
+            catch (Exception e)
+            {
+                Debug.Log($"Error with noclip: {e.Message}");
+            }
         }
 
-        private void EnableAllColliders()
-        {
-            foreach (MeshCollider meshCollider in colliders)
-            {
-                meshCollider.enabled = true;
-            }
-            colliders.Clear();
-        }
         public override PageType pageType => PageType.Toggle;
     }
 }
