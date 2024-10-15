@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TheGorillaWatch")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65b2a9a9e8ba55e44c46ad0095d8facead9b867f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a3e21bc1ccc6ad5074246998c0b5589c2346f8e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TheGorillaWatch")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TheGorillaWatch")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

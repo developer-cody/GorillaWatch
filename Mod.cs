@@ -63,7 +63,7 @@ namespace TheGorillaWatch
                 }
                 catch (Exception e)
                 {
-                    Debug.LogError($"Error With Getting Types: {e}");
+                    Debug.LogError($"Error With Getting Types: {e.Message}!");
                 }
             }
             counter = mainPageNum;
