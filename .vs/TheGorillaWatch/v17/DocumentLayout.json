@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\modinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:modinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\madebyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\madebyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -111,11 +115,24 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ModInfo.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\ModInfo.cs",
+              "RelativeDocumentMoniker": "ModInfo.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\ModInfo.cs*",
+              "RelativeToolTip": "ModInfo.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:28:51.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MadeByInfo.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MadeByInfo.cs",
               "RelativeDocumentMoniker": "Mods\\MadeByInfo.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MadeByInfo.cs*",
-              "RelativeToolTip": "Mods\\MadeByInfo.cs*",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MadeByInfo.cs",
+              "RelativeToolTip": "Mods\\MadeByInfo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-26T15:27:23.067Z",
@@ -123,7 +140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "MonkeWalker.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MonkeWalker.cs",
               "RelativeDocumentMoniker": "Mods\\MonkeWalker.cs",
@@ -136,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SlipMonk.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\SlipMonk.cs",
               "RelativeDocumentMoniker": "Mods\\SlipMonk.cs",
@@ -149,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CheckPoint.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\CheckPoint.cs",
               "RelativeDocumentMoniker": "Mods\\CheckPoint.cs",
@@ -162,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "NoClip.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\NoClip.cs",
               "RelativeDocumentMoniker": "Mods\\NoClip.cs",
@@ -175,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "BigMonkers.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\BigMonkers.cs",
               "RelativeDocumentMoniker": "Mods\\BigMonkers.cs",
@@ -187,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "MainPage.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MainPage.cs",
               "RelativeDocumentMoniker": "Mods\\MainPage.cs",
@@ -199,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "NoGravity.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\NoGravity.cs",
               "RelativeDocumentMoniker": "Mods\\NoGravity.cs",
@@ -211,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AirDrive.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\AirDrive.cs",
               "RelativeDocumentMoniker": "Mods\\AirDrive.cs",
@@ -224,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AirSwim.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\AirSwim.cs",
               "RelativeDocumentMoniker": "Mods\\AirSwim.cs",
@@ -237,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Frozone.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Frozone.cs",
               "RelativeDocumentMoniker": "Mods\\Frozone.cs",
@@ -249,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Dash.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Dash.cs",
               "RelativeDocumentMoniker": "Mods\\Dash.cs",
@@ -261,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Directory.Build.props",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Directory.Build.props",
               "RelativeDocumentMoniker": "Directory.Build.props",
@@ -273,7 +290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Platforms.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Platforms.cs",
               "RelativeDocumentMoniker": "Mods\\Platforms.cs",
@@ -285,7 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Speed.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Speed.cs",
               "RelativeDocumentMoniker": "Mods\\Speed.cs",
@@ -297,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Fly.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Fly.cs",
               "RelativeDocumentMoniker": "Mods\\Fly.cs",
@@ -309,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "MonkePunch.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MonkePunch.cs",
               "RelativeDocumentMoniker": "Mods\\MonkePunch.cs",
@@ -321,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "NetworkingManager.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Models\\NetworkingManager.cs",
               "RelativeDocumentMoniker": "Models\\NetworkingManager.cs",
@@ -333,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Mod.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mod.cs",
               "RelativeDocumentMoniker": "Mod.cs",
@@ -345,7 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "MonkeBoing.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MonkeBoing.cs",
               "RelativeDocumentMoniker": "Mods\\MonkeBoing.cs",
@@ -357,7 +374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ExamplePatch.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Patches\\ExamplePatch.cs",
               "RelativeDocumentMoniker": "Patches\\ExamplePatch.cs",
@@ -369,7 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "HarmonyPatches.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Patches\\HarmonyPatches.cs",
               "RelativeDocumentMoniker": "Patches\\HarmonyPatches.cs",
@@ -381,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "PageType.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Models\\PageType.cs",
               "RelativeDocumentMoniker": "Models\\PageType.cs",
