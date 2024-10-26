@@ -5,51 +5,42 @@ using UnityEngine;
 
 namespace TheGorillaWatch.Mods
 {
-    class NoClip : Page
+    class Noclip : Page
     {
-        public override string modName => "NoClip";
-        bool resetNoclip = true;
+        public override string modName => "Noclip (W?)";
         List<MeshCollider> colliders = new List<MeshCollider>();
 
         public override void Disable()
         {
-            foreach (MeshCollider meshcollider2 in colliders)
-            {
-                meshcollider2.enabled = false;
-            }
-            resetNoclip = false;
-        }
-
-        public override void OnUpdate()
-        {
+            base.Disable();
             try
             {
-                if (ControllerInputPoller.instance.rightControllerPrimaryButton)
+                MeshCollider[] array = FindObjectsOfType<MeshCollider>();
+                foreach (MeshCollider meshCollider in array)
                 {
-                    MeshCollider[] array = FindObjectsOfType<MeshCollider>();
-                    foreach (MeshCollider meshCollider in array)
-                    {
-                        if (meshCollider.enabled)
-                        {
-                            meshCollider.enabled = false;
-                            colliders.Add(meshCollider);
-                        }
-                    }
-                    resetNoclip = false;
-                }
-                else if (!resetNoclip)
-                {
-                    foreach (MeshCollider meshCollider2 in colliders)
-                    {
-                        meshCollider2.enabled = true;
-                        colliders.Remove(meshCollider2);
-                    }
-                    resetNoclip = true;
+                    meshCollider.enabled = true;
                 }
             }
             catch (Exception e)
             {
-                Debug.Log($"Error with noclip: {e.Message}");
+                Debug.Log($"Error with Noclip Disable: {e.Message}");
+            }
+        }
+
+        public override void Enable()
+        {
+            base.Enable();
+            try
+            {
+                MeshCollider[] array = FindObjectsOfType<MeshCollider>();
+                foreach (MeshCollider meshCollider in array)
+                {
+                    meshCollider.enabled = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.Log($"Error with Noclip Enable: {e.Message}");
             }
         }
 

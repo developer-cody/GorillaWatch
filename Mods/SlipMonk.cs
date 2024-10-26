@@ -7,19 +7,27 @@ namespace TheGorillaWatch.Mods
 {
     class SlipMonk : Page
     {
-        public override string modName => "NoClip";
+        public override string modName => "SlipMonk";
         List<MeshCollider> colliders = new List<MeshCollider>();
 
         public override void Disable()
         {
-            foreach (MeshCollider meshcollider2 in colliders)
+            base.Disable();
+            MeshCollider[] array = FindObjectsOfType<MeshCollider>();
+            foreach (MeshCollider meshCollider in array)
             {
-                meshcollider2.AddComponent<GorillaSurfaceOverride>().enabled = false;
+                if (meshCollider.enabled)
+                {
+                    meshCollider.AddComponent<GorillaSurfaceOverride>();
+                    meshCollider.GetComponent<GorillaSurfaceOverride>().enabled = false;
+                    meshCollider.GetComponent<GorillaSurfaceOverride>().overrideIndex = 0;
+                }
             }
         }
 
-        public override void OnUpdate()
+        public override void Enable()
         {
+            base.Enable();
             try
             {
                 MeshCollider[] array = FindObjectsOfType<MeshCollider>();
@@ -27,8 +35,9 @@ namespace TheGorillaWatch.Mods
                 {
                     if (meshCollider.enabled)
                     {
-                        meshCollider.AddComponent<GorillaSurfaceOverride>().enabled = true;
-                        meshCollider.AddComponent<GorillaSurfaceOverride>().overrideIndex = 51;
+                        meshCollider.AddComponent<GorillaSurfaceOverride>();
+                        meshCollider.GetComponent<GorillaSurfaceOverride>().enabled = true;
+                        meshCollider.GetComponent<GorillaSurfaceOverride>().overrideIndex = 61;
                     }
                 }
             }

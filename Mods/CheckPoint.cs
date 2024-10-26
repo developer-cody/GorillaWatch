@@ -2,6 +2,9 @@
 using TheGorillaWatch.Models;
 using UnityEngine;
 using System.Collections;
+using System;
+using System.Collections.Generic;
+using PlayFab.ClientModels;
 
 namespace TheGorillaWatch.Mods
 {
@@ -9,6 +12,10 @@ namespace TheGorillaWatch.Mods
     {
         public static GameObject CheckpointBox = null;
         private bool isTeleporting = false;
+        private bool doActionPerformed = false;
+        private float actionCooldownTime = 0.2f;
+        private float lastActionTime = 0f;
+        List<MeshCollider> colliders = new List<MeshCollider>();
 
         public override string modName => "Checkpoint";
 
@@ -50,7 +57,45 @@ namespace TheGorillaWatch.Mods
 
             if (ControllerInputPoller.instance.rightGrab && CheckpointBox != null && !isTeleporting)
             {
-                TeleportToCheckpoint();
+                if (Time.time - lastActionTime >= actionCooldownTime)
+                {
+                    TeleportToCheckpoint();
+
+                    if (!doActionPerformed)
+                    {
+                        try
+                        {
+                            MeshCollider[] array = FindObjectsOfType<MeshCollider>();
+                            foreach (MeshCollider meshCollider in array)
+                            {
+                                meshCollider.enabled = false;
+                            }
+                            doActionPerformed = true;
+                            lastActionTime = Time.time;
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.Log($"Error with Noclip with Checkpoint: {e.Message}");
+                        }
+                    }
+                }
+            }
+            else if (doActionPerformed && Time.time - lastActionTime >= actionCooldownTime)
+            {
+                try
+                {
+                    MeshCollider[] array = FindObjectsOfType<MeshCollider>();
+                    foreach (MeshCollider meshCollider in array)
+                    {
+                        meshCollider.enabled = true;
+                    }
+                    doActionPerformed = false;
+                    lastActionTime = Time.time;
+                }
+                catch (Exception e)
+                {
+                    Debug.Log($"Error with Noclip Disable: {e.Message}");
+                }
             }
         }
 
@@ -59,7 +104,7 @@ namespace TheGorillaWatch.Mods
             isTeleporting = true;
             UpdateCheckpointColor(Color.red);
 
-            GorillaTagger.Instance.offlineVRRig.transform.position = CheckpointBox.transform.position;
+            GorillaLocomotion.Player.Instance.headCollider.transform.position = CheckpointBox.transform.position;
 
             GorillaTagger.Instance.StartCoroutine(TeleportColorRoutine());
         }
@@ -84,7 +129,7 @@ namespace TheGorillaWatch.Mods
                 }
             }
         }
-        public override PageType pageType => PageType.Toggle;
 
+        public override PageType pageType => PageType.Toggle;
     }
 }

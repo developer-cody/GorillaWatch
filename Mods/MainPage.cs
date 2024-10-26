@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using TheGorillaWatch.Models;
-using UnityEngine;
 
 namespace TheGorillaWatch.Mods
 {
@@ -10,8 +7,14 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "GorillaWatchMainInfoPageWABSHUWAJSD";
 
-        public override string info => "\n\n <color=black>Gorilla</color>Watch!";
+        public override string info => $"<color=black>Gorilla</color>Watch!\nTime: {DateTime.Now:HH:mm:ss}";
 
         public override PageType pageType => PageType.Information;
+
+        public override void OnUpdate()
+        {
+            base.OnUpdate();
+            info = $" <color=black>Gorilla</color>Watch!\n{DateTime.Now:HH:mm:ss}";
+        }
     }
 }
