@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\models\\networkingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:models\\networkingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\airswim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\airswim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\slipmonk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\slipmonk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\nogravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\nogravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\platforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\platforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\speed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\speed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\smallmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\smallmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\noclip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\noclip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\models\\networkingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:models\\networkingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\bigmonkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,18 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\modinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:modinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\noclip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\noclip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\slipmonk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\slipmonk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\airswim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\airswim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\airdrive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,20 +71,8 @@
       "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\frozone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\speed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\speed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\directory.build.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:directory.build.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\nogravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\nogravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mods\\platforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|solutionrelative:mods\\platforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29757637-96FF-4081-A679-AE939C2D11B2}|TheGorillaWatch.csproj|c:\\users\\rgerm\\source\\repos\\gtmods\\watch\\gorillawatch\\mod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -110,7 +110,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -118,83 +118,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SmallMonkers.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\SmallMonkers.cs",
-              "RelativeDocumentMoniker": "Mods\\SmallMonkers.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\SmallMonkers.cs",
-              "RelativeToolTip": "Mods\\SmallMonkers.cs",
-              "ViewState": "AgIAAAwAAAAAMzMzMzMrwCAAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T16:42:24.787Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ModInfo.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\ModInfo.cs",
-              "RelativeDocumentMoniker": "ModInfo.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\ModInfo.cs",
-              "RelativeToolTip": "ModInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T15:28:51.179Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CheckPoint.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\CheckPoint.cs",
-              "RelativeDocumentMoniker": "Mods\\CheckPoint.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\CheckPoint.cs",
-              "RelativeToolTip": "Mods\\CheckPoint.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T14:22:12.396Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
               "Title": "NoClip.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\NoClip.cs",
               "RelativeDocumentMoniker": "Mods\\NoClip.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\NoClip.cs",
-              "RelativeToolTip": "Mods\\NoClip.cs",
-              "ViewState": "AgIAAAoAAADAy8zMzIwiwA8AAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\NoClip.cs*",
+              "RelativeToolTip": "Mods\\NoClip.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T14:08:50.819Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BigMonkers.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\BigMonkers.cs",
-              "RelativeDocumentMoniker": "Mods\\BigMonkers.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\BigMonkers.cs",
-              "RelativeToolTip": "Mods\\BigMonkers.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T16:24:30.432Z",
+              "WhenOpened": "2024-10-26T14:08:50.819Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MainPage.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MainPage.cs",
-              "RelativeDocumentMoniker": "Mods\\MainPage.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MainPage.cs",
-              "RelativeToolTip": "Mods\\MainPage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T21:22:51.772Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 2,
               "Title": "NoGravity.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\NoGravity.cs",
               "RelativeDocumentMoniker": "Mods\\NoGravity.cs",
@@ -202,11 +139,12 @@
               "RelativeToolTip": "Mods\\NoGravity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T14:25:57.54Z"
+              "WhenOpened": "2024-10-26T14:25:57.54Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "AirDrive.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\AirDrive.cs",
               "RelativeDocumentMoniker": "Mods\\AirDrive.cs",
@@ -218,19 +156,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "AirSwim.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\AirSwim.cs",
               "RelativeDocumentMoniker": "Mods\\AirSwim.cs",
               "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\AirSwim.cs",
               "RelativeToolTip": "Mods\\AirSwim.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowDEAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwDEAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T21:22:41.834Z"
+              "WhenOpened": "2024-10-15T21:22:41.834Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "NetworkingManager.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Models\\NetworkingManager.cs",
               "RelativeDocumentMoniker": "Models\\NetworkingManager.cs",
@@ -243,7 +182,107 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SmallMonkers.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\SmallMonkers.cs",
+              "RelativeDocumentMoniker": "Mods\\SmallMonkers.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\SmallMonkers.cs",
+              "RelativeToolTip": "Mods\\SmallMonkers.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCAAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T16:42:24.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Speed.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Speed.cs",
+              "RelativeDocumentMoniker": "Mods\\Speed.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Speed.cs",
+              "RelativeToolTip": "Mods\\Speed.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T21:32:24.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SlipMonk.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\SlipMonk.cs",
+              "RelativeDocumentMoniker": "Mods\\SlipMonk.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\SlipMonk.cs*",
+              "RelativeToolTip": "Mods\\SlipMonk.cs*",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T14:28:00.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Platforms.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Platforms.cs",
+              "RelativeDocumentMoniker": "Mods\\Platforms.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Platforms.cs",
+              "RelativeToolTip": "Mods\\Platforms.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T21:26:32.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainPage.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MainPage.cs",
+              "RelativeDocumentMoniker": "Mods\\MainPage.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MainPage.cs",
+              "RelativeToolTip": "Mods\\MainPage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T21:22:51.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BigMonkers.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\BigMonkers.cs",
+              "RelativeDocumentMoniker": "Mods\\BigMonkers.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\BigMonkers.cs",
+              "RelativeToolTip": "Mods\\BigMonkers.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T16:24:30.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CheckPoint.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\CheckPoint.cs",
+              "RelativeDocumentMoniker": "Mods\\CheckPoint.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\CheckPoint.cs",
+              "RelativeToolTip": "Mods\\CheckPoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T14:22:12.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ModInfo.cs",
+              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\ModInfo.cs",
+              "RelativeDocumentMoniker": "ModInfo.cs",
+              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\ModInfo.cs",
+              "RelativeToolTip": "ModInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:28:51.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "MadeByInfo.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MadeByInfo.cs",
               "RelativeDocumentMoniker": "Mods\\MadeByInfo.cs",
@@ -251,24 +290,11 @@
               "RelativeToolTip": "Mods\\MadeByInfo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T15:27:23.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-26T15:27:23.067Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SlipMonk.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\SlipMonk.cs",
-              "RelativeDocumentMoniker": "Mods\\SlipMonk.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\SlipMonk.cs",
-              "RelativeToolTip": "Mods\\SlipMonk.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAswBUAAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T14:28:00.996Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "MonkeWalker.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\MonkeWalker.cs",
               "RelativeDocumentMoniker": "Mods\\MonkeWalker.cs",
@@ -280,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "Frozone.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Frozone.cs",
               "RelativeDocumentMoniker": "Mods\\Frozone.cs",
@@ -292,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Dash.cs",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Dash.cs",
               "RelativeDocumentMoniker": "Mods\\Dash.cs",
@@ -304,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Directory.Build.props",
               "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Directory.Build.props",
               "RelativeDocumentMoniker": "Directory.Build.props",
@@ -313,30 +339,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
               "WhenOpened": "2024-10-26T14:27:54.25Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Platforms.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Platforms.cs",
-              "RelativeDocumentMoniker": "Mods\\Platforms.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Platforms.cs",
-              "RelativeToolTip": "Mods\\Platforms.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T21:26:32.834Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Speed.cs",
-              "DocumentMoniker": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Speed.cs",
-              "RelativeDocumentMoniker": "Mods\\Speed.cs",
-              "ToolTip": "C:\\Users\\rgerm\\source\\repos\\Gtmods\\Watch\\GorillaWatch\\Mods\\Speed.cs",
-              "RelativeToolTip": "Mods\\Speed.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T21:32:24.796Z"
             },
             {
               "$type": "Document",
