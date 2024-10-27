@@ -30,7 +30,7 @@ namespace TheGorillaWatch.Mods
         }
         public override void OnUpdate()
         {
-            Player.Instance.scale = ConfigManager.BigMonkersSize.Value;
+            GorillaLocomotion.Player.Instance.scale = ConfigManager.BigMonkersSize.Value;
         }
         public override PageType pageType => PageType.Toggle;
 

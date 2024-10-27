@@ -7,7 +7,7 @@ namespace TheGorillaWatch.Mods
 {
     class Noclip : Page
     {
-        public override string modName => "Noclip (W?)";
+        public override string modName => "Noclip";
         List<MeshCollider> colliders = new List<MeshCollider>();
 
         public override void Disable()
