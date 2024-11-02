@@ -4,23 +4,22 @@ This is a legal mod for Gorilla Tag that adds a fully-featured hunt watch to you
 
 ## Current Features
 
-- **PlatformGuy** – Create and walk on floating platforms.
-- **Frozone** – Glide smoothly across any surface.
-- **DrawMonk** – Draw lines in the air with your hands.
-- **VelocityFly** – Fly at different speeds based on your hand movements.
-- **IronMonke** – Become invincible with the strength of iron.
-- **DashMonk** – Dash quickly across the map.
-- **SpeedyMonk** – Run faster than ever before.
-- **Noclip** – Move through walls and obstacles effortlessly.
-- **CheckPoint** – Set and teleport to custom checkpoints.
-- **HighGravity** – Increase gravity for a more grounded experience.
-- **LowGravity** – Float around with reduced gravity.
-- **NoGravity** – Experience complete weightlessness.
-- **BigMonkers** – Become a giant among monkeys.
-- **SmallMonkers** – Shrink down to a smaller size.
-- **MonkePunch** – Punch with extra power and send others flying.
-- **MonkeWalker** – Walk on any surface, even vertical ones.
-- **MonkeBoing** – Bounce around like a rubber ball.
-- **AirDrive** – Drive through the air like you're in a vehicle.
-- **AirSwim** – Swim through the air with fluid movements.
-- **SlipMonk** – Slip and slide across any surface with ease.
+- **PlatformGuy** â€“ Create and walk on floating platforms.
+- **Frozone** â€“ Glide smoothly across any surface.
+- **DrawMonk** â€“ Draw lines in the air with your hands.
+- **VelocityFly** â€“ Fly at different speeds based on your hand movements.
+- **IronMonke** â€“ Become invincible with the strength of iron.
+- **DashMonk** â€“ Dash quickly across the map.
+- **SpeedyMonk** â€“ Run faster than ever before.
+- **Noclip** â€“ Move through walls and obstacles effortlessly.
+- **CheckPoint** â€“ Set and teleport to custom checkpoints.
+- **HighGravity** â€“ Increase gravity for a more grounded experience.
+- **LowGravity** â€“ Float around with reduced gravity.
+- **NoGravity** â€“ Experience complete weightlessness.
+- **BigMonkers** â€“ Become a giant among monkeys.
+- **SmallMonkers** â€“ Shrink down to a smaller size.
+- **MonkePunch** â€“ Punch with extra power and send others flying.
+- **MonkeWalker** â€“ Walk on any surface, even vertical ones.
+- **MonkeBoing** â€“ Bounce around like a rubber ball.
+- **AirSwim** â€“ Swim through the air with fluid movements.
+- **SlipMonk** â€“ Slip and slide across any surface with ease.
