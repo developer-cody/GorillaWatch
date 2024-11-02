@@ -20,7 +20,7 @@ namespace TheGorillaWatch.Mods
                 {
                     meshCollider.AddComponent<GorillaSurfaceOverride>();
                     meshCollider.GetComponent<GorillaSurfaceOverride>().enabled = false;
-                    //meshCollider.GetComponent<GorillaSurfaceOverride>().overrideIndex = 0;
+                    meshCollider.GetComponent<GorillaSurfaceOverride>().overrideIndex = 0;
                 }
             }
         }

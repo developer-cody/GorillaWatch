@@ -33,6 +33,7 @@
           "Fusion.Sockets": "2.0.0.0",
           "Fusion.Unity": "0.0.0.0",
           "geometry3Sharp": "0.0.0.0",
+          "GT_CustomMapSupportRuntime": "1.0.0.0",
           "HarmonyXInterop": "1.0.0.0",
           "KID": "0.0.0.0",
           "MeshBakerCore": "0.0.0.0",
@@ -52,6 +53,8 @@
           "Meta.WitAi.Lib": "0.0.0.0",
           "Meta.WitAi.TTS": "0.0.0.0",
           "Meta.XR.BuildingBlocks": "0.0.0.0",
+          "modio.UI": "0.0.0.0",
+          "modio.UnityPlugin": "1.4.3.0",
           "Mono.Cecil": "0.10.4.0",
           "Mono.Cecil.Mdb": "0.10.4.0",
           "Mono.Cecil.Pdb": "0.10.4.0",
@@ -64,6 +67,7 @@
           "Newtonsoft.Json": "13.0.0.0",
           "Newtonsoft.Json.UnityConverters.Addressables": "0.0.0.0",
           "Newtonsoft.Json.UnityConverters": "0.0.0.0",
+          "Nobi.UiRoundedCorners": "0.0.0.0",
           "Oculus.AudioManager": "0.0.0.0",
           "Oculus.Interaction": "0.0.0.0",
           "Oculus.Interaction.OVR": "0.0.0.0",
@@ -397,6 +401,14 @@
           }
         }
       },
+      "GT_CustomMapSupportRuntime/1.0.0.0": {
+        "runtime": {
+          "GT_CustomMapSupportRuntime.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "HarmonyXInterop/1.0.0.0": {
         "runtime": {
           "HarmonyXInterop.dll": {
@@ -549,6 +561,22 @@
           }
         }
       },
+      "modio.UI/0.0.0.0": {
+        "runtime": {
+          "modio.UI.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "modio.UnityPlugin/1.4.3.0": {
+        "runtime": {
+          "modio.UnityPlugin.dll": {
+            "assemblyVersion": "1.4.3.0",
+            "fileVersion": "1.4.3.0"
+          }
+        }
+      },
       "Mono.Cecil/0.10.4.0": {
         "runtime": {
           "Mono.Cecil.dll": {
@@ -640,6 +668,14 @@
       "Newtonsoft.Json.UnityConverters/0.0.0.0": {
         "runtime": {
           "Newtonsoft.Json.UnityConverters.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Nobi.UiRoundedCorners/0.0.0.0": {
+        "runtime": {
+          "Nobi.UiRoundedCorners.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1733,22 +1769,6 @@
           }
         }
       },
-      "modio.UnityPlugin/1.4.3.0": {
-        "runtime": {
-          "modio.UnityPlugin.dll": {
-            "assemblyVersion": "1.4.3.0",
-            "fileVersion": "1.4.3.0"
-          }
-        }
-      },
-      "GT_CustomMapSupportRuntime/1.0.0.0": {
-        "runtime": {
-          "GT_CustomMapSupportRuntime.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "System.Runtime.CompilerServices.Unsafe/6.0.0.0": {
         "runtime": {
           "System.Runtime.CompilerServices.Unsafe.dll": {
@@ -1885,6 +1905,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "GT_CustomMapSupportRuntime/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "HarmonyXInterop/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -1980,6 +2005,16 @@
       "serviceable": false,
       "sha512": ""
     },
+    "modio.UI/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "modio.UnityPlugin/1.4.3.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Mono.Cecil/0.10.4.0": {
       "type": "reference",
       "serviceable": false,
@@ -2036,6 +2071,11 @@
       "sha512": ""
     },
     "Newtonsoft.Json.UnityConverters/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Nobi.UiRoundedCorners/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2716,16 +2756,6 @@
       "sha512": ""
     },
     "ZString/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "modio.UnityPlugin/1.4.3.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "GT_CustomMapSupportRuntime/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

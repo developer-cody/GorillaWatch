@@ -842,3 +842,5 @@ C:\Users\rgerm\source\repos\Gtmods\Watch\GorillaWatch\obj\Debug\netstandard2.1\T
 C:\Users\rgerm\source\repos\Gtmods\Watch\GorillaWatch\obj\Debug\netstandard2.1\TheGorillaWatch.pdb
 C:\Users\rgerm\source\repos\Gtmods\Watch\GorillaWatch\bin\Debug\netstandard2.1\modio.UnityPlugin.dll
 C:\Users\rgerm\source\repos\Gtmods\Watch\GorillaWatch\bin\Debug\netstandard2.1\GT_CustomMapSupportRuntime.dll
+C:\Users\rgerm\source\repos\Gtmods\Watch\GorillaWatch\bin\Debug\netstandard2.1\modio.UI.dll
+C:\Users\rgerm\source\repos\Gtmods\Watch\GorillaWatch\bin\Debug\netstandard2.1\Nobi.UiRoundedCorners.dll
