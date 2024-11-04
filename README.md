@@ -1,6 +1,6 @@
-# GorillaWatch
+# GorillaWatch++
 
-This is a legal mod for Gorilla Tag that adds a fully-featured hunt watch to your wrist when you join a modded lobby! The watch includes a variety of fun and unique Gorilla Tag mods, enhancing your gameplay experience. Feel free to ping me with any suggestions for new features or mods you'd like to see added!
+This is a fork of a mod called GorillaWatch, in my opionion; it was good, but didn't have enough mods so I'm adding my own.
 
 ## Current Features
 
