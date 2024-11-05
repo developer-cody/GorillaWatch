@@ -13,9 +13,9 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "Join Discord";
 
-        public override void OnUpdate()
+        public override void Enable()
         {
-            base.OnUpdate();
+            base.Enable();
             Process.Start("https://discord.gg/qBmHgKmNMZ");
         }
 
