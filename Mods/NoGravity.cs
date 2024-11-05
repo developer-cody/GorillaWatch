@@ -8,6 +8,8 @@ namespace TheGorillaWatch.Mods
 {
     class NoGravity : Page
     {
+        public override List<string> incompatibleModNames => new List<string>() { "LowGravity", "HighGravity" };
+
         public override string modName => "NoGravity";
 
         public override void Enable()

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace TheGorillaWatch.Models
 {
@@ -19,5 +20,9 @@ namespace TheGorillaWatch.Models
         public virtual void OnUpdate() {  }
 
         public virtual void Init() { }
+        
+        public virtual List<string> incompatibleModNames { get; set; } = new List<string>();
+
+        public virtual List<string> requiredModNames { get; set; } = new List<string>();
     }
 }

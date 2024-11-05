@@ -9,6 +9,7 @@ namespace TheGorillaWatch.Mods
     class Platforms : Page
     {
         public override string modName => "PlatformGuy";
+        public override List<string> incompatibleModNames => new List<string>() { "FrozoneGuy" };
 
         GameObject leftplat;
         GameObject rightplat;

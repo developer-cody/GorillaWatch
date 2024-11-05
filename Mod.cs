@@ -199,6 +199,63 @@ namespace TheGorillaWatch
                             string modEnabled = mods[counter].modEnabled ? "<color=green>enabled</color>" : $"<color=red>disabled</color>";
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].modName + ":\n" + modEnabled + $"\n{mods[counter].info}";
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.color = mods[counter].modEnabled ? Color.green : Color.red;
+                            if (ToggleMod && Time.time > PageCoolDown + .5)
+                            {
+                                PageCoolDown = Time.time;
+                                if (mods[counter].modEnabled)
+                                {
+                                    if (mods[counter].requiredModNames.Count > 0)
+                                    {
+                                        foreach (Page mod in mods)
+                                        {
+                                            if (mods[counter].requiredModNames.Contains(mod.modName))
+                                            {
+                                                mod.Disable();
+                                            }
+                                        }
+                                    }
+                                    mods[counter].Disable();
+                                }
+                                else
+                                {
+                                    if (mods[counter].incompatibleModNames.Count > 0)
+                                    {
+                                        foreach (Page mod in mods)
+                                        {
+                                            if (mods[counter].incompatibleModNames.Contains(mod.modName))
+                                            {
+                                                mod.Disable();
+                                            }
+                                        }
+                                    }
+                                    if (mods[counter].requiredModNames.Count > 0)
+                                    {
+                                        foreach (Page mod in mods)
+                                        {
+                                            if (mods[counter].requiredModNames.Contains(mod.modName))
+                                            {
+                                                mod.Enable();
+                                            }
+                                        }
+                                    }
+                                    mods[counter].Enable();
+                                }
+                                GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(66, true, 1f);
+                            }
+                            break;
+                        case PageType.Information:
+                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.gameObject.SetActive(false);
+                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].info;
+                            break;
+                    }
+
+                    /*switch (mods[counter].pageType)
+                    {
+                        case PageType.Toggle:
+                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.gameObject.SetActive(true);
+                            string modEnabled = mods[counter].modEnabled ? "<color=green>enabled</color>" : $"<color=red>disabled</color>";
+                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].modName + ":\n" + modEnabled + $"\n{mods[counter].info}";
+                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.color = mods[counter].modEnabled ? Color.green : Color.red;
 
                             if (ToggleMod && Time.time > PageCoolDown + .5)
                             {
@@ -219,7 +276,7 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.gameObject.SetActive(false);
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].info;
                             break;
-                    }
+                    }*/
                 }
             }
             else if (!reset)

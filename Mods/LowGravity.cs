@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using TheGorillaWatch.Models;
 using UnityEngine;
+using BepInEx;
 
 namespace TheGorillaWatch.Mods
 {
     class LowGravity : Page
     {
         public override string modName => "LowGravity";
+        public override List<string> incompatibleModNames => new List<string>() { "NoGravity", "HighGravity" };
 
         public override void Enable()
         {
@@ -19,9 +21,9 @@ namespace TheGorillaWatch.Mods
         public override void Disable()
         {
             base.Disable();
-            Physics.gravity = new Vector3(0, -9.807f, 0);
+            Physics.gravity = new Vector3(0, -9.81f, 0);
         }
-        public override PageType pageType => PageType.Toggle;
 
+        public override PageType pageType => PageType.Toggle;
     }
 }

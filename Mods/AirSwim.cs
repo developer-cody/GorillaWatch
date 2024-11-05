@@ -47,6 +47,7 @@ namespace TheGorillaWatch.Mods
                 Swim.transform.position = GorillaTagger.Instance.headCollider.transform.position + new Vector3(0f, 200f, 0f);
             }
         }
+
         public override PageType pageType => PageType.Toggle;
     }
 }

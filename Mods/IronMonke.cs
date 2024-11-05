@@ -10,6 +10,7 @@ namespace TheGorillaWatch.Mods
     class IronMonke : Page
     {
         public override string modName => "IronMonke";
+        public override List<string> incompatibleModNames => new List<string>() { "VelocityFly", "DashMonk" };
 
         public override void OnUpdate()
         {

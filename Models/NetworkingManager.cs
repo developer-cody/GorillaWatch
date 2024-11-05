@@ -19,10 +19,40 @@ namespace TheGorillaWatch.Models
             {
                 if (p.CustomProperties.ContainsKey("GorillaWatch"))
                 {
-                    StartCoroutine("WaitForInit", p);
+                    StartCoroutine(nameof(WaitForInit), p);
+                }
+
+                if (p.CustomProperties.TryGetValue("size", out object sizeValue) && sizeValue is float size)
+                {
+                    var rig = GorillaGameManager.instance.FindPlayerVRRig(p);
+                    if (rig != null)
+                    {
+                        rig.transform.localScale = new Vector3(size, size, size);
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"Could not find VR rig for player: {p.NickName}");
+                    }
                 }
             }
         }
+
+        /*public override void OnJoinedRoom()
+        {
+            foreach (Player p in PhotonNetwork.PlayerListOthers)
+            {
+                if (p.CustomProperties.ContainsKey("GorillaWatch"))
+                {
+                    StartCoroutine("WaitForInit", p);
+                }
+                
+                if (p.CustomProperties.ContainsKey("size"))
+                {
+                    var rig = GorillaGameManager.instance.FindPlayerVRRig(p);
+                    rig.transform.localScale = new Vector3((float)changedProps["size"], (float)changedProps["size"], (float)changedProps["size"]);
+                }
+            }
+        }*/
 
         IEnumerator WaitForInit(Player p)
         {
@@ -68,6 +98,40 @@ namespace TheGorillaWatch.Models
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
         {
+            if (PlayerList.TryGetValue(otherPlayer, out var playerObject) && Riglist.TryGetValue(otherPlayer, out var rig))
+            {
+                rig.transform.localScale = Vector3.one;
+
+                Destroy(playerObject.gameObject);
+                PlayerList.Remove(otherPlayer);
+                Riglist.Remove(otherPlayer);
+            }
+        }
+
+        public override void OnLeftRoom()
+        {
+            foreach (var rig in Riglist.Values)
+            {
+                if (rig != null)
+                {
+                    rig.transform.localScale = Vector3.one;
+                }
+            }
+
+            foreach (var watch in PlayerList.Values)
+            {
+                if (watch != null)
+                {
+                    Destroy(watch);
+                }
+            }
+
+            PlayerList.Clear();
+            Riglist.Clear();
+        }
+
+        /*public override void OnPlayerLeftRoom(Player otherPlayer)
+        {
             if (PlayerList.ContainsKey(otherPlayer))
             {
                 Riglist[otherPlayer].transform.localScale = Vector3.one;
@@ -89,6 +153,6 @@ namespace TheGorillaWatch.Models
             }
             PlayerList.Clear();
             Riglist.Clear();
-        }
+        }*/
     }
 }

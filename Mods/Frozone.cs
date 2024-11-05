@@ -9,6 +9,7 @@ namespace TheGorillaWatch.Mods
     class Frozone : Page
     {
         public override string modName => "Frozone";
+        public override List<string> incompatibleModNames => new List<string>() { "PlatformGuy" };
 
         GameObject FrozoneL;
         GameObject FrozoneR;
@@ -54,7 +55,7 @@ namespace TheGorillaWatch.Mods
                 GameObject.Destroy(FrozoneR, .1f);
             }
         }
-        public override PageType pageType => PageType.Toggle;
 
+        public override PageType pageType => PageType.Toggle;
     }
 }
