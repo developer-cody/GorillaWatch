@@ -13,7 +13,6 @@ namespace TheGorillaWatch.Mods
         private bool doActionPerformed = false;
         private float actionCooldownTime = 0.2f;
         private float lastActionTime = 0f;
-        List<MeshCollider> colliders = new List<MeshCollider>();
 
         public override string modName => "Checkpoint";
 
@@ -53,7 +52,7 @@ namespace TheGorillaWatch.Mods
                 CheckpointBox.transform.position = GorillaTagger.Instance.leftHandTransform.position;
             }
 
-            if (ControllerInputPoller.instance.rightGrab && CheckpointBox != null && !isTeleporting)
+            if (ControllerInputPoller.instance.rightGrab && CheckpointBox != null && !isTeleporting && CheckpointBox.transform.position != Vector3.zero)
             {
                 if (Time.time - lastActionTime >= actionCooldownTime)
                 {

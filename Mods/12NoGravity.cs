@@ -19,7 +19,7 @@ namespace TheGorillaWatch.Mods
         public override void Disable()
         {
             base.Disable();
-            Physics.gravity = new Vector3(0f, -9.807f, 0f);
+            Physics.gravity = new Vector3(0f, -9.8f, 0f);
         }
 
         public override PageType pageType => PageType.Toggle;

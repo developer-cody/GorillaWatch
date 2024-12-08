@@ -12,7 +12,6 @@ namespace TheGorillaWatch.Mods
 
         private Vector3 walkPos = Vector3.zero;
         private Vector3 walkNormal = Vector3.zero;
-        private bool rightGrab = true;
 
         public override void OnUpdate()
         {
@@ -26,7 +25,7 @@ namespace TheGorillaWatch.Mods
                 walkNormal = ray.normal;
             }
 
-            if (walkPos != Vector3.zero && rightGrab)
+            if (walkPos != Vector3.zero)
             {
                 Player.Instance.bodyCollider.attachedRigidbody.AddForce(walkNormal * -9.81f, ForceMode.Acceleration);
                 ZeroGravity();
@@ -42,7 +41,8 @@ namespace TheGorillaWatch.Mods
         public override void Disable()
         {
             base.Disable();
-            Physics.gravity = new Vector3(0f, -9.81f, 0f);
+            Physics.gravity = new Vector3(0f, -9.8f, 0f);
+            walkPos = Vector3.zero;
 
             Player.Instance.bodyCollider.attachedRigidbody.AddForce(0f, 0f, 0f, ForceMode.Acceleration);
         }

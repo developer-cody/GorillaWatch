@@ -26,7 +26,7 @@ namespace TheGorillaWatch.Mods
             bounce = Player.Instance.bodyCollider.material.bounciness;
             PMCombine = Player.Instance.bodyCollider.material.bounceCombine;
             Player.Instance.bodyCollider.material.bounceCombine = PhysicMaterialCombine.Maximum;
-            Player.Instance.bodyCollider.material.bounciness = .75f;
+            Player.Instance.bodyCollider.material.bounciness = .95f;
         }
         public override PageType pageType => PageType.Toggle;
 

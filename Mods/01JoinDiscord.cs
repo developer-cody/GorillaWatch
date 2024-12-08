@@ -10,7 +10,7 @@ namespace TheGorillaWatch.Mods
         public override void Enable()
         {
             base.Enable();
-            Process.Start("https://discord.gg/qBmHgKmNMZ");
+            Process.Start("https://discord.gg/E7kTnTYZEG");
         }
 
         public override PageType pageType => PageType.Toggle;
