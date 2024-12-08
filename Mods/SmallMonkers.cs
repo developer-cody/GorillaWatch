@@ -1,12 +1,8 @@
-﻿using GorillaLocomotion;
-using GorillaNetworking;
+﻿using GorillaNetworking;
 using Photon.Pun;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using TheGorillaWatch.Configuration;
 using TheGorillaWatch.Models;
-using UnityEngine;
 
 namespace TheGorillaWatch.Mods
 {
@@ -33,7 +29,7 @@ namespace TheGorillaWatch.Mods
         {
             GorillaLocomotion.Player.Instance.scale = ConfigManager.SmallMonkersSize.Value;
         }
-        public override PageType pageType => PageType.Toggle;
 
+        public override PageType pageType => PageType.Toggle;
     }
 }

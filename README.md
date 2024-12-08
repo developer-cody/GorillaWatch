@@ -21,6 +21,6 @@ This is a legal mod for Gorilla Tag that adds a fully-featured hunt watch to you
 - **MonkePunch** – Punch with extra power and send others flying.
 - **MonkeWalker** – Walk on any surface, even vertical ones.
 - **MonkeBoing** – Bounce around like a rubber ball.
-- **AirDrive** – Drive through the air like you're in a vehicle.
+- **WallRun** – Walk on walls!
 - **AirSwim** – Swim through the air with fluid movements.
 - **SlipMonk** – Slip and slide across any surface with ease.

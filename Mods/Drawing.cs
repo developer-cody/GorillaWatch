@@ -1,8 +1,4 @@
-﻿using CjLib;
-using GorillaLocomotion;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GorillaLocomotion;
 using TheGorillaWatch.Models;
 using UnityEngine;
 

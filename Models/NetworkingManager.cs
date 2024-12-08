@@ -3,7 +3,6 @@ using Photon.Realtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 
 namespace TheGorillaWatch.Models
@@ -36,23 +35,6 @@ namespace TheGorillaWatch.Models
                 }
             }
         }
-
-        /*public override void OnJoinedRoom()
-        {
-            foreach (Player p in PhotonNetwork.PlayerListOthers)
-            {
-                if (p.CustomProperties.ContainsKey("GorillaWatch"))
-                {
-                    StartCoroutine("WaitForInit", p);
-                }
-                
-                if (p.CustomProperties.ContainsKey("size"))
-                {
-                    var rig = GorillaGameManager.instance.FindPlayerVRRig(p);
-                    rig.transform.localScale = new Vector3((float)changedProps["size"], (float)changedProps["size"], (float)changedProps["size"]);
-                }
-            }
-        }*/
 
         IEnumerator WaitForInit(Player p)
         {
@@ -129,30 +111,5 @@ namespace TheGorillaWatch.Models
             PlayerList.Clear();
             Riglist.Clear();
         }
-
-        /*public override void OnPlayerLeftRoom(Player otherPlayer)
-        {
-            if (PlayerList.ContainsKey(otherPlayer))
-            {
-                Riglist[otherPlayer].transform.localScale = Vector3.one;
-                Destroy(PlayerList[otherPlayer].gameObject);
-                PlayerList.Remove(otherPlayer);
-                Riglist.Remove(otherPlayer);
-            }
-        }
-
-        public override void OnLeftRoom()
-        {
-            foreach (Player rig in Riglist.Keys)
-            {
-                Riglist[rig].transform.localScale = Vector3.one;
-            }
-            foreach (GameObject Watch in PlayerList.Values)
-            {
-                Destroy(Watch);
-            }
-            PlayerList.Clear();
-            Riglist.Clear();
-        }*/
     }
 }

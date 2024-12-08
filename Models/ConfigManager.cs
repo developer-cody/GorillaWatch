@@ -43,6 +43,10 @@ namespace TheGorillaWatch.Configuration
             {
                 SmallMonkersSize.Value = .1f;
             }
+            else if (SmallMonkersSize.Value < .1f)
+            {
+                SmallMonkersSize.Value = .1f;
+            }
         }
     }
 }

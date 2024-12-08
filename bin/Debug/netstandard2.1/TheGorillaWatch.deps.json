@@ -36,6 +36,9 @@
           "GT_CustomMapSupportRuntime": "1.0.0.0",
           "HarmonyXInterop": "1.0.0.0",
           "KID": "0.0.0.0",
+          "LIV.LCK": "0.0.0.0",
+          "LIV.LCK_GorillaTag": "0.0.0.0",
+          "LIV.NativeAudioBridge": "0.0.0.0",
           "MeshBakerCore": "0.0.0.0",
           "Meta.Voice.Hub.Runtime": "0.0.0.0",
           "Meta.Voice.Samples.BuiltInTimer": "0.0.0.0",
@@ -63,8 +66,9 @@
           "MonoMod.RuntimeDetour": "22.1.29.1",
           "MonoMod.Utils": "22.1.29.1",
           "NanoSockets": "1.0.0.0",
+          "NativeGallery": "0.0.0.0",
           "NavMeshComponents": "0.0.0.0",
-          "Newtonsoft.Json": "13.0.0.0",
+          "Newtonsoft.Json": "12.0.0.0",
           "Newtonsoft.Json.UnityConverters.Addressables": "0.0.0.0",
           "Newtonsoft.Json.UnityConverters": "0.0.0.0",
           "Nobi.UiRoundedCorners": "0.0.0.0",
@@ -197,7 +201,6 @@
           "UnityEngine.WindModule": "0.0.0.0",
           "UnityEngine.XR.LegacyInputHelpers": "0.0.0.0",
           "UnityEngine.XRModule": "0.0.0.0",
-          "Utilla": "1.0.0.0",
           "Valve.Newtonsoft.Json": "9.0.0.0",
           "VoiceSDK.Dictation.Runtime": "0.0.0.0",
           "VoiceSDK.Runtime": "0.0.0.0",
@@ -425,6 +428,30 @@
           }
         }
       },
+      "LIV.LCK/0.0.0.0": {
+        "runtime": {
+          "LIV.LCK.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "LIV.LCK_GorillaTag/0.0.0.0": {
+        "runtime": {
+          "LIV.LCK_GorillaTag.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "LIV.NativeAudioBridge/0.0.0.0": {
+        "runtime": {
+          "LIV.NativeAudioBridge.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "MeshBakerCore/0.0.0.0": {
         "runtime": {
           "MeshBakerCore.dll": {
@@ -641,6 +668,14 @@
           }
         }
       },
+      "NativeGallery/0.0.0.0": {
+        "runtime": {
+          "NativeGallery.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "NavMeshComponents/0.0.0.0": {
         "runtime": {
           "NavMeshComponents.dll": {
@@ -649,11 +684,11 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.0.0": {
+      "Newtonsoft.Json/12.0.0.0": {
         "runtime": {
           "Newtonsoft.Json.dll": {
-            "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.2.0"
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
           }
         }
       },
@@ -1713,14 +1748,6 @@
           }
         }
       },
-      "Utilla/1.0.0.0": {
-        "runtime": {
-          "Utilla.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "Valve.Newtonsoft.Json/9.0.0.0": {
         "runtime": {
           "Valve.Newtonsoft.Json.dll": {
@@ -1920,6 +1947,21 @@
       "serviceable": false,
       "sha512": ""
     },
+    "LIV.LCK/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LIV.LCK_GorillaTag/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LIV.NativeAudioBridge/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "MeshBakerCore/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -2055,12 +2097,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "NativeGallery/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "NavMeshComponents/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Newtonsoft.Json/13.0.0.0": {
+    "Newtonsoft.Json/12.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2721,11 +2768,6 @@
       "sha512": ""
     },
     "UnityEngine.XRModule/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Utilla/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

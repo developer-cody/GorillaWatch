@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
-using TheGorillaWatch.Models;
+﻿using TheGorillaWatch.Models;
 using UnityEngine;
 
 namespace TheGorillaWatch.Mods
@@ -10,58 +6,59 @@ namespace TheGorillaWatch.Mods
     class MonkeWalker : Page
     {
         public override string modName => "MonkeWalker";
-
         private GameObject playerColliderParent;
 
         public override void Disable()
         {
             base.Disable();
-            Destroy(playerColliderParent);
-        }
-
-        public override void OnUpdate()
-        {
             if (playerColliderParent != null)
             {
                 Destroy(playerColliderParent);
             }
-            
-            playerColliderParent = new GameObject();
-            
+        }
+
+        public override void OnUpdate()
+        {
+            if (playerColliderParent == null)
+            {
+                playerColliderParent = new GameObject("PlayerCollidersParent");
+            }
+            else
+            {
+                foreach (Transform child in playerColliderParent.transform)
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+
             foreach (VRRig vrig in GorillaParent.instance.vrrigs)
             {
-                if (vrig != GorillaTagger.Instance.offlineVRRig)
+                if (vrig == GorillaTagger.Instance.offlineVRRig) continue;
+
+                GameObject playerCollider = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                playerCollider.transform.SetParent(playerColliderParent.transform, false);
+                playerCollider.transform.position = vrig.transform.position;
+                playerCollider.transform.rotation = vrig.transform.rotation;
+                playerCollider.transform.localScale = new Vector3(0.3f, 0.55f, 0.3f);
+
+                playerCollider.GetComponent<Renderer>().enabled = false;
+                BoxCollider collider = playerCollider.GetComponent<BoxCollider>();
+                if (collider == null) collider = playerCollider.AddComponent<BoxCollider>();
+                collider.isTrigger = false;
+
+                Rigidbody rb = playerCollider.GetComponent<Rigidbody>();
+                if (rb == null) rb = playerCollider.AddComponent<Rigidbody>();
+                rb.isKinematic = true;
+                rb.useGravity = false;
+
+                Rigidbody vrigRb = vrig.gameObject.GetComponent<Rigidbody>();
+                if (vrigRb != null)
                 {
-                    GameObject thisPlayerCollider = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    thisPlayerCollider.transform.position = vrig.transform.position;
-                    thisPlayerCollider.GetComponent<Renderer>().enabled = false;
-                    thisPlayerCollider.transform.localScale = new Vector3(0.3f, 0.55f, 0.3f);
-                    thisPlayerCollider.transform.rotation = vrig.transform.rotation;
-                    thisPlayerCollider.transform.SetParent(playerColliderParent.transform, false);
-            
-                    if (thisPlayerCollider.GetComponent<BoxCollider>() != null)
-                    {
-                        thisPlayerCollider.GetComponent<BoxCollider>().enabled = true;
-                    }
-                    else
-                    {
-                        thisPlayerCollider.AddComponent<BoxCollider>();
-                    }
-            
-                    Rigidbody rb = thisPlayerCollider.AddComponent<Rigidbody>();
-                    rb.isKinematic = true;
-                    rb.useGravity = false;
-            
-                    Rigidbody handRigidbody = vrig.gameObject.GetComponent<Rigidbody>();
-                    if (handRigidbody != null)
-                    {
-                        handRigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
-                    }
+                    vrigRb.collisionDetectionMode = CollisionDetectionMode.Continuous;
                 }
             }
         }
+
         public override PageType pageType => PageType.Toggle;
-
     }
-
 }

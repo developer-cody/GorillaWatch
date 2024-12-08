@@ -7,7 +7,7 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "GorillaWatchMainInfoPageWABSHUWAJSD";
 
-        public override string info => $"<color=black>Gorilla</color>Watch!\nTime: {DateTime.Now:HH:mm:ss}";
+        public override string info => $"\n<color=black>Gorilla</color>Watch!\nTime: {DateTime.Now:HH:mm:ss}";
 
         public override PageType pageType => PageType.Information;
 

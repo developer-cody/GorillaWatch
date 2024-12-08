@@ -10,7 +10,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TheGorillaWatch.Models;
 using TheGorillaWatch.Configuration;
-using System.Net.NetworkInformation;
 
 namespace TheGorillaWatch
 {
@@ -100,11 +99,9 @@ namespace TheGorillaWatch
                 reset = false;
 
                 bool ToggleMod;
-
                 bool ToggleWatch;
 
                 useLeftTriggerToToggleMod = ConfigManager.toggleModButton.Value;
-
                 useRightTriggerToToggleWatch = ConfigManager.toggleWatchButton.Value;
 
                 if (!useLeftTriggerToToggleMod)
@@ -158,6 +155,7 @@ namespace TheGorillaWatch
                 GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().rightHand.gameObject.SetActive(false);
                 GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().hat.gameObject.SetActive(false);
                 GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().face.gameObject.SetActive(false);
+                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<Renderer>().material.color = Color.gray;
 
                 foreach (Page p in mods)
                 {
@@ -248,35 +246,6 @@ namespace TheGorillaWatch
                             GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].info;
                             break;
                     }
-
-                    /*switch (mods[counter].pageType)
-                    {
-                        case PageType.Toggle:
-                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.gameObject.SetActive(true);
-                            string modEnabled = mods[counter].modEnabled ? "<color=green>enabled</color>" : $"<color=red>disabled</color>";
-                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].modName + ":\n" + modEnabled + $"\n{mods[counter].info}";
-                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.color = mods[counter].modEnabled ? Color.green : Color.red;
-
-                            if (ToggleMod && Time.time > PageCoolDown + .5)
-                            {
-                                GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(66, true, 1f);
-
-                                PageCoolDown = Time.time;
-                                if (mods[counter].modEnabled)
-                                {
-                                    mods[counter].Disable();
-                                }
-                                else
-                                {
-                                    mods[counter].Enable();
-                                }
-                            }
-                            break;
-                        case PageType.Information:
-                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.gameObject.SetActive(false);
-                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].info;
-                            break;
-                    }*/
                 }
             }
             else if (!reset)

@@ -1,10 +1,8 @@
-﻿using GorillaLocomotion;
-using TheGorillaWatch.Models;
+﻿using TheGorillaWatch.Models;
 using UnityEngine;
 using System.Collections;
 using System;
 using System.Collections.Generic;
-using PlayFab.ClientModels;
 
 namespace TheGorillaWatch.Mods
 {

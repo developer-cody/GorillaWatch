@@ -1,5 +1,8 @@
 is_global = true
 build_property.RootNamespace = TheGorillaWatch
-build_property.ProjectDir = C:\Users\rgerm\source\repos\Gtmods\Watch\GorillaWatch\
+build_property.ProjectDir = D:\Coding\repos\Gtmods\Watch\GorillaWatch\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

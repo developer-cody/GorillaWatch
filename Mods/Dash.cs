@@ -1,5 +1,4 @@
 ﻿using GorillaLocomotion;
-using System;
 using System.Collections.Generic;
 using TheGorillaWatch.Models;
 using UnityEngine;

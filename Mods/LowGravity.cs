@@ -1,9 +1,7 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Text;
 using TheGorillaWatch.Models;
 using UnityEngine;
-using BepInEx;
 
 namespace TheGorillaWatch.Mods
 {
