@@ -1,15 +1,15 @@
 using BepInEx;
-using System;
-using UnityEngine;
 using GorillaNetworking;
-using Photon.Pun;
 using HarmonyLib;
-using Valve.VR;
-using UnityEngine.XR;
+using Photon.Pun;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using TheGorillaWatch.Models;
 using TheGorillaWatch.Configuration;
+using TheGorillaWatch.Models;
+using UnityEngine;
+using UnityEngine.XR;
+using Valve.VR;
 
 namespace TheGorillaWatch
 {
@@ -49,7 +49,7 @@ namespace TheGorillaWatch
                             Page modObject = (Page)mod.AddComponent(type);
                             mods.Add(modObject);
                             mod.transform.SetParent(modHolder.transform);
-                            if(modObject.modName == "GorillaWatchMainInfoPageWABSHUWAJSD")
+                            if (modObject.modName == "GorillaWatchMainInfoPageWABSHUWAJSD")
                             {
                                 mainPageNum = mods.IndexOf(modObject);
                             }
@@ -89,6 +89,8 @@ namespace TheGorillaWatch
 
         void Update()
         {
+            var huntComputer = GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>();
+
             if (!initialized)
             {
                 return;
@@ -149,13 +151,21 @@ namespace TheGorillaWatch
                 }
 
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(watchOn);
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().enabled = false;
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().badge.gameObject.SetActive(false);
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().leftHand.gameObject.SetActive(false);
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().rightHand.gameObject.SetActive(false);
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().hat.gameObject.SetActive(false);
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().face.gameObject.SetActive(false);
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<Renderer>().material.color = Color.gray;
+
+                var componentsToDisable = new GameObject[] {
+                    huntComputer.badge.gameObject,
+                    huntComputer.leftHand.gameObject,
+                    huntComputer.rightHand.gameObject,
+                    huntComputer.hat.gameObject,
+                    huntComputer.face.gameObject
+                };
+
+                foreach (var component in componentsToDisable)
+                {
+                    component.SetActive(false);
+                }
+
+                huntComputer.enabled = false;
 
                 foreach (Page p in mods)
                 {
@@ -193,10 +203,10 @@ namespace TheGorillaWatch
                     switch (mods[counter].pageType)
                     {
                         case PageType.Toggle:
-                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.gameObject.SetActive(true);
+                            huntComputer.material.gameObject.SetActive(true);
                             string modEnabled = mods[counter].modEnabled ? "<color=green>enabled</color>" : $"<color=red>disabled</color>";
-                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].modName + ":\n" + modEnabled + $"\n{mods[counter].info}";
-                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.color = mods[counter].modEnabled ? Color.green : Color.red;
+                            huntComputer.text.text = mods[counter].modName + ":\n" + modEnabled + $"\n{mods[counter].info}";
+                            huntComputer.material.color = mods[counter].modEnabled ? Color.green : Color.red;
                             if (ToggleMod && Time.time > PageCoolDown + .5)
                             {
                                 PageCoolDown = Time.time;
@@ -242,29 +252,34 @@ namespace TheGorillaWatch
                             }
                             break;
                         case PageType.Information:
-                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.gameObject.SetActive(false);
-                            GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().text.text = mods[counter].info;
+                            huntComputer.material.gameObject.SetActive(false);
+                            huntComputer.text.text = mods[counter].info;
                             break;
                     }
                 }
             }
             else if (!reset)
             {
-                Physics.gravity = new Vector3(0f, -9.8f, 0f);
-
-                foreach (Page mod in mods)
-                {
-                    mod.Disable();
-                }
+                foreach (Page mod in mods) { mod.Disable(); }
 
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(false);
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().enabled = true;
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().material.gameObject.SetActive(true);
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().badge.gameObject.SetActive(true);
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().leftHand.gameObject.SetActive(true);
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().rightHand.gameObject.SetActive(true);
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().hat.gameObject.SetActive(true);
-                GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>().face.gameObject.SetActive(true);
+
+                var componentsToDisable = new GameObject[] {
+                    huntComputer.material.gameObject,
+                    huntComputer.badge.gameObject,
+                    huntComputer.leftHand.gameObject,
+                    huntComputer.rightHand.gameObject,
+                    huntComputer.hat.gameObject,
+                    huntComputer.face.gameObject
+                };
+
+                foreach (var component in componentsToDisable)
+                {
+                    component.SetActive(false);
+                }
+
+                huntComputer.enabled = false;
+
                 reset = true;
             }
         }

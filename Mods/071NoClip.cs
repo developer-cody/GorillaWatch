@@ -8,41 +8,33 @@ namespace TheGorillaWatch.Mods
     class Noclip : Page
     {
         public override List<string> requiredModNames => new List<string>() { "PlatformGuy" };
-
         public override string modName => "Noclip";
-        List<MeshCollider> colliders = new List<MeshCollider>();
-
-        public override void Disable()
-        {
-            base.Disable();
-            try
-            {
-                MeshCollider[] array = FindObjectsOfType<MeshCollider>();
-                foreach (MeshCollider meshCollider in array)
-                {
-                    meshCollider.enabled = true;
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.Log($"Error with Noclip Disable: {e.Message}");
-            }
-        }
 
         public override void Enable()
         {
             base.Enable();
+            ToggleColliders(false);
+        }
+
+        public override void Disable()
+        {
+            base.Disable();
+            ToggleColliders(true);
+        }
+
+        private void ToggleColliders(bool enable)
+        {
             try
             {
                 MeshCollider[] array = FindObjectsOfType<MeshCollider>();
                 foreach (MeshCollider meshCollider in array)
                 {
-                    meshCollider.enabled = false;
+                    meshCollider.enabled = enable;
                 }
             }
             catch (Exception e)
             {
-                Debug.Log($"Error with Noclip Enable: {e.Message}");
+                Debug.Log($"Error with Noclip Toggle: {e.Message}");
             }
         }
 

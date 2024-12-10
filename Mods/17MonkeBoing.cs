@@ -8,8 +8,8 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "MonkeBoing";
 
-        float bounce;
-        PhysicMaterialCombine PMCombine;
+        private float bounce;
+        private PhysicMaterialCombine PMCombine;
 
         public override void Disable()
         {
@@ -26,9 +26,9 @@ namespace TheGorillaWatch.Mods
             bounce = Player.Instance.bodyCollider.material.bounciness;
             PMCombine = Player.Instance.bodyCollider.material.bounceCombine;
             Player.Instance.bodyCollider.material.bounceCombine = PhysicMaterialCombine.Maximum;
-            Player.Instance.bodyCollider.material.bounciness = .95f;
+            Player.Instance.bodyCollider.material.bounciness = 0.95f;
         }
-        public override PageType pageType => PageType.Toggle;
 
+        public override PageType pageType => PageType.Toggle;
     }
 }

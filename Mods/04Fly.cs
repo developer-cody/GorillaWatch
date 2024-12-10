@@ -1,7 +1,5 @@
 ﻿using GorillaLocomotion;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using TheGorillaWatch.Models;
 using UnityEngine;
 
@@ -10,14 +8,24 @@ namespace TheGorillaWatch.Mods
     class Fly : Page
     {
         public override string modName => "VelocityFly";
-        public override List<string> incompatibleModNames => new List<string>() { "IronMonke", "DashMonk" };
+        public override List<string> incompatibleModNames => new List<string> { "IronMonke", "DashMonk" };
+
+        private const float flyForce = 1000f;
 
         public override void OnUpdate()
         {
             if (ControllerInputPoller.instance.rightControllerPrimaryButton)
             {
-                Player.Instance.GetComponent<Rigidbody>().velocity = Player.Instance.headCollider.transform.forward * Time.deltaTime * 1400f;
+                ApplyFlyForce();
             }
+        }
+
+        private void ApplyFlyForce()
+        {
+            Rigidbody playerRigidbody = Player.Instance.GetComponent<Rigidbody>();
+            Transform headTransform = Player.Instance.headCollider.transform;
+
+            playerRigidbody.velocity = headTransform.forward * Time.deltaTime * flyForce;
         }
 
         public override PageType pageType => PageType.Toggle;

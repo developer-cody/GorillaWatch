@@ -15,7 +15,7 @@ namespace TheGorillaWatch.Mods
         {
             base.Enable();
             var hash1 = new ExitGames.Client.Photon.Hashtable();
-            hash1.AddOrUpdate("size", ConfigManager.SmallMonkersSize.Value);
+            hash1.AddOrUpdate("size", ConfigManager.smallMonkersSize.Value);
             PhotonNetwork.SetPlayerCustomProperties(hash1);
         }
         public override void Disable()
@@ -27,7 +27,7 @@ namespace TheGorillaWatch.Mods
         }
         public override void OnUpdate()
         {
-            GorillaLocomotion.Player.Instance.scale = ConfigManager.SmallMonkersSize.Value;
+            GorillaLocomotion.Player.Instance.scale = ConfigManager.smallMonkersSize.Value;
         }
 
         public override PageType pageType => PageType.Toggle;

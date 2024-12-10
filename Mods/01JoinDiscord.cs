@@ -1,16 +1,26 @@
 ﻿using System.Diagnostics;
 using TheGorillaWatch.Models;
+using UnityEngine;
 
 namespace TheGorillaWatch.Mods
 {
     class JoinDiscord : Page
     {
         public override string modName => "Join Discord";
+        string DiscordInvite = "https://discord.gg/E7kTnTYZEG";
 
         public override void Enable()
         {
             base.Enable();
-            Process.Start("https://discord.gg/E7kTnTYZEG");
+
+            if (Application.platform == RuntimePlatform.WindowsPlayer)
+            {
+                Process.Start(DiscordInvite);
+            }
+            else
+            {
+                Application.OpenURL(DiscordInvite);
+            }
         }
 
         public override PageType pageType => PageType.Toggle;

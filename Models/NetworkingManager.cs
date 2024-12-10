@@ -16,34 +16,55 @@ namespace TheGorillaWatch.Models
         {
             foreach (Player p in PhotonNetwork.PlayerListOthers)
             {
-                if (p.CustomProperties.ContainsKey("GorillaWatch"))
-                {
-                    StartCoroutine(nameof(WaitForInit), p);
-                }
+                HandlePlayerInitialization(p);
+            }
+        }
 
-                if (p.CustomProperties.TryGetValue("size", out object sizeValue) && sizeValue is float size)
-                {
-                    var rig = GorillaGameManager.instance.FindPlayerVRRig(p);
-                    if (rig != null)
-                    {
-                        rig.transform.localScale = new Vector3(size, size, size);
-                    }
-                    else
-                    {
-                        Debug.LogWarning($"Could not find VR rig for player: {p.NickName}");
-                    }
-                }
+        // Helper method to handle player initialization
+        private void HandlePlayerInitialization(Player p)
+        {
+            if (p.CustomProperties.ContainsKey("GorillaWatch"))
+            {
+                StartCoroutine(nameof(WaitForInit), p);
+            }
+
+            if (p.CustomProperties.TryGetValue("size", out object sizeValue) && sizeValue is float size)
+            {
+                UpdatePlayerSize(p, size);
+            }
+        }
+
+        // Helper method to update player size
+        private void UpdatePlayerSize(Player p, float size)
+        {
+            var rig = GorillaGameManager.instance.FindPlayerVRRig(p);
+            if (rig != null)
+            {
+                rig.transform.localScale = new Vector3(size, size, size);
+            }
+            else
+            {
+                Debug.LogWarning($"Could not find VR rig for player: {p.NickName}");
             }
         }
 
         IEnumerator WaitForInit(Player p)
         {
             yield return new WaitForSeconds(0.7f);
+            InitializePlayerWatch(p);
+        }
+
+        // Helper method to initialize the player's watch
+        private void InitializePlayerWatch(Player p)
+        {
             var rig = GorillaGameManager.instance.FindPlayerVRRig(p);
+            if (rig == null) return;
+
             var huntwatch = GameObject.Instantiate(GorillaTagger.Instance.offlineVRRig.huntComputer);
-            huntwatch.transform.parent = rig.leftHandTransform;
+            huntwatch.transform.SetParent(rig.leftHandTransform, false);
             huntwatch.transform.localPosition = new Vector3(-0.6364f, 0.6427f, 0.0153f);
             huntwatch.transform.localRotation = GorillaTagger.Instance.offlineVRRig.huntComputer.transform.localRotation;
+
             PlayerList.Add(p, huntwatch);
             Riglist.Add(p, rig.gameObject);
         }
@@ -52,13 +73,7 @@ namespace TheGorillaWatch.Models
         {
             if (newPlayer.CustomProperties.ContainsKey("GorillaWatch"))
             {
-                var rig = GorillaGameManager.instance.FindPlayerVRRig(newPlayer);
-                var huntwatch = GameObject.Instantiate(GorillaTagger.Instance.offlineVRRig.huntComputer);
-                huntwatch.transform.parent = rig.leftHandTransform;
-                huntwatch.transform.localPosition = new Vector3(-0.6364f, 0.6427f, 0.0153f);
-                huntwatch.transform.localRotation = GorillaTagger.Instance.offlineVRRig.huntComputer.transform.localRotation;
-                PlayerList.Add(newPlayer, huntwatch);
-                Riglist.Add(newPlayer, rig.gameObject);
+                InitializePlayerWatch(newPlayer);
             }
         }
 
@@ -68,13 +83,12 @@ namespace TheGorillaWatch.Models
             {
                 if (changedProps.ContainsKey("size") && !targetPlayer.IsLocal)
                 {
-                    var rig = GorillaGameManager.instance.FindPlayerVRRig(targetPlayer);
-                    rig.transform.localScale = new Vector3((float)changedProps["size"], (float)changedProps["size"], (float)changedProps["size"]);
+                    UpdatePlayerSize(targetPlayer, (float)changedProps["size"]);
                 }
             }
             catch (Exception e)
             {
-                Debug.Log($"Error with player {targetPlayer.NickName}: {e.Message}");
+                Debug.LogError($"Error with player {targetPlayer.NickName}: {e.Message}");
             }
         }
 
@@ -82,12 +96,21 @@ namespace TheGorillaWatch.Models
         {
             if (PlayerList.TryGetValue(otherPlayer, out var playerObject) && Riglist.TryGetValue(otherPlayer, out var rig))
             {
-                rig.transform.localScale = Vector3.one;
-
-                Destroy(playerObject.gameObject);
-                PlayerList.Remove(otherPlayer);
-                Riglist.Remove(otherPlayer);
+                CleanUpPlayer(playerObject, rig, otherPlayer);
             }
+        }
+
+        // Helper method to clean up when a player leaves
+        private void CleanUpPlayer(GameObject playerObject, GameObject rig, Player player)
+        {
+            if (rig != null)
+            {
+                rig.transform.localScale = Vector3.one;
+            }
+
+            Destroy(playerObject);
+            PlayerList.Remove(player);
+            Riglist.Remove(player);
         }
 
         public override void OnLeftRoom()

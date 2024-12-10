@@ -6,6 +6,9 @@ namespace TheGorillaWatch.Mods
 {
     class HighGravity : Page
     {
+        private const float HighGravityValue = -14.5f;
+        private const float DefaultGravityValue = -9.8f;
+
         public override List<string> incompatibleModNames => new List<string>() { "LowGravity", "NoGravity" };
 
         public override string modName => "HighGravity";
@@ -13,15 +16,20 @@ namespace TheGorillaWatch.Mods
         public override void Enable()
         {
             base.Enable();
-            Physics.gravity = new Vector3(0, -14.5f, 0);
+            SetGravity(HighGravityValue);
         }
 
         public override void Disable()
         {
             base.Disable();
-            Physics.gravity = new Vector3(0, -9.807f, 0);
+            SetGravity(DefaultGravityValue);
         }
-        public override PageType pageType => PageType.Toggle;
 
+        private void SetGravity(float gravityValue)
+        {
+            Physics.gravity = new Vector3(0, gravityValue, 0);
+        }
+
+        public override PageType pageType => PageType.Toggle;
     }
 }

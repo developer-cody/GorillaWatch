@@ -11,6 +11,7 @@ namespace TheGorillaWatch.Mods
         public override void Disable()
         {
             base.Disable();
+            // Destroy playerColliderParent if it exists
             if (playerColliderParent != null)
             {
                 Destroy(playerColliderParent);
@@ -35,27 +36,33 @@ namespace TheGorillaWatch.Mods
             {
                 if (vrig == GorillaTagger.Instance.offlineVRRig) continue;
 
-                GameObject playerCollider = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                playerCollider.transform.SetParent(playerColliderParent.transform, false);
-                playerCollider.transform.position = vrig.transform.position;
-                playerCollider.transform.rotation = vrig.transform.rotation;
-                playerCollider.transform.localScale = new Vector3(0.3f, 0.55f, 0.3f);
+                CreateColliderForVRig(vrig);
+            }
+        }
 
-                playerCollider.GetComponent<Renderer>().enabled = false;
-                BoxCollider collider = playerCollider.GetComponent<BoxCollider>();
-                if (collider == null) collider = playerCollider.AddComponent<BoxCollider>();
-                collider.isTrigger = false;
+        private void CreateColliderForVRig(VRRig vrig)
+        {
+            GameObject playerCollider = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            playerCollider.transform.SetParent(playerColliderParent.transform, false);
+            playerCollider.transform.position = vrig.transform.position;
+            playerCollider.transform.rotation = vrig.transform.rotation;
+            playerCollider.transform.localScale = new Vector3(0.3f, 0.55f, 0.3f);
 
-                Rigidbody rb = playerCollider.GetComponent<Rigidbody>();
-                if (rb == null) rb = playerCollider.AddComponent<Rigidbody>();
-                rb.isKinematic = true;
-                rb.useGravity = false;
+            playerCollider.GetComponent<Renderer>().enabled = false;
 
-                Rigidbody vrigRb = vrig.gameObject.GetComponent<Rigidbody>();
-                if (vrigRb != null)
-                {
-                    vrigRb.collisionDetectionMode = CollisionDetectionMode.Continuous;
-                }
+            BoxCollider collider = playerCollider.GetComponent<BoxCollider>();
+            if (collider == null) collider = playerCollider.AddComponent<BoxCollider>();
+            collider.isTrigger = false;
+
+            Rigidbody rb = playerCollider.GetComponent<Rigidbody>();
+            if (rb == null) rb = playerCollider.AddComponent<Rigidbody>();
+            rb.isKinematic = true;
+            rb.useGravity = false;
+
+            Rigidbody vrigRb = vrig.gameObject.GetComponent<Rigidbody>();
+            if (vrigRb != null)
+            {
+                vrigRb.collisionDetectionMode = CollisionDetectionMode.Continuous;
             }
         }
 

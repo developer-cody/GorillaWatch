@@ -14,6 +14,7 @@ namespace TheGorillaWatch.Mods
         public override void OnUpdate()
         {
             base.OnUpdate();
+
             info = $" <color=black>Gorilla</color>Watch!\n{DateTime.Now:HH:mm:ss}";
         }
     }

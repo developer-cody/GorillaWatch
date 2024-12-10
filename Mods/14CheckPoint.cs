@@ -2,7 +2,6 @@
 using UnityEngine;
 using System.Collections;
 using System;
-using System.Collections.Generic;
 
 namespace TheGorillaWatch.Mods
 {
@@ -36,7 +35,6 @@ namespace TheGorillaWatch.Mods
                 CheckpointBox.transform.localScale = new Vector3(.2f, .2f, .2f);
                 CheckpointBox.name = "CheckpointBox";
                 GameObject.Destroy(CheckpointBox.GetComponent<BoxCollider>());
-
                 UpdateCheckpointColor(Color.green);
             }
         }

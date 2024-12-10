@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using TheGorillaWatch.Models;
 using UnityEngine;
 
@@ -8,7 +7,6 @@ namespace TheGorillaWatch.Mods
     class SlipMonk : Page
     {
         public override string modName => "SlipMonk";
-        List<MeshCollider> colliders = new List<MeshCollider>();
 
         public override void Disable()
         {
@@ -18,9 +16,18 @@ namespace TheGorillaWatch.Mods
             {
                 if (meshCollider.enabled)
                 {
-                    meshCollider.AddComponent<GorillaSurfaceOverride>();
-                    meshCollider.GetComponent<GorillaSurfaceOverride>().enabled = false;
-                    meshCollider.GetComponent<GorillaSurfaceOverride>().overrideIndex = 0;
+                    GorillaSurfaceOverride surfaceOverride = meshCollider.GetComponent<GorillaSurfaceOverride>();
+                    if (surfaceOverride == null)
+                    {
+                        surfaceOverride = meshCollider.AddComponent<GorillaSurfaceOverride>();
+                    }
+
+                    if (surfaceOverride.overrideIndex != 0)
+                    {
+                        surfaceOverride.overrideIndex = 0;
+                    }
+
+                    surfaceOverride.enabled = false;
                 }
             }
         }
@@ -35,9 +42,18 @@ namespace TheGorillaWatch.Mods
                 {
                     if (meshCollider.enabled)
                     {
-                        meshCollider.AddComponent<GorillaSurfaceOverride>();
-                        meshCollider.GetComponent<GorillaSurfaceOverride>().enabled = true;
-                        meshCollider.GetComponent<GorillaSurfaceOverride>().overrideIndex = 61;
+                        GorillaSurfaceOverride surfaceOverride = meshCollider.GetComponent<GorillaSurfaceOverride>();
+                        if (surfaceOverride == null)
+                        {
+                            surfaceOverride = meshCollider.AddComponent<GorillaSurfaceOverride>();
+                        }
+
+                        if (surfaceOverride.overrideIndex != 61)
+                        {
+                            surfaceOverride.overrideIndex = 61;
+                        }
+
+                        surfaceOverride.enabled = true;
                     }
                 }
             }

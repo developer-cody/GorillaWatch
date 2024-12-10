@@ -28,6 +28,7 @@ namespace TheGorillaWatch.Mods
             if (walkPos != Vector3.zero)
             {
                 Player.Instance.bodyCollider.attachedRigidbody.AddForce(walkNormal * -9.81f, ForceMode.Acceleration);
+
                 ZeroGravity();
             }
         }
@@ -35,16 +36,16 @@ namespace TheGorillaWatch.Mods
         public override void Enable()
         {
             base.Enable();
-
         }
 
         public override void Disable()
         {
             base.Disable();
+
             Physics.gravity = new Vector3(0f, -9.8f, 0f);
             walkPos = Vector3.zero;
 
-            Player.Instance.bodyCollider.attachedRigidbody.AddForce(0f, 0f, 0f, ForceMode.Acceleration);
+            Player.Instance.bodyCollider.attachedRigidbody.velocity = Vector3.zero;
         }
 
         private void ZeroGravity()

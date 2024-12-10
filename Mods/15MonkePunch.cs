@@ -7,9 +7,8 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "MonkePunch";
 
-        public static Vector3[] lastLeft = new Vector3[] { Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero };
-
-        public static Vector3[] lastRight = new Vector3[] { Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero };
+        public static Vector3[] lastLeft = new Vector3[10];
+        public static Vector3[] lastRight = new Vector3[10];
 
         public override void OnUpdate()
         {
@@ -19,30 +18,33 @@ namespace TheGorillaWatch.Mods
                 if (vrrig != GorillaTagger.Instance.offlineVRRig)
                 {
                     index++;
-            
-                    Vector3 they = vrrig.rightHandTransform.position;
-                    Vector3 notthem = GorillaTagger.Instance.offlineVRRig.head.rigTarget.position;
-                    float distance = Vector3.Distance(they, notthem);
-            
-                    if (distance < .3)
+
+                    // Right hand
+                    Vector3 rightHandPos = vrrig.rightHandTransform.position;
+                    Vector3 playerHeadPos = GorillaTagger.Instance.offlineVRRig.head.rigTarget.position;
+                    float rightDistance = Vector3.Distance(rightHandPos, playerHeadPos);
+
+                    if (rightDistance < .3f)
                     {
-                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity += Vector3.Normalize(vrrig.rightHandTransform.position - lastRight[index]) * 5f;
+                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity +=
+                            Vector3.Normalize(rightHandPos - lastRight[index]) * 5f;
                     }
-                    lastRight[index] = vrrig.rightHandTransform.position;
-            
-                    they = vrrig.leftHandTransform.position;
-                    distance = Vector3.Distance(they, notthem);
-            
-                    if (distance < .3)
+                    lastRight[index] = rightHandPos;
+
+                    // Left hand
+                    Vector3 leftHandPos = vrrig.leftHandTransform.position;
+                    float leftDistance = Vector3.Distance(leftHandPos, playerHeadPos);
+
+                    if (leftDistance < .3f)
                     {
-                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity += Vector3.Normalize(vrrig.leftHandTransform.position - lastLeft[index]) * 5f;
+                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity +=
+                            Vector3.Normalize(leftHandPos - lastLeft[index]) * 5f;
                     }
-                    lastLeft[index] = vrrig.leftHandTransform.position;
+                    lastLeft[index] = leftHandPos;
                 }
             }
-
         }
-        public override PageType pageType => PageType.Toggle;
 
+        public override PageType pageType => PageType.Toggle;
     }
 }

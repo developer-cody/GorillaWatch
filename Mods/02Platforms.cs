@@ -14,6 +14,9 @@ namespace TheGorillaWatch.Mods
         Vector3 leftOffset = new Vector3(0f, -0.06f, 0f);
         Vector3 rightOffset = new Vector3(0f, -0.06f, 0f);
 
+        private float colorChangeSpeed = 1f;
+        private float timeElapsed = 0f;
+
         public override void Disable()
         {
             base.Disable();
@@ -29,6 +32,10 @@ namespace TheGorillaWatch.Mods
         public override void OnUpdate()
         {
             Color playerColor = GorillaTagger.Instance.offlineVRRig.mainSkin.material.color;
+            Color newColor = Color.HSVToRGB(Mathf.PingPong(timeElapsed, 2f), 1f, 1f);
+
+            timeElapsed += Time.deltaTime * colorChangeSpeed;
+
 
             if (ControllerInputPoller.instance.leftGrab)
             {
@@ -39,8 +46,8 @@ namespace TheGorillaWatch.Mods
                     leftplat.transform.position = GorillaTagger.Instance.leftHandTransform.position + leftOffset;
                     leftplat.transform.rotation = GorillaTagger.Instance.leftHandTransform.rotation;
                     leftplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
-                    leftplat.GetComponent<Renderer>().material.color = playerColor;
                 }
+                leftplat.GetComponent<Renderer>().material.color = newColor;
             }
             else
             {
@@ -50,6 +57,7 @@ namespace TheGorillaWatch.Mods
                     leftplat = null;
                 }
             }
+
             if (ControllerInputPoller.instance.rightGrab)
             {
                 if (rightplat == null)
@@ -59,8 +67,8 @@ namespace TheGorillaWatch.Mods
                     rightplat.transform.position = GorillaTagger.Instance.rightHandTransform.position + rightOffset;
                     rightplat.transform.rotation = GorillaTagger.Instance.rightHandTransform.rotation;
                     rightplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
-                    rightplat.GetComponent<Renderer>().material.color = playerColor;
                 }
+                rightplat.GetComponent<Renderer>().material.color = newColor;
             }
             else
             {
