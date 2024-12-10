@@ -1,4 +1,5 @@
 ﻿using GorillaLocomotion;
+using System;
 using System.Collections.Generic;
 using TheGorillaWatch.Models;
 using UnityEngine;
@@ -12,20 +13,16 @@ namespace TheGorillaWatch.Mods
 
         private float lastDashTime = 0f;
         private readonly float dashCooldown = 0.8f;
-        private readonly Vector3 dashDirection;
-
-        public DashMonk()
-        {
-            dashDirection = Player.Instance.headCollider.transform.forward;
-        }
 
         public override PageType pageType => PageType.Toggle;
 
         public override void OnUpdate()
         {
+            base.OnUpdate();
+
             if (ControllerInputPoller.instance.rightControllerPrimaryButton && Time.time - lastDashTime >= dashCooldown)
             {
-                Player.Instance.bodyCollider.attachedRigidbody.AddForce(dashDirection * 10f, ForceMode.VelocityChange);
+                Player.Instance.bodyCollider.attachedRigidbody.AddForce(Player.Instance.headCollider.transform.forward * 10, ForceMode.VelocityChange);
 
                 lastDashTime = Time.time;
             }

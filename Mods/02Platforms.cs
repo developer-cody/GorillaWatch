@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TheGorillaWatch.Configuration;
 using TheGorillaWatch.Models;
 using UnityEngine;
 
@@ -47,7 +48,15 @@ namespace TheGorillaWatch.Mods
                     leftplat.transform.rotation = GorillaTagger.Instance.leftHandTransform.rotation;
                     leftplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                 }
-                leftplat.GetComponent<Renderer>().material.color = newColor;
+
+                if (ConfigManager.platformConfig.Value)
+                {
+                    leftplat.GetComponent<Renderer>().material.color = newColor;
+                }
+                else
+                {
+                    leftplat.GetComponent<Renderer>().material.color = playerColor;
+                }
             }
             else
             {
@@ -68,7 +77,15 @@ namespace TheGorillaWatch.Mods
                     rightplat.transform.rotation = GorillaTagger.Instance.rightHandTransform.rotation;
                     rightplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                 }
-                rightplat.GetComponent<Renderer>().material.color = newColor;
+
+                if (ConfigManager.platformConfig.Value)
+                {
+                    rightplat.GetComponent<Renderer>().material.color = newColor;
+                }
+                else
+                {
+                    rightplat.GetComponent<Renderer>().material.color = playerColor;
+                }
             }
             else
             {
