@@ -89,7 +89,16 @@ namespace TheGorillaWatch
 
         void Update()
         {
+
             var huntComputer = GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>();
+
+            var componentsToDisable = new GameObject[] {
+                    huntComputer.badge.gameObject,
+                    huntComputer.leftHand.gameObject,
+                    huntComputer.rightHand.gameObject,
+                    huntComputer.hat.gameObject,
+                    huntComputer.face.gameObject
+            };
 
             if (!initialized)
             {
@@ -151,14 +160,6 @@ namespace TheGorillaWatch
                 }
 
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(watchOn);
-
-                var componentsToDisable = new GameObject[] {
-                    huntComputer.badge.gameObject,
-                    huntComputer.leftHand.gameObject,
-                    huntComputer.rightHand.gameObject,
-                    huntComputer.hat.gameObject,
-                    huntComputer.face.gameObject
-                };
 
                 foreach (var component in componentsToDisable)
                 {
@@ -263,15 +264,6 @@ namespace TheGorillaWatch
                 foreach (Page mod in mods) { mod.Disable(); }
 
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(false);
-
-                var componentsToDisable = new GameObject[] {
-                    huntComputer.material.gameObject,
-                    huntComputer.badge.gameObject,
-                    huntComputer.leftHand.gameObject,
-                    huntComputer.rightHand.gameObject,
-                    huntComputer.hat.gameObject,
-                    huntComputer.face.gameObject
-                };
 
                 foreach (var component in componentsToDisable)
                 {

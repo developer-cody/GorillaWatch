@@ -40,7 +40,7 @@ namespace TheGorillaWatch.Mods
                 FrozoneL.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                 FrozoneL.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
                 FrozoneL.GetComponent<Renderer>().material.color = Color.cyan;
-                GameObject.Destroy(FrozoneL, .1f);
+                Destroy(FrozoneL, .1f);
             }
 
             if (ControllerInputPoller.instance.rightGrab)
@@ -52,7 +52,7 @@ namespace TheGorillaWatch.Mods
                 FrozoneR.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                 FrozoneR.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
                 FrozoneR.GetComponent<Renderer>().material.color = Color.cyan;
-                GameObject.Destroy(FrozoneR, .1f);
+                Destroy(FrozoneR, .1f);
             }
         }
 

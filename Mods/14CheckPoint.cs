@@ -20,7 +20,7 @@ namespace TheGorillaWatch.Mods
             base.Disable();
             if (CheckpointBox != null)
             {
-                GameObject.Destroy(CheckpointBox);
+                Destroy(CheckpointBox);
                 CheckpointBox = null;
             }
         }
@@ -34,7 +34,7 @@ namespace TheGorillaWatch.Mods
                 CheckpointBox.transform.position = new Vector3(0, 2, 0);
                 CheckpointBox.transform.localScale = new Vector3(.2f, .2f, .2f);
                 CheckpointBox.name = "CheckpointBox";
-                GameObject.Destroy(CheckpointBox.GetComponent<BoxCollider>());
+                Destroy(CheckpointBox.GetComponent<BoxCollider>());
                 UpdateCheckpointColor(Color.green);
             }
         }

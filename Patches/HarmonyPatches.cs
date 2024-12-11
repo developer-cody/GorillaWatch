@@ -11,7 +11,6 @@ namespace TheGorillaWatch.Patches
 
         public static bool IsPatched { get; private set; }
 
-        // Apply all Harmony patches in the executing assembly
         internal static void ApplyHarmonyPatches()
         {
             if (IsPatched) return;
@@ -29,7 +28,6 @@ namespace TheGorillaWatch.Patches
             }
         }
 
-        // Remove all Harmony patches
         internal static void RemoveHarmonyPatches()
         {
             if (!IsPatched) return;

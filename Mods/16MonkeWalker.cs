@@ -11,7 +11,7 @@ namespace TheGorillaWatch.Mods
         public override void Disable()
         {
             base.Disable();
-            // Destroy playerColliderParent if it exists
+
             if (playerColliderParent != null)
             {
                 Destroy(playerColliderParent);
