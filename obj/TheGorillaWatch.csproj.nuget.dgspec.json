@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Coding\\repos\\Gtmods\\Watch\\GorillaWatch\\TheGorillaWatch.csproj": {}
+    "E:\\Coding\\repos\\Gtmods\\Watch\\GorillaWatch\\TheGorillaWatch.csproj": {}
   },
   "projects": {
-    "D:\\Coding\\repos\\Gtmods\\Watch\\GorillaWatch\\TheGorillaWatch.csproj": {
+    "E:\\Coding\\repos\\Gtmods\\Watch\\GorillaWatch\\TheGorillaWatch.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\repos\\Gtmods\\Watch\\GorillaWatch\\TheGorillaWatch.csproj",
+        "projectUniqueName": "E:\\Coding\\repos\\Gtmods\\Watch\\GorillaWatch\\TheGorillaWatch.csproj",
         "projectName": "TheGorillaWatch",
-        "projectPath": "D:\\Coding\\repos\\Gtmods\\Watch\\GorillaWatch\\TheGorillaWatch.csproj",
+        "projectPath": "E:\\Coding\\repos\\Gtmods\\Watch\\GorillaWatch\\TheGorillaWatch.csproj",
         "packagesPath": "C:\\Users\\rgerm\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\repos\\Gtmods\\Watch\\GorillaWatch\\obj\\",
+        "outputPath": "E:\\Coding\\repos\\Gtmods\\Watch\\GorillaWatch\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

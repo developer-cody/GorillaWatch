@@ -89,7 +89,6 @@ namespace TheGorillaWatch
 
         void Update()
         {
-
             var huntComputer = GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>();
 
             var componentsToDisable = new GameObject[] {
