@@ -41,12 +41,14 @@ namespace TheGorillaWatch.Configuration
             // Big Monkers Size Configuration
             bigMonkersSize = config.Bind("Settings", "How Big Do You Want BigMonkers to Be?", 2f,
                 "Choose how big you want the scale to be when BigMonkers is enabled.");
+
             // Ensure Big Monkers Size is within reasonable bounds
             if (bigMonkersSize.Value <= 1f) bigMonkersSize.Value = 2f;
 
             // Small Monkers Size Configuration
             smallMonkersSize = config.Bind("Settings", "How Small Do You Want SmallMonkers to Be?", 0.1f,
                 "Choose how small you want the scale to be when SmallMonkers is enabled.");
+
             // Ensure Small Monkers Size is within reasonable bounds
             if (smallMonkersSize.Value >= 1f) smallMonkersSize.Value = 0.1f;
             else if (smallMonkersSize.Value < 0.1f) smallMonkersSize.Value = 0.1f;

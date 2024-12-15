@@ -7,7 +7,7 @@ namespace TheGorillaWatch.Mods
     class AirSwim : Page
     {
         public override string modName => "AirSwim";
-        GameObject Swim = null;
+        GameObject Swim;
 
         public override void Disable()
         {
@@ -39,7 +39,7 @@ namespace TheGorillaWatch.Mods
             base.OnUpdate();
             if (Swim != null)
             {
-                GorillaLocomotion.Player.Instance.audioManager.UnsetMixerSnapshot(0.1f);
+                Player.Instance.audioManager.UnsetMixerSnapshot(0.1f);
                 Swim.transform.position = GorillaTagger.Instance.headCollider.transform.position + new Vector3(0f, 200f, 0f);
             }
         }

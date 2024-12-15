@@ -1,8 +1,4 @@
 ﻿namespace TheGorillaWatch.Models
 {
-    public enum PageType
-    {
-        Toggle,
-        Information
-    }
+    public enum PageType { Toggle, Information }
 }

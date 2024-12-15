@@ -14,7 +14,6 @@ using Valve.VR;
 namespace TheGorillaWatch
 {
     [BepInPlugin(ModInfo.GUID, ModInfo.Name, ModInfo.Version)]
-
     public class Mod : BaseUnityPlugin
     {
         bool IsSteamVR;
@@ -25,6 +24,8 @@ namespace TheGorillaWatch
         bool useLeftTriggerToToggleMod;
         bool useRightTriggerToToggleWatch;
         bool toggleableWatch;
+        bool ToggleMod;
+        bool ToggleWatch;
         public static int counter;
         public static float PageCoolDown;
         public static List<Page> mods = new List<Page>();
@@ -35,6 +36,7 @@ namespace TheGorillaWatch
             GorillaTagger.OnPlayerSpawned(Initialized);
             GameObject modHolder = new GameObject("GorillaWatch Mod Holder");
             int mainPageNum = 0;
+
             foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
             {
                 try
@@ -71,7 +73,6 @@ namespace TheGorillaWatch
         void Initialized()
         {
             IsSteamVR = Traverse.Create(PlayFabAuthenticator.instance).Field("platform").GetValue().ToString().ToLower() == "steam";
-
             initialized = true;
 
             foreach (Page page in mods)
@@ -90,8 +91,7 @@ namespace TheGorillaWatch
         void Update()
         {
             var huntComputer = GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>();
-
-            var componentsToDisable = new GameObject[] {
+            var huntWatchComponents = new GameObject[] {
                     huntComputer.badge.gameObject,
                     huntComputer.leftHand.gameObject,
                     huntComputer.rightHand.gameObject,
@@ -99,31 +99,19 @@ namespace TheGorillaWatch
                     huntComputer.face.gameObject
             };
 
-            if (!initialized)
-            {
-                return;
-            }
+            if (!initialized) return;
 
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.CustomProperties["gameMode"].ToString().Contains("MODDED") && !PhotonNetwork.CurrentRoom.CustomProperties["gameMode"].ToString().Contains("HUNT"))
             {
                 reset = false;
-
-                bool ToggleMod;
-                bool ToggleWatch;
 
                 useLeftTriggerToToggleMod = ConfigManager.toggleModButton.Value;
                 useRightTriggerToToggleWatch = ConfigManager.toggleWatchButton.Value;
 
                 if (!useLeftTriggerToToggleMod)
                 {
-                    if (IsSteamVR)
-                    {
-                        ToggleMod = SteamVR_Actions.gorillaTag_LeftJoystickClick.GetState(SteamVR_Input_Sources.LeftHand);
-                    }
-                    else
-                    {
-                        ControllerInputPoller.instance.leftControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out ToggleMod);
-                    }
+                    if (IsSteamVR) { ToggleMod = SteamVR_Actions.gorillaTag_LeftJoystickClick.GetState(SteamVR_Input_Sources.LeftHand); }
+                    else { ControllerInputPoller.instance.leftControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out ToggleMod); }
                 }
                 else
                 {
@@ -132,40 +120,21 @@ namespace TheGorillaWatch
 
                 if (!useRightTriggerToToggleWatch)
                 {
-                    if (IsSteamVR)
-                    {
-                        ToggleWatch = SteamVR_Actions.gorillaTag_RightJoystickClick.GetState(SteamVR_Input_Sources.RightHand);
-                    }
-                    else
-                    {
-                        ControllerInputPoller.instance.rightControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out ToggleWatch);
-                    }
+                    if (IsSteamVR) { ToggleWatch = SteamVR_Actions.gorillaTag_RightJoystickClick.GetState(SteamVR_Input_Sources.RightHand); }
+                    else { ControllerInputPoller.instance.rightControllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out ToggleWatch); }
                 }
                 else
                 {
                     ToggleWatch = ControllerInputPoller.instance.rightControllerIndexFloat > 0.5f;
                 }
 
-                toggleableWatch = ConfigManager.toggleableWatch.Value;
+                if (ToggleWatch && !stickClickJustPressed && toggleableWatch) { watchOn = !watchOn;  stickClickJustPressed = true; }
+                else if (!ToggleWatch) { stickClickJustPressed = false; }
 
-                if (ToggleWatch && !stickClickJustPressed && toggleableWatch)
-                {
-                    watchOn = !watchOn;
-                    stickClickJustPressed = true;
-                }
-                else if (!ToggleWatch)
-                {
-                    stickClickJustPressed = false;
-                }
-
-                GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(watchOn);
-
-                foreach (var component in componentsToDisable)
+                foreach (var component in huntWatchComponents)
                 {
                     component.SetActive(false);
                 }
-
-                huntComputer.enabled = false;
 
                 foreach (Page p in mods)
                 {
@@ -174,6 +143,11 @@ namespace TheGorillaWatch
                         p.OnUpdate();
                     }
                 }
+
+                toggleableWatch = ConfigManager.toggleableWatch.Value;
+                GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(watchOn);
+
+                huntComputer.enabled = false;
 
                 if (watchOn)
                 {
@@ -191,14 +165,8 @@ namespace TheGorillaWatch
                         GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(67, true, 1f);
                     }
 
-                    if (counter < 0)
-                    {
-                        counter = mods.Count - 1;
-                    }
-                    if (counter >= mods.Count)
-                    {
-                        counter = 0;
-                    }
+                    if (counter < 0) { counter = mods.Count - 1; }
+                    if (counter >= mods.Count) { counter = 0; }
 
                     switch (mods[counter].pageType)
                     {
@@ -207,6 +175,7 @@ namespace TheGorillaWatch
                             string modEnabled = mods[counter].modEnabled ? "<color=green>enabled</color>" : $"<color=red>disabled</color>";
                             huntComputer.text.text = mods[counter].modName + ":\n" + modEnabled + $"\n{mods[counter].info}";
                             huntComputer.material.color = mods[counter].modEnabled ? Color.green : Color.red;
+
                             if (ToggleMod && Time.time > PageCoolDown + .5)
                             {
                                 PageCoolDown = Time.time;
@@ -251,6 +220,7 @@ namespace TheGorillaWatch
                                 GorillaTagger.Instance.offlineVRRig.PlayHandTapLocal(66, true, 1f);
                             }
                             break;
+
                         case PageType.Information:
                             huntComputer.material.gameObject.SetActive(false);
                             huntComputer.text.text = mods[counter].info;
@@ -262,13 +232,17 @@ namespace TheGorillaWatch
             {
                 foreach (Page mod in mods) { mod.Disable(); }
 
-                GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(false);
-
-                foreach (var component in componentsToDisable)
+                foreach (var component in huntWatchComponents)
                 {
                     component.SetActive(false);
                 }
 
+                foreach (var component in huntWatchComponents)
+                {
+                    component.SetActive(false);
+                }
+
+                GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(false);
                 huntComputer.enabled = false;
 
                 reset = true;

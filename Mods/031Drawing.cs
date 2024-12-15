@@ -1,8 +1,4 @@
-﻿using CjLib;
-using GorillaLocomotion;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GorillaLocomotion;
 using TheGorillaWatch.Models;
 using UnityEngine;
 
@@ -14,6 +10,7 @@ namespace TheGorillaWatch.Mods
 
         GameObject DrawL;
         GameObject DrawR;
+
         public override void Disable()
         {
             base.Disable();
@@ -33,7 +30,16 @@ namespace TheGorillaWatch.Mods
                 DrawL = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                 DrawL.transform.position = Player.Instance.leftControllerTransform.position;
                 DrawL.transform.rotation = Player.Instance.leftControllerTransform.rotation;
-                DrawL.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+
+                if (Player.Instance.scale != 1f)
+                {
+                    DrawL.transform.localScale = new Vector3(1 / Player.Instance.scale, 1 / Player.Instance.scale, 1 / Player.Instance.scale);
+                }
+                else
+                {
+                    DrawL.transform.localScale = new Vector3(1, 1, 1);
+                }
+
                 DrawL.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                 DrawL.GetComponent<Renderer>().material.color = Color.black;
                 Destroy(DrawL.GetComponent<Rigidbody>());

@@ -8,8 +8,8 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "MonkeBoing";
 
-        private float bounce;
-        private PhysicMaterialCombine PMCombine;
+        float bounce;
+        PhysicMaterialCombine PMCombine;
 
         public override void Disable()
         {

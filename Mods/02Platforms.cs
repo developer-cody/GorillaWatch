@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using GorillaLocomotion;
+using System.Collections.Generic;
 using TheGorillaWatch.Configuration;
 using TheGorillaWatch.Models;
 using UnityEngine;
@@ -12,8 +13,13 @@ namespace TheGorillaWatch.Mods
 
         GameObject leftplat;
         GameObject rightplat;
+
         Vector3 leftOffset = new Vector3(0f, -0.06f, 0f);
         Vector3 rightOffset = new Vector3(0f, -0.06f, 0f);
+
+        float defaultXValue = .02f;
+        float defaultYValue = .270f;
+        float defaultZValue = .353f;
 
         private float colorChangeSpeed = 1f;
         private float timeElapsed = 0f;
@@ -43,26 +49,35 @@ namespace TheGorillaWatch.Mods
                 if (leftplat == null)
                 {
                     leftplat = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    leftplat.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
+
+                    if (Player.Instance.scale != 1f)
+                    {
+                        leftplat.transform.localScale = new Vector3(defaultXValue / Player.Instance.scale, defaultYValue / Player.Instance.scale, defaultZValue / Player.Instance.scale);
+                    }
+                    else
+                    {
+                        leftplat.transform.localScale = new Vector3(defaultXValue, defaultYValue, defaultZValue);
+                    }
+
                     leftplat.transform.position = GorillaTagger.Instance.leftHandTransform.position + leftOffset;
                     leftplat.transform.rotation = GorillaTagger.Instance.leftHandTransform.rotation;
                     leftplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
-                }
 
-                if (ConfigManager.platformConfig.Value)
-                {
-                    leftplat.GetComponent<Renderer>().material.color = newColor;
-                }
-                else
-                {
-                    leftplat.GetComponent<Renderer>().material.color = playerColor;
+                    if (ConfigManager.platformConfig.Value)
+                    {
+                        leftplat.GetComponent<Renderer>().material.color = newColor;
+                    }
+                    else
+                    {
+                        leftplat.GetComponent<Renderer>().material.color = playerColor;
+                    }
                 }
             }
             else
             {
                 if (leftplat != null)
                 {
-                    GameObject.Destroy(leftplat);
+                    Destroy(leftplat);
                     leftplat = null;
                 }
             }
@@ -72,26 +87,35 @@ namespace TheGorillaWatch.Mods
                 if (rightplat == null)
                 {
                     rightplat = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    rightplat.transform.localScale = new Vector3(0.02f, 0.270f, 0.353f);
+
+                    if (Player.Instance.scale != 1f)
+                    {
+                        rightplat.transform.localScale = new Vector3(defaultXValue / Player.Instance.scale, defaultYValue / Player.Instance.scale, defaultZValue / Player.Instance.scale);
+                    }
+                    else
+                    {
+                        rightplat.transform.localScale = new Vector3(defaultXValue, defaultYValue, defaultZValue);
+                    }
+
                     rightplat.transform.position = GorillaTagger.Instance.rightHandTransform.position + rightOffset;
                     rightplat.transform.rotation = GorillaTagger.Instance.rightHandTransform.rotation;
                     rightplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
-                }
 
-                if (ConfigManager.platformConfig.Value)
-                {
-                    rightplat.GetComponent<Renderer>().material.color = newColor;
-                }
-                else
-                {
-                    rightplat.GetComponent<Renderer>().material.color = playerColor;
+                    if (ConfigManager.platformConfig.Value)
+                    {
+                        rightplat.GetComponent<Renderer>().material.color = newColor;
+                    }
+                    else
+                    {
+                        rightplat.GetComponent<Renderer>().material.color = playerColor;
+                    }
                 }
             }
             else
             {
                 if (rightplat != null)
                 {
-                    GameObject.Destroy(rightplat);
+                    Destroy(rightplat);
                     rightplat = null;
                 }
             }

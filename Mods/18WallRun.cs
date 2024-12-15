@@ -10,8 +10,8 @@ namespace TheGorillaWatch.Mods
         public override string modName => "MonkeWallWalk";
         public override PageType pageType => PageType.Toggle;
 
-        private Vector3 walkPos = Vector3.zero;
-        private Vector3 walkNormal = Vector3.zero;
+        Vector3 walkPos = Vector3.zero;
+        Vector3 walkNormal = Vector3.zero;
 
         public override void OnUpdate()
         {

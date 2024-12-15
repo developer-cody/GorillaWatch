@@ -14,66 +14,135 @@ namespace TheGorillaWatch.Models
 
         public override void OnJoinedRoom()
         {
-            foreach (Player p in PhotonNetwork.PlayerListOthers)
+            try
             {
-                HandlePlayerInitialization(p);
+                foreach (Player p in PhotonNetwork.PlayerListOthers)
+                {
+                    try
+                    {
+                        HandlePlayerInitialization(p);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Error while handling player initialization for {p.NickName}: {e.Message}");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Something went wrong in OnJoinedRoom in GORILLAWATCH: {e.Message}");
             }
         }
 
-        // Helper method to handle player initialization
         private void HandlePlayerInitialization(Player p)
         {
-            if (p.CustomProperties.ContainsKey("GorillaWatch"))
+            try
             {
-                StartCoroutine(nameof(WaitForInit), p);
-            }
+                if (p.CustomProperties.ContainsKey("GorillaWatch"))
+                {
+                    try
+                    {
+                        StartCoroutine(nameof(WaitForInit), p);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Error starting WaitForInit coroutine for player {p.NickName}: {e.Message}");
+                    }
+                }
 
-            if (p.CustomProperties.TryGetValue("size", out object sizeValue) && sizeValue is float size)
+                if (p.CustomProperties.TryGetValue("size", out object sizeValue) && sizeValue is float size)
+                {
+                    try
+                    {
+                        UpdatePlayerSize(p, size);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Error updating size for player {p.NickName}: {e.Message}");
+                    }
+                }
+            }
+            catch (Exception e)
             {
-                UpdatePlayerSize(p, size);
+                Debug.LogError($"Error in HandlePlayerInitialization for player {p.NickName}: {e.Message}");
             }
         }
 
-        // Helper method to update player size
         private void UpdatePlayerSize(Player p, float size)
         {
-            var rig = GorillaGameManager.instance.FindPlayerVRRig(p);
-            if (rig != null)
+            try
             {
-                rig.transform.localScale = new Vector3(size, size, size);
+                var rig = GorillaGameManager.instance.FindPlayerVRRig(p);
+
+                if (rig != null)
+                {
+                    rig.transform.localScale = new Vector3(size, size, size);
+                }
+                else
+                {
+                    Debug.LogWarning($"Could not find VR rig for player: {p.NickName}");
+                }
             }
-            else
+            catch (Exception e)
             {
-                Debug.LogWarning($"Could not find VR rig for player: {p.NickName}");
+                Debug.LogError($"Error in UpdatePlayerSize for player {p.NickName}: {e.Message}");
             }
         }
 
         IEnumerator WaitForInit(Player p)
         {
             yield return new WaitForSeconds(0.7f);
-            InitializePlayerWatch(p);
+
+            try
+            {
+                InitializePlayerWatch(p);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error initializing watch for player {p.NickName}: {e.Message}");
+            }
         }
 
-        // Helper method to initialize the player's watch
         private void InitializePlayerWatch(Player p)
         {
-            var rig = GorillaGameManager.instance.FindPlayerVRRig(p);
-            if (rig == null) return;
+            try
+            {
+                var rig = GorillaGameManager.instance.FindPlayerVRRig(p);
+                if (rig == null) return;
 
-            var huntwatch = GameObject.Instantiate(GorillaTagger.Instance.offlineVRRig.huntComputer);
-            huntwatch.transform.SetParent(rig.leftHandTransform, false);
-            huntwatch.transform.localPosition = new Vector3(-0.6364f, 0.6427f, 0.0153f);
-            huntwatch.transform.localRotation = GorillaTagger.Instance.offlineVRRig.huntComputer.transform.localRotation;
+                var huntwatch = GameObject.Instantiate(GorillaTagger.Instance.offlineVRRig.huntComputer);
+                huntwatch.transform.SetParent(rig.leftHandTransform, false);
+                huntwatch.transform.localPosition = new Vector3(-0.6364f, 0.6427f, 0.0153f);
+                huntwatch.transform.localRotation = GorillaTagger.Instance.offlineVRRig.huntComputer.transform.localRotation;
 
-            PlayerList.Add(p, huntwatch);
-            Riglist.Add(p, rig.gameObject);
+                PlayerList.Add(p, huntwatch);
+                Riglist.Add(p, rig.gameObject);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error in InitializePlayerWatch for player {p.NickName}: {e.Message}");
+            }
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
-            if (newPlayer.CustomProperties.ContainsKey("GorillaWatch"))
+            try
             {
-                InitializePlayerWatch(newPlayer);
+                if (newPlayer.CustomProperties.ContainsKey("GorillaWatch"))
+                {
+                    try
+                    {
+                        InitializePlayerWatch(newPlayer);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Error initializing player watch for {newPlayer.NickName}: {e.Message}");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error in OnPlayerEnteredRoom for player {newPlayer.NickName}: {e.Message}");
             }
         }
 
@@ -83,56 +152,104 @@ namespace TheGorillaWatch.Models
             {
                 if (changedProps.ContainsKey("size") && !targetPlayer.IsLocal)
                 {
-                    UpdatePlayerSize(targetPlayer, (float)changedProps["size"]);
+                    try
+                    {
+                        UpdatePlayerSize(targetPlayer, (float)changedProps["size"]);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Error updating size for player {targetPlayer.NickName}: {e.Message}");
+                    }
                 }
             }
             catch (Exception e)
             {
-                Debug.LogError($"Error with player {targetPlayer.NickName}: {e.Message}");
+                Debug.LogError($"Error in OnPlayerPropertiesUpdate for player {targetPlayer.NickName}: {e.Message}");
             }
         }
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
         {
-            if (PlayerList.TryGetValue(otherPlayer, out var playerObject) && Riglist.TryGetValue(otherPlayer, out var rig))
+            try
             {
-                CleanUpPlayer(playerObject, rig, otherPlayer);
+                if (PlayerList.TryGetValue(otherPlayer, out var playerObject) && Riglist.TryGetValue(otherPlayer, out var rig))
+                {
+                    try
+                    {
+                        CleanUpPlayer(playerObject, rig, otherPlayer);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Error cleaning up player {otherPlayer.NickName}: {e.Message}");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error in OnPlayerLeftRoom for player {otherPlayer.NickName}: {e.Message}");
             }
         }
 
-        // Helper method to clean up when a player leaves
         private void CleanUpPlayer(GameObject playerObject, GameObject rig, Player player)
         {
-            if (rig != null)
-            {
-                rig.transform.localScale = Vector3.one;
-            }
-
-            Destroy(playerObject);
-            PlayerList.Remove(player);
-            Riglist.Remove(player);
-        }
-
-        public override void OnLeftRoom()
-        {
-            foreach (var rig in Riglist.Values)
+            try
             {
                 if (rig != null)
                 {
                     rig.transform.localScale = Vector3.one;
                 }
-            }
 
-            foreach (var watch in PlayerList.Values)
+                Destroy(playerObject);
+                PlayerList.Remove(player);
+                Riglist.Remove(player);
+            }
+            catch (Exception e)
             {
-                if (watch != null)
-                {
-                    Destroy(watch);
-                }
+                Debug.LogError($"Error in CleanUpPlayer for player {player.NickName}: {e.Message}");
             }
+        }
 
-            PlayerList.Clear();
-            Riglist.Clear();
+        public override void OnLeftRoom()
+        {
+            try
+            {
+                foreach (var rig in Riglist.Values)
+                {
+                    try
+                    {
+                        if (rig != null)
+                        {
+                            rig.transform.localScale = Vector3.one;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Error resetting rig scale in OnLeftRoom: {e.Message}");
+                    }
+                }
+
+                foreach (var watch in PlayerList.Values)
+                {
+                    try
+                    {
+                        if (watch != null)
+                        {
+                            Destroy(watch);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Error destroying watch in OnLeftRoom: {e.Message}");
+                    }
+                }
+
+                PlayerList.Clear();
+                Riglist.Clear();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error in OnLeftRoom: {e.Message}");
+            }
         }
     }
 }

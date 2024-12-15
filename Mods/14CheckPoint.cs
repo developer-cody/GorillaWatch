@@ -7,11 +7,13 @@ namespace TheGorillaWatch.Mods
 {
     class Checkpoint : Page
     {
-        public static GameObject CheckpointBox = null;
         private bool isTeleporting = false;
         private bool doActionPerformed = false;
+
         private float actionCooldownTime = 0.2f;
         private float lastActionTime = 0f;
+
+        public static GameObject CheckpointBox = null;
 
         public override string modName => "Checkpoint";
 

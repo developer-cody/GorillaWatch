@@ -6,12 +6,11 @@ namespace TheGorillaWatch.Mods
 {
     class HighGravity : Page
     {
+        public override List<string> incompatibleModNames => new List<string>() { "LowGravity", "NoGravity" };
+        public override string modName => "HighGravity";
+
         private const float HighGravityValue = -14.5f;
         private const float DefaultGravityValue = -9.8f;
-
-        public override List<string> incompatibleModNames => new List<string>() { "LowGravity", "NoGravity" };
-
-        public override string modName => "HighGravity";
 
         public override void Enable()
         {
