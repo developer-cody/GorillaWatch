@@ -205,6 +205,7 @@ namespace TheGorillaWatch
                                             }
                                         }
                                     }
+
                                     if (mods[counter].requiredModNames.Count > 0)
                                     {
                                         foreach (Page mod in mods)
@@ -228,11 +229,7 @@ namespace TheGorillaWatch
 
                         case PageType.notatogglebutnotinfo:
                             huntComputer.material.gameObject.SetActive(false);
-
-                            foreach (Page mod in mods)
-                            {
-                                mod.Enable();
-                            }
+                            mods[counter].Enable();
                             break;
                     }
                 }

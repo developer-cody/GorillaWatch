@@ -10,18 +10,28 @@ namespace TheGorillaWatch.Mods
         public override string modName => "VelocityFly";
         public override List<string> incompatibleModNames => new List<string> { "IronMonke", "DashMonk" };
 
-        private float flyForce = 10f;
+        private float flyForce = 1000f;
 
         public override void OnUpdate()
         {
-            if (ControllerInputPoller.instance.rightControllerPrimaryButton)
+            var scale = Player.Instance.scale;
+
+            if (scale < 1f)
             {
-                Player.Instance.transform.position += Player.Instance.headCollider.transform.forward * Time.deltaTime * flyForce;
+                flyForce = 250f;
+            }
+            else if (scale > 1f)
+            {
+                flyForce = 2000f;
+            }
+            else
+            {
+                flyForce = 1000f;
             }
 
-            if (Player.Instance.scale != 1f)
+            if (ControllerInputPoller.instance.rightControllerPrimaryButton)
             {
-                flyForce /= Player.Instance.scale;
+                Player.Instance.GetComponent<Rigidbody>().velocity = Player.Instance.headCollider.transform.forward * Time.deltaTime * flyForce;
             }
         }
 
