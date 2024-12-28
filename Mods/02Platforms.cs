@@ -17,10 +17,6 @@ namespace TheGorillaWatch.Mods
         Vector3 leftOffset = new Vector3(0f, -0.06f, 0f);
         Vector3 rightOffset = new Vector3(0f, -0.06f, 0f);
 
-        float defaultXValue = .02f;
-        float defaultYValue = .270f;
-        float defaultZValue = .353f;
-
         private float colorChangeSpeed = 1f;
         private float timeElapsed = 0f;
 
@@ -49,19 +45,11 @@ namespace TheGorillaWatch.Mods
                 if (leftplat == null)
                 {
                     leftplat = GameObject.CreatePrimitive(PrimitiveType.Cube);
-
-                    if (Player.Instance.scale != 1f)
-                    {
-                        leftplat.transform.localScale = new Vector3(defaultXValue / Player.Instance.scale, defaultYValue / Player.Instance.scale, defaultZValue / Player.Instance.scale);
-                    }
-                    else
-                    {
-                        leftplat.transform.localScale = new Vector3(defaultXValue, defaultYValue, defaultZValue);
-                    }
-
+                    leftplat.transform.localScale = new Vector3(.02f, .27f, .353f);
                     leftplat.transform.position = GorillaTagger.Instance.leftHandTransform.position + leftOffset;
                     leftplat.transform.rotation = GorillaTagger.Instance.leftHandTransform.rotation;
                     leftplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
+                    leftplat.AddComponent<GorillaSurfaceOverride>().overrideIndex = 0;
 
                     if (ConfigManager.platformConfig.Value)
                     {
@@ -87,19 +75,11 @@ namespace TheGorillaWatch.Mods
                 if (rightplat == null)
                 {
                     rightplat = GameObject.CreatePrimitive(PrimitiveType.Cube);
-
-                    if (Player.Instance.scale != 1f)
-                    {
-                        rightplat.transform.localScale = new Vector3(defaultXValue / Player.Instance.scale, defaultYValue / Player.Instance.scale, defaultZValue / Player.Instance.scale);
-                    }
-                    else
-                    {
-                        rightplat.transform.localScale = new Vector3(defaultXValue, defaultYValue, defaultZValue);
-                    }
-
+                    rightplat.transform.localScale = new Vector3(.02f, .27f, .353f);
                     rightplat.transform.position = GorillaTagger.Instance.rightHandTransform.position + rightOffset;
                     rightplat.transform.rotation = GorillaTagger.Instance.rightHandTransform.rotation;
                     rightplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
+                    rightplat.AddComponent<GorillaSurfaceOverride>().overrideIndex = 0;
 
                     if (ConfigManager.platformConfig.Value)
                     {

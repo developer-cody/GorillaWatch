@@ -13,7 +13,7 @@ using Valve.VR;
 
 namespace TheGorillaWatch
 {
-    [BepInPlugin(ModInfo.GUID, ModInfo.Name, ModInfo.Version)]
+    [BepInPlugin(Constants.GUID, Constants.Name, Constants.Version)]
     public class Mod : BaseUnityPlugin
     {
         bool IsSteamVR;
@@ -75,17 +75,17 @@ namespace TheGorillaWatch
             IsSteamVR = Traverse.Create(PlayFabAuthenticator.instance).Field("platform").GetValue().ToString().ToLower() == "steam";
             initialized = true;
 
-            foreach (Page page in mods)
-            {
-                page.Init();
-            }
-
             var hash = new ExitGames.Client.Photon.Hashtable();
-            hash.Add(ModInfo.Name, ModInfo.Version);
+            hash.Add(Constants.Name, Constants.Version);
             hash.Add("size", 1f);
             PhotonNetwork.LocalPlayer.CustomProperties = hash;
             PhotonNetwork.SetPlayerCustomProperties(hash);
             gameObject.AddComponent<NetworkingManager>();
+
+            foreach (Page page in mods)
+            {
+                page.Init();
+            }
         }
 
         void Update()
@@ -128,7 +128,7 @@ namespace TheGorillaWatch
                     ToggleWatch = ControllerInputPoller.instance.rightControllerIndexFloat > 0.5f;
                 }
 
-                if (ToggleWatch && !stickClickJustPressed && toggleableWatch) { watchOn = !watchOn;  stickClickJustPressed = true; }
+                if (ToggleWatch && !stickClickJustPressed && toggleableWatch) { watchOn = !watchOn; stickClickJustPressed = true; }
                 else if (!ToggleWatch) { stickClickJustPressed = false; }
 
                 foreach (var component in huntWatchComponents)
@@ -224,6 +224,15 @@ namespace TheGorillaWatch
                         case PageType.Information:
                             huntComputer.material.gameObject.SetActive(false);
                             huntComputer.text.text = mods[counter].info;
+                            break;
+
+                        case PageType.notatogglebutnotinfo:
+                            huntComputer.material.gameObject.SetActive(false);
+
+                            foreach (Page mod in mods)
+                            {
+                                mod.Enable();
+                            }
                             break;
                     }
                 }

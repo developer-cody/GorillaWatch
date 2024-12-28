@@ -110,7 +110,7 @@ namespace TheGorillaWatch.Models
                 var rig = GorillaGameManager.instance.FindPlayerVRRig(p);
                 if (rig == null) return;
 
-                var huntwatch = GameObject.Instantiate(GorillaTagger.Instance.offlineVRRig.huntComputer);
+                var huntwatch = Instantiate(GorillaTagger.Instance.offlineVRRig.huntComputer);
                 huntwatch.transform.SetParent(rig.leftHandTransform, false);
                 huntwatch.transform.localPosition = new Vector3(-0.6364f, 0.6427f, 0.0153f);
                 huntwatch.transform.localRotation = GorillaTagger.Instance.offlineVRRig.huntComputer.transform.localRotation;

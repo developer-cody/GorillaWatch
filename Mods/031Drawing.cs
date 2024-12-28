@@ -30,16 +30,7 @@ namespace TheGorillaWatch.Mods
                 DrawL = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                 DrawL.transform.position = Player.Instance.leftControllerTransform.position;
                 DrawL.transform.rotation = Player.Instance.leftControllerTransform.rotation;
-
-                if (Player.Instance.scale != 1f)
-                {
-                    DrawL.transform.localScale = new Vector3(1 / Player.Instance.scale, 1 / Player.Instance.scale, 1 / Player.Instance.scale);
-                }
-                else
-                {
-                    DrawL.transform.localScale = new Vector3(1, 1, 1);
-                }
-
+                DrawL.transform.localScale = new Vector3(.2f, .2f, .2f);
                 DrawL.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                 DrawL.GetComponent<Renderer>().material.color = Color.black;
                 Destroy(DrawL.GetComponent<Rigidbody>());

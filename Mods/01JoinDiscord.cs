@@ -7,7 +7,7 @@ namespace TheGorillaWatch.Mods
     class JoinDiscord : Page
     {
         public override string modName => "Join Discord";
-        string DiscordInvite = "https://discord.gg/E7kTnTYZEG";
+        string DiscordInvite = "https://discord.gg/xFxMUJcGsx";
 
         public override void Enable()
         {
@@ -23,6 +23,6 @@ namespace TheGorillaWatch.Mods
             }
         }
 
-        public override PageType pageType => PageType.Toggle;
+        public override PageType pageType => PageType.notatogglebutnotinfo;
     }
 }

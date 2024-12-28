@@ -10,8 +10,8 @@ namespace TheGorillaWatch.Mods
         public override string modName => "IronMonke";
         public override List<string> incompatibleModNames => new List<string> { "VelocityFly", "DashMonk" };
 
-        private const float forceMultiplier = 10f;
-        private const float vibrationStrengthDivisor = 50f;
+        private const float forceMultiplier = 8f;
+        private const float vibrationStrengthDivisor = 25f;
 
         public override void OnUpdate()
         {

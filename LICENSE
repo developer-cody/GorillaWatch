@@ -1,24 +1,37 @@
 # Foxtrot License
 
-Copyright (c) 2024 NeoTechGorillas
+**Copyright (c) 2024 by Cody**
 
 ## 1. Grant of License
-Subject to the terms and conditions of this license, you are granted a **non-exclusive, non-transferable license** to **download and use only the release binaries** (compiled or packaged files) made available in the "Releases" section of this repository.
+
+Subject to the terms and conditions set forth in this license agreement, you are hereby granted a **non-exclusive, non-transferable** license to **download, install, and use the release binaries** (compiled or packaged files) made available in the "Releases" section of this repository.
+
+This license allows you to use the release binaries for **personal, non-commercial** purposes only.
 
 ## 2. Restrictions
-You may **not**:
-- Modify, distribute, or compile the source code in this repository.
-- Reverse engineer, decompile, or disassemble the source code or any part of this repository.
-- Redistribute the source code or any compiled versions of the repository, either in original or modified form.
-- Use the source code for any commercial purposes, including but not limited to resale, redistribution, or incorporation into other projects.
 
-You are **only allowed** to use the release binaries provided through the repository for **personal, non-commercial** purposes.
+You **may not**:
+
+- Modify, distribute, or compile the source code found in this repository.
+- Reverse engineer, decompile, or disassemble the source code or any part of the repository.
+- Redistribute the source code, compiled binaries, or any modified versions of either, in any form.
+- Use the source code or binaries for **commercial** purposes, including but not limited to resale, redistribution, or incorporation into other commercial projects.
 
 ## 3. No Warranty
-The software, including but not limited to the release binaries, is provided **"as-is"**, without any warranty of any kind, either express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, or non-infringement.
+
+The software, including but not limited to the release binaries, is provided **"as-is"** and without warranty of any kind, either express or implied. This includes but is not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
+
+The copyright holder does not guarantee that the software will meet your requirements, or that it will be error-free, secure, or reliable.
 
 ## 4. Termination
-If you violate any of the terms of this license, your rights to use the repository and its release binaries will be immediately terminated without notice.
+
+This license is effective until terminated. The copyright holder reserves the right to terminate your license to use the software at any time, with or without cause, if you breach any terms of this agreement. Upon termination, you must immediately cease using the software and destroy all copies in your possession.
 
 ## 5. Limitation of Liability
-In no event shall the copyright holder or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.
+
+In no event shall the copyright holder or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption), regardless of the cause or theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising out of your use of this software, even if the copyright holder has been advised of the possibility of such damages.
+
+## 6. General Provisions
+
+- This license agreement is governed by the laws of the jurisdiction in which the copyright holder resides.
+- If any provision of this license is found to be invalid or unenforceable, the remainder of the license will remain in full effect.

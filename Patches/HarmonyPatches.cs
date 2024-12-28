@@ -7,7 +7,7 @@ namespace TheGorillaWatch.Patches
 {
     public class HarmonyPatches
     {
-        private static readonly Harmony instance = new Harmony(ModInfo.GUID);
+        private static readonly Harmony instance = new Harmony(Constants.GUID);
 
         public static bool IsPatched { get; private set; }
 
@@ -17,10 +17,10 @@ namespace TheGorillaWatch.Patches
 
             try
             {
-                Debug.Log($"{ModInfo.Name} is Applying Harmony patches...");
+                Debug.Log($"{Constants.Name} is Applying Harmony patches...");
                 instance.PatchAll(Assembly.GetExecutingAssembly());
                 IsPatched = true;
-                Debug.Log($"Harmony patches applied successfully, in {ModInfo.Name}.");
+                Debug.Log($"Harmony patches applied successfully, in {Constants.Name}.");
             }
             catch (Exception ex)
             {
