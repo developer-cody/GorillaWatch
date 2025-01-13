@@ -1,5 +1,4 @@
-﻿using GorillaLocomotion;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TheGorillaWatch.Models;
 using UnityEngine;
 
@@ -7,7 +6,7 @@ namespace TheGorillaWatch.Mods
 {
     class Frozone : Page
     {
-        public override string modName => "Frozone";
+        public override string modName => "FrozoneGuy";
         public override List<string> incompatibleModNames => new List<string>() { "PlatformGuy" };
 
         GameObject FrozoneL;
@@ -37,16 +36,7 @@ namespace TheGorillaWatch.Mods
             if (ControllerInputPoller.instance.leftGrab)
             {
                 FrozoneL = GameObject.CreatePrimitive(PrimitiveType.Cube);
-
-                if (Player.Instance.scale != 1f)
-                {
-                    FrozoneL.transform.localScale = new Vector3(defaultXValue / Player.Instance.scale, defaultYValue / Player.Instance.scale, defaultZValue / Player.Instance.scale);
-                }
-                else
-                {
-                    FrozoneL.transform.localScale = new Vector3(defaultXValue, defaultYValue, defaultZValue);
-                }
-
+                FrozoneL.transform.localScale = new Vector3(.02f, .27f, .353f);
                 FrozoneL.transform.position = GorillaTagger.Instance.leftHandTransform.position + leftOffset;
                 FrozoneL.transform.rotation = GorillaTagger.Instance.leftHandTransform.rotation;
                 FrozoneL.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
@@ -58,16 +48,7 @@ namespace TheGorillaWatch.Mods
             if (ControllerInputPoller.instance.rightGrab)
             {
                 FrozoneR = GameObject.CreatePrimitive(PrimitiveType.Cube);
-
-                if (Player.Instance.scale != 1f)
-                {
-                    FrozoneR.transform.localScale = new Vector3(defaultXValue / Player.Instance.scale, defaultYValue / Player.Instance.scale, defaultZValue / Player.Instance.scale);
-                }
-                else
-                {
-                    FrozoneR.transform.localScale = new Vector3(defaultXValue, defaultYValue, defaultZValue);
-                }
-
+                FrozoneR.transform.localScale = new Vector3(.02f, .27f, .353f);
                 FrozoneR.transform.position = GorillaTagger.Instance.rightHandTransform.position + rightOffset;
                 FrozoneR.transform.rotation = GorillaTagger.Instance.rightHandTransform.rotation;
                 FrozoneR.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");

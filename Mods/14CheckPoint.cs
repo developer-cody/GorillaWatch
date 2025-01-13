@@ -52,7 +52,7 @@ namespace TheGorillaWatch.Mods
                 CheckpointBox.transform.position = GorillaTagger.Instance.leftHandTransform.position;
             }
 
-            if (ControllerInputPoller.instance.rightGrab && CheckpointBox != null && !isTeleporting && CheckpointBox.transform.position != Vector3.zero)
+            if (ControllerInputPoller.instance.rightGrab && CheckpointBox != null && !isTeleporting && CheckpointBox.transform.localPosition != Vector3.zero)
             {
                 if (Time.time - lastActionTime >= actionCooldownTime)
                 {

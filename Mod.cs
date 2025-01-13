@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TheGorillaWatch.Configuration;
 using TheGorillaWatch.Models;
+using TheGorillaWatch.Patches;
 using UnityEngine;
 using UnityEngine.XR;
 using Valve.VR;
@@ -86,6 +87,8 @@ namespace TheGorillaWatch
             {
                 page.Init();
             }
+
+            HarmonyPatches.ApplyHarmonyPatches();
         }
 
         void Update()

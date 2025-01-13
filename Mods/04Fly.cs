@@ -14,24 +14,10 @@ namespace TheGorillaWatch.Mods
 
         public override void OnUpdate()
         {
-            var scale = Player.Instance.scale;
-
-            if (scale < 1f)
-            {
-                flyForce = 250f;
-            }
-            else if (scale > 1f)
-            {
-                flyForce = 2000f;
-            }
-            else
-            {
-                flyForce = 1000f;
-            }
-
             if (ControllerInputPoller.instance.rightControllerPrimaryButton)
             {
-                Player.Instance.GetComponent<Rigidbody>().velocity = Player.Instance.headCollider.transform.forward * Time.deltaTime * flyForce;
+                Player.Instance.GetComponent<Rigidbody>().velocity =
+                    Player.Instance.headCollider.transform.forward * Time.deltaTime * flyForce * Player.Instance.scale;
             }
         }
 

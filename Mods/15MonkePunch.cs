@@ -1,4 +1,5 @@
-﻿using TheGorillaWatch.Models;
+﻿using GorillaLocomotion;
+using TheGorillaWatch.Models;
 using UnityEngine;
 
 namespace TheGorillaWatch.Mods
@@ -26,7 +27,7 @@ namespace TheGorillaWatch.Mods
 
                     if (rightDistance < .3f)
                     {
-                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity +=
+                        Player.Instance.GetComponent<Rigidbody>().velocity +=
                             Vector3.Normalize(rightHandPos - lastRight[index]) * 5f;
                     }
                     lastRight[index] = rightHandPos;
@@ -37,7 +38,7 @@ namespace TheGorillaWatch.Mods
 
                     if (leftDistance < .3f)
                     {
-                        GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity +=
+                        Player.Instance.GetComponent<Rigidbody>().velocity +=
                             Vector3.Normalize(leftHandPos - lastLeft[index]) * 5f;
                     }
                     lastLeft[index] = leftHandPos;
