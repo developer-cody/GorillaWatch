@@ -4,7 +4,7 @@
     {
         public const string GUID = "com.SillyCody.gorillatag.gorillawatch";
         public const string Name = "GorillaWatch";
-        public const string Version = "2.3.7";
+        public const string Version = "2.3.8";
 
         /*
          * Project History:

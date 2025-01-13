@@ -61,6 +61,12 @@ Welcome to *GorillaWatch*, the ultimate mod designed to elevate your **Gorilla T
 ### **AirSwim**
 - **Description:** Glide through the air with the smoothness and freedom of swimming. Move through the space as if you were floating, turning the sky into your playground.
 
+### **NoSlip**
+- **Description:** NoSlip is a page in the mod that makes the surfaces have no slip!!
+
+### **SlipMonk**
+- **Description:** SlipMonk is a page in the mod that makes the surfaces slippery!
+
 ---
 
 ## **Join the Fun!**

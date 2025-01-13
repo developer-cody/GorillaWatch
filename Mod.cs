@@ -239,21 +239,16 @@ namespace TheGorillaWatch
             }
             else if (!reset)
             {
-                foreach (Page mod in mods) { mod.Disable(); }
-
-                foreach (var component in huntWatchComponents)
-                {
-                    component.SetActive(false);
-                }
-
-                foreach (var component in huntWatchComponents)
-                {
-                    component.SetActive(false);
-                }
-
+                // Disabling the mod
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(false);
                 huntComputer.enabled = false;
+                foreach (var component in huntWatchComponents)
+                {
+                    component.SetActive(false);
+                }
 
+                // Disabling all mods
+                foreach (Page mod in mods) { mod.Disable(); }
                 reset = true;
             }
         }
