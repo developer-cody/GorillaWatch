@@ -11,22 +11,27 @@ namespace TheGorillaWatch.Mods
         public override List<string> incompatibleModNames => new List<string>() { "VelocityFly", "IronMonke" };
         public override PageType pageType => PageType.Toggle;
 
-        private bool wasPressed;
-        private float flyForce = 1000f;
+        private bool buttonWasPressed = false;
+        private float dashForce = 10f;
 
         public override void OnUpdate()
         {
             base.OnUpdate();
 
-            if (ControllerInputPoller.instance.rightControllerPrimaryButton && !wasPressed)
+            bool isPressed = ControllerInputPoller.instance.rightControllerPrimaryButton;
+
+            if (isPressed && !buttonWasPressed)
             {
-                Player.Instance.GetComponent<Rigidbody>().velocity =
-                    Player.Instance.headCollider.transform.forward * Time.deltaTime * flyForce * Player.Instance.scale;
-                wasPressed = true;
+                Rigidbody playerRigidbody = Player.Instance.GetComponent<Rigidbody>();
+                Vector3 dashDirection = Player.Instance.headCollider.transform.forward.normalized;
+
+                playerRigidbody.velocity += dashDirection * dashForce * Player.Instance.scale;
+
+                buttonWasPressed = true; 
             }
-            else
+            else if (!isPressed)
             {
-                wasPressed = false;
+                buttonWasPressed = false;
             }
         }
     }

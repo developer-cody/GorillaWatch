@@ -12,10 +12,6 @@ namespace TheGorillaWatch.Mods
         GameObject FrozoneL;
         GameObject FrozoneR;
 
-        float defaultXValue = .02f;
-        float defaultYValue = .270f;
-        float defaultZValue = .353f;
-
         public override void Disable()
         {
             base.Disable();

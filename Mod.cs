@@ -5,6 +5,7 @@ using Photon.Pun;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using TheGorillaWatch.Configuration;
 using TheGorillaWatch.Models;
 using TheGorillaWatch.Patches;
@@ -231,8 +232,13 @@ namespace TheGorillaWatch
                             break;
 
                         case PageType.notatogglebutnotinfo:
+                            huntComputer.text.text = mods[counter].modName + "\n" + mods[counter].info;
                             huntComputer.material.gameObject.SetActive(false);
-                            mods[counter].Enable();
+
+                            if (ToggleMod)
+                            {
+                                mods[counter].OnUpdate();
+                            }
                             break;
                     }
                 }
