@@ -1,4 +1,5 @@
-﻿using GorillaNetworking;
+﻿using GorillaLocomotion;
+using GorillaNetworking;
 using Photon.Pun;
 using System.Collections.Generic;
 using TheGorillaWatch.Configuration;
@@ -17,16 +18,25 @@ namespace TheGorillaWatch.Mods
             hash1.AddOrUpdate("size", ConfigManager.bigMonkersSize.Value);
             PhotonNetwork.SetPlayerCustomProperties(hash1);
         }
+
         public override void Disable()
         {
             base.Disable();
             var hash2 = new ExitGames.Client.Photon.Hashtable();
             hash2.AddOrUpdate("size", 1f);
             PhotonNetwork.SetPlayerCustomProperties(hash2);
+
+            ChangeScale(1f);
         }
+
         public override void OnUpdate()
         {
-            GorillaLocomotion.Player.Instance.scale = ConfigManager.bigMonkersSize.Value;
+            ChangeScale(ConfigManager.bigMonkersSize.Value);
+        }
+
+        public static void ChangeScale(float scale)
+        {
+            typeof(Player).GetField("nativeScale", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(Player.Instance, scale);
         }
 
         public override PageType pageType => PageType.Toggle;

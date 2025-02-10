@@ -5,7 +5,6 @@ using Photon.Pun;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using TheGorillaWatch.Configuration;
 using TheGorillaWatch.Models;
 using TheGorillaWatch.Patches;
@@ -245,7 +244,6 @@ namespace TheGorillaWatch
             }
             else if (!reset)
             {
-                // Disabling the mod
                 GorillaTagger.Instance.offlineVRRig.EnableHuntWatch(false);
                 huntComputer.enabled = false;
                 foreach (var component in huntWatchComponents)
@@ -253,7 +251,6 @@ namespace TheGorillaWatch
                     component.SetActive(false);
                 }
 
-                // Disabling all mods
                 foreach (Page mod in mods) { mod.Disable(); }
                 reset = true;
             }

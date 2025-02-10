@@ -9,7 +9,7 @@ namespace TheGorillaWatch.Mods
     {
         public override string modName => "Join <color=blue>Discord</color>!";
         public override string info => "Click <color=red>LEFT JOYSTICK</color> to join!";
-        private readonly string DiscordInvite = "https://discord.gg/xFxMUJcGsx";
+        private readonly string DiscordInvite = "https://discord.gg/jsyWpJEkQ6";
         private static bool isDiscordOpened = false;
 
         public async override void OnUpdate()
