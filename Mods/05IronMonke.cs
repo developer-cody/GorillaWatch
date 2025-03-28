@@ -31,12 +31,12 @@ namespace TheGorillaWatch.Mods
         private void ApplyForce(Transform handTransform, bool isLeftHand)
         {
             Vector3 forceDirection = isLeftHand ? -handTransform.right : handTransform.right;
-            Player.Instance.bodyCollider.attachedRigidbody.AddForce(forceMultiplier * Player.Instance.scale * forceDirection, ForceMode.Acceleration);
+            GTPlayer.Instance.bodyCollider.attachedRigidbody.AddForce(forceMultiplier * GTPlayer.Instance.scale * forceDirection, ForceMode.Acceleration);
         }
 
         private void TriggerVibration(bool isLeftHand)
         {
-            float vibrationStrength = GorillaTagger.Instance.tapHapticStrength / vibrationStrengthDivisor * Player.Instance.bodyCollider.attachedRigidbody.velocity.magnitude;
+            float vibrationStrength = GorillaTagger.Instance.tapHapticStrength / vibrationStrengthDivisor * GTPlayer.Instance.bodyCollider.attachedRigidbody.velocity.magnitude;
             GorillaTagger.Instance.StartVibration(isLeftHand, vibrationStrength, GorillaTagger.Instance.tapHapticDuration);
         }
 

@@ -10,15 +10,15 @@ namespace TheGorillaWatch.Mods
         public override void OnUpdate()
         {
             base.OnUpdate();
-            Player.Instance.jumpMultiplier = 1.3f;
-            Player.Instance.maxJumpSpeed = 8.5f;
+            GTPlayer.Instance.jumpMultiplier = 1.3f;
+            GTPlayer.Instance.maxJumpSpeed = 8.5f;
         }
 
         public override void Disable()
         {
             base.Disable();
-            Player.Instance.jumpMultiplier = 1.1f;
-            Player.Instance.maxJumpSpeed = 6.5f;
+            GTPlayer.Instance.jumpMultiplier = 1.1f;
+            GTPlayer.Instance.maxJumpSpeed = 6.5f;
         }
 
         public override PageType pageType => PageType.Toggle;

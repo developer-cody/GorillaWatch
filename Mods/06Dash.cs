@@ -22,10 +22,10 @@ namespace TheGorillaWatch.Mods
 
             if (isPressed && !buttonWasPressed)
             {
-                Rigidbody playerRigidbody = Player.Instance.GetComponent<Rigidbody>();
-                Vector3 dashDirection = Player.Instance.headCollider.transform.forward.normalized;
+                Rigidbody playerRigidbody = GTPlayer.Instance.GetComponent<Rigidbody>();
+                Vector3 dashDirection = GTPlayer.Instance.headCollider.transform.forward.normalized;
 
-                playerRigidbody.velocity += dashDirection * dashForce * Player.Instance.scale;
+                playerRigidbody.velocity += dashDirection * dashForce * GTPlayer.Instance.scale;
 
                 buttonWasPressed = true; 
             }

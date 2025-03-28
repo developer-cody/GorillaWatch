@@ -14,19 +14,19 @@ namespace TheGorillaWatch.Mods
         public override void Disable()
         {
             base.Disable();
-            bounce = Player.Instance.bodyCollider.material.bounciness;
-            PMCombine = Player.Instance.bodyCollider.material.bounceCombine;
-            Player.Instance.bodyCollider.material.bounceCombine = PhysicMaterialCombine.Maximum;
-            Player.Instance.bodyCollider.material.bounciness = 0f;
+            bounce = GTPlayer.Instance.bodyCollider.material.bounciness;
+            PMCombine = GTPlayer.Instance.bodyCollider.material.bounceCombine;
+            GTPlayer.Instance.bodyCollider.material.bounceCombine = PhysicMaterialCombine.Maximum;
+            GTPlayer.Instance.bodyCollider.material.bounciness = 0f;
         }
 
         public override void Enable()
         {
             base.Enable();
-            bounce = Player.Instance.bodyCollider.material.bounciness;
-            PMCombine = Player.Instance.bodyCollider.material.bounceCombine;
-            Player.Instance.bodyCollider.material.bounceCombine = PhysicMaterialCombine.Maximum;
-            Player.Instance.bodyCollider.material.bounciness = 0.95f;
+            bounce = GTPlayer.Instance.bodyCollider.material.bounciness;
+            PMCombine = GTPlayer.Instance.bodyCollider.material.bounceCombine;
+            GTPlayer.Instance.bodyCollider.material.bounceCombine = PhysicMaterialCombine.Maximum;
+            GTPlayer.Instance.bodyCollider.material.bounciness = 0.95f;
         }
 
         public override PageType pageType => PageType.Toggle;

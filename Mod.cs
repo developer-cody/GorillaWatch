@@ -229,16 +229,6 @@ namespace TheGorillaWatch
                             huntComputer.material.gameObject.SetActive(false);
                             huntComputer.text.text = mods[counter].info;
                             break;
-
-                        case PageType.notatogglebutnotinfo:
-                            huntComputer.text.text = mods[counter].modName + "\n" + mods[counter].info;
-                            huntComputer.material.gameObject.SetActive(false);
-
-                            if (ToggleMod)
-                            {
-                                mods[counter].OnUpdate();
-                            }
-                            break;
                     }
                 }
             }

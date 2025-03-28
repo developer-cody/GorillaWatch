@@ -4,7 +4,7 @@ using TheGorillaWatch.Mods;
 
 namespace TheGorillaWatch.Patches
 {
-    [HarmonyPatch(typeof(Player), "GetSlidePercentage")]
+    [HarmonyPatch(typeof(GTPlayer), "GetSlidePercentage")]
     public class SlipPatches
     {
         static void Postfix(ref float __result)

@@ -37,7 +37,7 @@ namespace TheGorillaWatch.Mods
 
         public static void ChangeScale(float scale)
         {
-            typeof(Player).GetField("nativeScale", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(Player.Instance, scale);
+            typeof(GTPlayer).GetField("nativeScale", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(GTPlayer.Instance, scale);
         }
 
         public override PageType pageType => PageType.Toggle;

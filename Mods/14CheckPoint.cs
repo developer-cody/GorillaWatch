@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using GorillaLocomotion;
 
 namespace TheGorillaWatch.Mods
 {
@@ -101,7 +102,7 @@ namespace TheGorillaWatch.Mods
             isTeleporting = true;
             UpdateCheckpointColor(Color.red);
 
-            GorillaLocomotion.Player.Instance.headCollider.transform.position = CheckpointBox.transform.position;
+            GTPlayer.Instance.headCollider.transform.position = CheckpointBox.transform.position;
 
             GorillaTagger.Instance.StartCoroutine(TeleportColorRoutine());
         }

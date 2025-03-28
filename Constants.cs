@@ -4,6 +4,6 @@
     {
         public const string GUID = "com.SillyCody.gorillatag.gorillawatch";
         public const string Name = "GorillaWatch";
-        public const string Version = "2.4.0";
+        public const string Version = "2.5.0";
     }
 }

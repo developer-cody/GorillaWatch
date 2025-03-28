@@ -29,7 +29,7 @@ namespace TheGorillaWatch.Mods
             }
             else
             {
-                Player.Instance.audioManager.UnsetMixerSnapshot(0.1f);
+                GTPlayer.Instance.audioManager.UnsetMixerSnapshot(0.1f);
                 Swim.transform.position = GorillaTagger.Instance.headCollider.transform.position + new Vector3(0f, 200f, 0f);
             }
         }
@@ -39,7 +39,7 @@ namespace TheGorillaWatch.Mods
             base.OnUpdate();
             if (Swim != null)
             {
-                Player.Instance.audioManager.UnsetMixerSnapshot(0.1f);
+                GTPlayer.Instance.audioManager.UnsetMixerSnapshot(0.1f);
                 Swim.transform.position = GorillaTagger.Instance.headCollider.transform.position + new Vector3(0f, 200f, 0f);
             }
         }

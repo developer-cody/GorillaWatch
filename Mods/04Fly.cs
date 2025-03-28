@@ -16,8 +16,8 @@ namespace TheGorillaWatch.Mods
         {
             if (ControllerInputPoller.instance.rightControllerPrimaryButton)
             {
-                Player.Instance.GetComponent<Rigidbody>().velocity =
-                    Player.Instance.headCollider.transform.forward * Time.deltaTime * flyForce * Player.Instance.scale;
+                GTPlayer.Instance.GetComponent<Rigidbody>().velocity =
+                    GTPlayer.Instance.headCollider.transform.forward * Time.deltaTime * flyForce * GTPlayer.Instance.scale;
             }
         }
 
