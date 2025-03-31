@@ -11,7 +11,7 @@ namespace TheGorillaWatch.Mods
         public override void Enable()
         {
             base.Enable();
-            MonkeWallWalkEnabled = false;
+            MonkeWallWalkEnabled = true;
         }
 
         public override void Disable()
