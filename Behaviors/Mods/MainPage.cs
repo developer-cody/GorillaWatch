@@ -1,18 +1,17 @@
 ﻿using System;
-using TheGorillaWatch.Models;
+using TheGorillaWatch.Behaviors.Page;
 
-namespace TheGorillaWatch.Mods
+namespace TheGorillaWatch.Behaviors.Mods
 {
-    class MainPage : Page
+    class MainPage : ModPage
     {
-        public override string modName => "GorillaWatchMainInfoPageWABSHUWAJSD";
+        public override string modName => "MainPage";
         public override string info => $"\n<color=black>Gorilla</color>Watch!\nTime: {DateTime.Now:HH:mm:ss}";
         public override PageType pageType => PageType.Information;
 
         public override void OnUpdate()
         {
             base.OnUpdate();
-
             info = $" <color=black>Gorilla</color>Watch!\n{DateTime.Now:HH:mm:ss}";
         }
     }

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using TheGorillaWatch.Models;
+using TheGorillaWatch.Behaviors.Page;
 using UnityEngine;
 
-namespace TheGorillaWatch.Mods
+namespace TheGorillaWatch.Behaviors.Mods
 {
-    class Noclip : Page
+    class Noclip : ModPage
     {
         public override List<string> requiredModNames => new List<string>() { "PlatformGuy" };
         public override string modName => "Noclip";

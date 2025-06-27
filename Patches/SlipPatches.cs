@@ -1,6 +1,6 @@
 ﻿using GorillaLocomotion;
 using HarmonyLib;
-using TheGorillaWatch.Mods;
+using TheGorillaWatch.Behaviors.Mods;
 
 namespace TheGorillaWatch.Patches
 {
@@ -9,15 +9,8 @@ namespace TheGorillaWatch.Patches
     {
         static void Postfix(ref float __result)
         {
-            if (SlipMonk.SlipMonkEnabled)
-            {
-                __result = 1f;
-            }
-
-            if (NoSlip.NoSlipEnabled)
-            {
-                __result = 0f;
-            }
+            if (SlipMonk.SlipMonkEnabled) __result = 1f; 
+            if (NoSlip.NoSlipEnabled)  __result = 0f;
         }
     }
 }

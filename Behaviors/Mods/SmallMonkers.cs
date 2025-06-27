@@ -2,20 +2,21 @@
 using GorillaNetworking;
 using Photon.Pun;
 using System.Collections.Generic;
+using TheGorillaWatch.Behaviors.Page;
 using TheGorillaWatch.Configuration;
-using TheGorillaWatch.Models;
 
-namespace TheGorillaWatch.Mods
+namespace TheGorillaWatch.Behaviors.Mods
 {
-    class BigMonkers : Page
+    class SmallMonkers : ModPage
     {
-        public override string modName => "BigMonkers";
-        public override List<string> incompatibleModNames => new List<string>() { "SmallMonkers" };
+        public override string modName => "SmallMonkers";
+        public override List<string> incompatibleModNames => new List<string>() { "BigMonkers" };
+
         public override void Enable()
         {
             base.Enable();
             var hash1 = new ExitGames.Client.Photon.Hashtable();
-            hash1.AddOrUpdate("size", ConfigManager.bigMonkersSize.Value);
+            hash1.AddOrUpdate("size", ConfigManager.smallMonkersSize.Value);
             PhotonNetwork.SetPlayerCustomProperties(hash1);
         }
 
@@ -31,7 +32,7 @@ namespace TheGorillaWatch.Mods
 
         public override void OnUpdate()
         {
-            ChangeScale(ConfigManager.bigMonkersSize.Value);
+            ChangeScale(ConfigManager.smallMonkersSize.Value);
         }
 
         public static void ChangeScale(float scale)

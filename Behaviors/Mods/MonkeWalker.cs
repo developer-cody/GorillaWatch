@@ -1,9 +1,9 @@
-﻿using TheGorillaWatch.Models;
+﻿using TheGorillaWatch.Behaviors.Page;
 using UnityEngine;
 
-namespace TheGorillaWatch.Mods
+namespace TheGorillaWatch.Behaviors.Mods
 {
-    class MonkeWalker : Page
+    class MonkeWalker : ModPage
     {
         public override string modName => "MonkeWalker";
         private GameObject playerColliderParent;

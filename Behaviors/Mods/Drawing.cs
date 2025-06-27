@@ -1,10 +1,10 @@
 ﻿using GorillaLocomotion;
-using TheGorillaWatch.Models;
+using TheGorillaWatch.Behaviors.Page;
 using UnityEngine;
 
-namespace TheGorillaWatch.Mods
+namespace TheGorillaWatch.Behaviors.Mods
 {
-    class Drawing : Page
+    class Drawing : ModPage
     {
         public override string modName => "DrawingGuy";
 

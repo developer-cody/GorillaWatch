@@ -1,11 +1,11 @@
 ﻿using GorillaLocomotion;
 using System.Collections.Generic;
-using TheGorillaWatch.Models;
+using TheGorillaWatch.Behaviors.Page;
 using UnityEngine;
 
-namespace TheGorillaWatch.Mods
+namespace TheGorillaWatch.Behaviors.Mods
 {
-    class IronMonke : Page
+    class IronMonke : ModPage
     {
         public override string modName => "IronMonke";
         public override List<string> incompatibleModNames => new List<string> { "VelocityFly", "DashMonk" };

@@ -1,12 +1,11 @@
-﻿using GorillaLocomotion;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TheGorillaWatch.Behaviors.Page;
 using TheGorillaWatch.Configuration;
-using TheGorillaWatch.Models;
 using UnityEngine;
 
-namespace TheGorillaWatch.Mods
+namespace TheGorillaWatch.Behaviors.Mods
 {
-    class Platforms : Page
+    class Platforms : ModPage
     {
         public override string modName => "PlatformGuy";
         public override List<string> incompatibleModNames => new List<string>() { "FrozoneGuy" };

@@ -48,7 +48,7 @@
       <HintPath>$(BepInExAssemblyPath)\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.Harmony">
-      <HintPath>$(BepInExAssemblyPath)\0</HintPath>
+      <HintPath>..\..\SteamLibrary\steamapps\common\Gorilla Tag\BepInEx\core\BepInEx.Harmony.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.Preloader">
       <HintPath>$(BepInExAssemblyPath)\BepInEx.Preloader.dll</HintPath>
@@ -187,9 +187,6 @@
     </Reference>
     <Reference Include="NavMeshComponents">
       <HintPath>$(GameAssemblyPath)\NavMeshComponents.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>$(BepInExAssemblyPath)\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json.UnityConverters">
       <HintPath>$(GameAssemblyPath)\Newtonsoft.Json.UnityConverters.dll</HintPath>

@@ -1,9 +1,9 @@
 ﻿using GorillaLocomotion;
-using TheGorillaWatch.Models;
+using TheGorillaWatch.Behaviors.Page;
 
-namespace TheGorillaWatch.Mods
+namespace TheGorillaWatch.Behaviors.Mods
 {
-    class SpeedyMonk : Page
+    class SpeedyMonk : ModPage
     {
         public override string modName => "SpeedyMonk";
 

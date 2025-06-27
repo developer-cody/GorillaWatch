@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using TheGorillaWatch.Models;
+using TheGorillaWatch.Behaviors.Page;
 
-namespace TheGorillaWatch.Mods
+namespace TheGorillaWatch.Behaviors.Mods
 {
-    class NoSlip : Page
+    class NoSlip : ModPage
     {
         public override string modName => "NoSlip";
         public override List<string> incompatibleModNames => new List<string> { "SlipMonk" };
