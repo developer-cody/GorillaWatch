@@ -2,8 +2,8 @@
 using TheGorillaWatch.Behaviors.Page;
 using TheGorillaWatch.Configuration;
 using UnityEngine;
-using Valve.VR;
 using UnityEngine.XR;
+using Valve.VR;
 
 namespace TheGorillaWatch.Behaviors.MainComponents
 {

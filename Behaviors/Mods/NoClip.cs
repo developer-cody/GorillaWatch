@@ -22,7 +22,7 @@ namespace TheGorillaWatch.Behaviors.Mods
             ToggleColliders(true);
         }
 
-        private void ToggleColliders(bool enable)
+        public static void ToggleColliders(bool enable)
         {
             try
             {

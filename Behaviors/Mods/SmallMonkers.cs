@@ -30,15 +30,9 @@ namespace TheGorillaWatch.Behaviors.Mods
             ChangeScale(1f);
         }
 
-        public override void OnUpdate()
-        {
-            ChangeScale(ConfigManager.smallMonkersSize.Value);
-        }
+        public override void OnUpdate() => ChangeScale(ConfigManager.smallMonkersSize.Value);
 
-        public static void ChangeScale(float scale)
-        {
-            typeof(GTPlayer).GetField("nativeScale", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(GTPlayer.Instance, scale);
-        }
+        public static void ChangeScale(float scale) => typeof(GTPlayer).GetField("nativeScale", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(GTPlayer.Instance, scale);
 
         public override PageType pageType => PageType.Toggle;
     }

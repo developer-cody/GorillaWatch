@@ -5,6 +5,7 @@
         public static readonly string[] OrderedModNames = new string[]
         {
             "MainPage",
+            "MadeBy",
             "Platforms",
             "Frozone",
             "Drawing",

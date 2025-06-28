@@ -12,6 +12,7 @@ namespace TheGorillaWatch.Configuration
         public static ConfigEntry<bool> platformConfig;
         public static ConfigEntry<float> bigMonkersSize;
         public static ConfigEntry<float> smallMonkersSize;
+        public static ConfigEntry<int> flyType;
 
         private static ConfigFile config;
 
@@ -41,6 +42,9 @@ namespace TheGorillaWatch.Configuration
 
             smallMonkersSize = config.Bind("Settings", "How Small Do You Want SmallMonkers to Be?", 0.1f,
                 "Choose how small you want the scale to be when SmallMonkers is enabled.");
+            
+            flyType = config.Bind("Settings", "Which type of fly would you like?", 1,
+                "Enter 1, for the normal fly, or 2 for joystick fly.");
 
             if (smallMonkersSize.Value >= 1f) smallMonkersSize.Value = 0.1f;
             else if (smallMonkersSize.Value < 0.1f) smallMonkersSize.Value = 0.1f;
