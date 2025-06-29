@@ -1,8 +1,8 @@
-﻿using Photon.Pun;
-using Photon.Realtime;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 namespace TheGorillaWatch.Models
@@ -14,57 +14,43 @@ namespace TheGorillaWatch.Models
 
         public override void OnJoinedRoom()
         {
-            try
+            foreach (Player p in PhotonNetwork.PlayerListOthers)
             {
-                foreach (Player p in PhotonNetwork.PlayerListOthers)
+                try
                 {
-                    try
-                    {
-                        HandlePlayerInitialization(p);
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogError($"Error while handling player initialization for {p.NickName}: {e.Message}");
-                    }
+                    HandlePlayerInitialization(p);
                 }
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Something went wrong in OnJoinedRoom in GORILLAWATCH: {e.Message}");
+                catch (Exception e)
+                {
+                    Debug.LogError($"Error while handling player initialization for {p.NickName}: {e.Message}");
+                }
             }
         }
 
         private void HandlePlayerInitialization(Player p)
         {
-            try
+            if (p.CustomProperties.ContainsKey("GorillaWatch"))
             {
-                if (p.CustomProperties.ContainsKey("GorillaWatch"))
+                try
                 {
-                    try
-                    {
-                        StartCoroutine(nameof(WaitForInit), p);
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogError($"Error starting WaitForInit coroutine for player {p.NickName}: {e.Message}");
-                    }
+                    StartCoroutine(nameof(WaitForInit), p);
                 }
-
-                if (p.CustomProperties.TryGetValue("size", out object sizeValue) && sizeValue is float size)
+                catch (Exception e)
                 {
-                    try
-                    {
-                        UpdatePlayerSize(p, size);
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogError($"Error updating size for player {p.NickName}: {e.Message}");
-                    }
+                    Debug.LogError($"Error starting WaitForInit coroutine for player {p.NickName}: {e.Message}");
                 }
             }
-            catch (Exception e)
+
+            if (p.CustomProperties.TryGetValue("size", out object sizeValue) && sizeValue is float size)
             {
-                Debug.LogError($"Error in HandlePlayerInitialization for player {p.NickName}: {e.Message}");
+                try
+                {
+                    UpdatePlayerSize(p, size);
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Error updating size for player {p.NickName}: {e.Message}");
+                }
             }
         }
 
@@ -126,67 +112,46 @@ namespace TheGorillaWatch.Models
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
-            try
+            if (newPlayer.CustomProperties.ContainsKey("GorillaWatch"))
             {
-                if (newPlayer.CustomProperties.ContainsKey("GorillaWatch"))
+                try
                 {
-                    try
-                    {
-                        InitializePlayerWatch(newPlayer);
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogError($"Error initializing player watch for {newPlayer.NickName}: {e.Message}");
-                    }
+                    InitializePlayerWatch(newPlayer);
                 }
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Error in OnPlayerEnteredRoom for player {newPlayer.NickName}: {e.Message}");
+                catch (Exception e)
+                {
+                    Debug.LogError($"Error initializing player watch for {newPlayer.NickName}: {e.Message}");
+                }
             }
         }
 
         public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
         {
-            try
+            if (changedProps.ContainsKey("size") && !targetPlayer.IsLocal)
             {
-                if (changedProps.ContainsKey("size") && !targetPlayer.IsLocal)
+                try
                 {
-                    try
-                    {
-                        UpdatePlayerSize(targetPlayer, (float)changedProps["size"]);
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogError($"Error updating size for player {targetPlayer.NickName}: {e.Message}");
-                    }
+                    UpdatePlayerSize(targetPlayer, (float)changedProps["size"]);
                 }
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Error in OnPlayerPropertiesUpdate for player {targetPlayer.NickName}: {e.Message}");
+                catch (Exception e)
+                {
+                    Debug.LogError($"Error updating size for player {targetPlayer.NickName}: {e.Message}");
+                }
             }
         }
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
         {
-            try
+            if (PlayerList.TryGetValue(otherPlayer, out var playerObject) && Riglist.TryGetValue(otherPlayer, out var rig))
             {
-                if (PlayerList.TryGetValue(otherPlayer, out var playerObject) && Riglist.TryGetValue(otherPlayer, out var rig))
+                try
                 {
-                    try
-                    {
-                        CleanUpPlayer(playerObject, rig, otherPlayer);
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogError($"Error cleaning up player {otherPlayer.NickName}: {e.Message}");
-                    }
+                    CleanUpPlayer(playerObject, rig, otherPlayer);
                 }
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Error in OnPlayerLeftRoom for player {otherPlayer.NickName}: {e.Message}");
+                catch (Exception e)
+                {
+                    Debug.LogError($"Error cleaning up player {otherPlayer.NickName}: {e.Message}");
+                }
             }
         }
 
@@ -211,45 +176,38 @@ namespace TheGorillaWatch.Models
 
         public override void OnLeftRoom()
         {
-            try
+            foreach (var rig in Riglist.Values)
             {
-                foreach (var rig in Riglist.Values)
+                try
                 {
-                    try
+                    if (rig != null)
                     {
-                        if (rig != null)
-                        {
-                            rig.transform.localScale = Vector3.one;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogError($"Error resetting rig scale in OnLeftRoom: {e.Message}");
+                        rig.transform.localScale = Vector3.one;
                     }
                 }
-
-                foreach (var watch in PlayerList.Values)
+                catch (Exception e)
                 {
-                    try
+                    Debug.LogError($"Error resetting rig scale in OnLeftRoom: {e.Message}");
+                }
+            }
+
+            foreach (var watch in PlayerList.Values)
+            {
+                try
+                {
+                    if (watch != null)
                     {
-                        if (watch != null)
-                        {
-                            Destroy(watch);
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogError($"Error destroying watch in OnLeftRoom: {e.Message}");
+                        Destroy(watch);
                     }
                 }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Error destroying watch in OnLeftRoom: {e.Message}");
+                }
+            }
 
-                PlayerList.Clear();
-                Riglist.Clear();
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Error in OnLeftRoom: {e.Message}");
-            }
+            PlayerList.Clear();
+            Riglist.Clear();
         }
     }
 }

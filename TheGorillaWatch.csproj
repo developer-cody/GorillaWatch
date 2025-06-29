@@ -10,7 +10,11 @@
     <None Remove="Reasoure\**" />
   </ItemGroup>
 
-  <ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Assets\GorillaWatch.wav" />
+	</ItemGroup>
+
+	<ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>$(BepInExAssemblyPath)\0Harmony.dll</HintPath>
     </Reference>

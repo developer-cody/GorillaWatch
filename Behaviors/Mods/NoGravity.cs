@@ -12,8 +12,8 @@ namespace TheGorillaWatch.Behaviors.Mods
 
         public override void Enable() => SetGravity(0f);
         public override void Disable() => SetGravity(ogGrav);
-        private void SetGravity(float gravityValue) => Physics.gravity = new Vector3(0, gravityValue, 0);
 
+        private void SetGravity(float gravityValue) => Physics.gravity = new Vector3(0, gravityValue, 0);
         
         public override PageType pageType => PageType.Toggle;
     }

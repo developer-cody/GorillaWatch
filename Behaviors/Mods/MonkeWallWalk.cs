@@ -8,16 +8,8 @@ namespace TheGorillaWatch.Behaviors.Mods
         public override PageType pageType => PageType.Toggle;
         public static bool MonkeWallWalkEnabled;
 
-        public override void Enable()
-        {
-            base.Enable();
-            MonkeWallWalkEnabled = true;
-        }
+        public override void Enable() => MonkeWallWalkEnabled = true;
 
-        public override void Disable()
-        {
-            base.Disable();
-            MonkeWallWalkEnabled = false;
-        }
+        public override void Disable() => MonkeWallWalkEnabled = false;
     }
 }

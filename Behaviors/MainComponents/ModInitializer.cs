@@ -23,7 +23,7 @@ namespace TheGorillaWatch.Behaviors.MainComponents
             Initialized = true;
 
             var hash = new ExitGames.Client.Photon.Hashtable();
-            hash.Add(Constants.Name, Constants.Version);
+            hash.Add(Constants.NAME, Constants.VERS);
             hash.Add("size", 1f);
             PhotonNetwork.LocalPlayer.CustomProperties = hash;
             PhotonNetwork.SetPlayerCustomProperties(hash);

@@ -18,11 +18,6 @@ namespace TheGorillaWatch.Behaviors.Mods
             Destroy(DrawR);
         }
 
-        public override void Enable()
-        {
-            base.Enable();
-        }
-
         public override void OnUpdate()
         {
             if (ControllerInputPoller.instance.leftGrab)

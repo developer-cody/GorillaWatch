@@ -5,7 +5,7 @@ using TheGorillaWatch.Configuration;
 
 namespace TheGorillaWatch
 {
-    [BepInPlugin(Constants.GUID, Constants.Name, Constants.Version)]
+    [BepInPlugin(Constants.GUID, Constants.NAME, Constants.VERS)]
     public class Plugin : BaseUnityPlugin
     {
         private Plugin()
@@ -15,6 +15,7 @@ namespace TheGorillaWatch
 
             gameObject.AddComponent<ModInitializer>();
             gameObject.AddComponent<WatchController>();
+            gameObject.AddComponent<StartUpSound>();
         }
     }
 }

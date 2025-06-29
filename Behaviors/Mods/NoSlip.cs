@@ -10,19 +10,8 @@ namespace TheGorillaWatch.Behaviors.Mods
 
         public static bool NoSlipEnabled;
 
-        public override void Enable()
-        {
-            base.Enable();
-
-            NoSlipEnabled = true;
-        }
-
-        public override void Disable()
-        {
-            base.Disable();
-
-            NoSlipEnabled = false;
-        }
+        public override void Enable() => NoSlipEnabled = true;
+        public override void Disable() => NoSlipEnabled = false;
 
         public override PageType pageType => PageType.Toggle;
     }

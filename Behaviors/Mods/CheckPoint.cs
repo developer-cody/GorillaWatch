@@ -8,14 +8,13 @@ namespace TheGorillaWatch.Behaviors.Mods
 {
     class Checkpoint : ModPage
     {
-        private bool isTeleporting = false;
+        public override string modName => "Checkpoint";
 
+        private bool isTeleporting = false;
         private float actionCooldownTime = 0.35f;
         private float lastActionTime = 0f;
-
         public static GameObject CheckpointBox = null;
 
-        public override string modName => "Checkpoint";
 
         public override void Enable()
         {
