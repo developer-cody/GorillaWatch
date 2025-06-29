@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TheGorillaWatch.Behaviors.Page;
 using UnityEngine;
 
@@ -10,22 +9,23 @@ namespace TheGorillaWatch.Behaviors.Mods
         public override List<string> requiredModNames => new List<string>() { "PlatformGuy" };
         public override string modName => "Noclip";
 
-        public override void Enable() => ToggleColliders(false);
-        public override void Disable() => ToggleColliders(true);
-        
-        public static void ToggleColliders(bool enable)
+        public override void Enable()
         {
-            try
+            base.Enable();
+            MeshCollider[] array = FindObjectsOfType<MeshCollider>();
+            foreach (MeshCollider meshCollider in array)
             {
-                MeshCollider[] array = FindObjectsOfType<MeshCollider>();
-                foreach (MeshCollider meshCollider in array)
-                {
-                    meshCollider.enabled = enable;
-                }
+                meshCollider.enabled = false;
             }
-            catch (Exception e)
+        }
+
+        public override void Disable()
+        {
+            base.Disable();
+            MeshCollider[] array = FindObjectsOfType<MeshCollider>();
+            foreach (MeshCollider meshCollider in array)
             {
-                Debug.Log($"Error with Noclip Toggle: {e.Message}");
+                meshCollider.enabled = true;
             }
         }
 
