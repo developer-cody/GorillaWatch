@@ -11,7 +11,7 @@ namespace TheGorillaWatch.Behaviors.Mods
         {
             base.OnUpdate();
             GTPlayer.Instance.jumpMultiplier = 1.5f;
-            GTPlayer.Instance.maxJumpSpeed = 9.5f;
+            GTPlayer.Instance.maxJumpSpeed = 8.5f;
         }
 
         public override void Disable()

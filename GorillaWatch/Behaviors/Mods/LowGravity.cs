@@ -12,7 +12,7 @@ namespace TheGorillaWatch.Behaviors.Mods
         {
             base.Enable();
             GravityUtils.isOn = true;
-            GravityUtils.SetGravity(4f);
+            GravityUtils.SetGravity(-4f);
         }
 
         public override void Disable()
