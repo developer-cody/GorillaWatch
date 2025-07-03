@@ -1,6 +1,5 @@
 ﻿using Photon.Pun;
 using TheGorillaWatch.Behaviors.Page;
-using TheGorillaWatch.Configuration;
 using UnityEngine;
 using UnityEngine.XR;
 using Valve.VR;

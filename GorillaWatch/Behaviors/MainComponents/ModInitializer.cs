@@ -5,7 +5,6 @@ using GorillaNetworking;
 using HarmonyLib;
 using Photon.Pun;
 using TheGorillaWatch.Behaviors.Page;
-using TheGorillaWatch.Models;
 using UnityEngine;
 
 namespace TheGorillaWatch.Behaviors.MainComponents

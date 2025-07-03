@@ -3,7 +3,6 @@ using GorillaNetworking;
 using Photon.Pun;
 using System.Collections.Generic;
 using TheGorillaWatch.Behaviors.Page;
-using TheGorillaWatch.Configuration;
 
 namespace TheGorillaWatch.Behaviors.Mods
 {

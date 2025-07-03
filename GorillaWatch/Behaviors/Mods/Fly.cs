@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using GorillaLocomotion;
 using TheGorillaWatch.Behaviors.Page;
-using TheGorillaWatch.Configuration;
 using UnityEngine;
 
 namespace TheGorillaWatch.Behaviors.Mods

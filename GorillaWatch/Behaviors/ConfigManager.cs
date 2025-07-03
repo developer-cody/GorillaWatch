@@ -2,7 +2,7 @@
 using BepInEx.Configuration;
 using System.IO;
 
-namespace TheGorillaWatch.Configuration
+namespace TheGorillaWatch.Behaviors
 {
     class ConfigManager
     {

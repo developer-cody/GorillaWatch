@@ -1,7 +1,7 @@
 using BepInEx;
 using HarmonyLib;
+using TheGorillaWatch.Behaviors;
 using TheGorillaWatch.Behaviors.MainComponents;
-using TheGorillaWatch.Configuration;
 
 namespace TheGorillaWatch
 {

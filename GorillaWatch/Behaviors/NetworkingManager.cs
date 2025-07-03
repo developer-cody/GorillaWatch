@@ -5,7 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-namespace TheGorillaWatch.Models
+namespace TheGorillaWatch.Behaviors
 {
     public class NetworkingManager : MonoBehaviourPunCallbacks
     {

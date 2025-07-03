@@ -15,14 +15,13 @@ namespace TheGorillaWatch.Behaviors.Mods
         private float lastActionTime = 0f;
         public static GameObject CheckpointBox = null;
 
-
         public override void Enable()
         {
             base.Enable();
             if (CheckpointBox == null)
             {
                 CheckpointBox = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                CheckpointBox.transform.position = new Vector3(0, 2, 0);
+                CheckpointBox.transform.position = Vector3.zero;
                 CheckpointBox.transform.localScale = new Vector3(.2f, .2f, .2f);
                 CheckpointBox.name = "CheckpointBox";
                 Destroy(CheckpointBox.GetComponent<BoxCollider>());
@@ -50,7 +49,7 @@ namespace TheGorillaWatch.Behaviors.Mods
                 CheckpointBox.transform.position = GorillaTagger.Instance.leftHandTransform.position;
             }
 
-            if (ControllerInputPoller.instance.rightGrab && CheckpointBox != null && !isTeleporting && CheckpointBox.transform.localPosition != Vector3.zero)
+            if (ControllerInputPoller.instance.rightGrab && CheckpointBox != null && !isTeleporting && CheckpointBox.transform.position != Vector3.zero)
             {
                 if (Time.time - lastActionTime >= actionCooldownTime)
                 {
@@ -58,7 +57,6 @@ namespace TheGorillaWatch.Behaviors.Mods
                     UpdateCheckpointColor(Color.red);
 
                     GTPlayer.Instance.TeleportTo(CheckpointBox.transform);
-
                     GorillaTagger.Instance.StartCoroutine(TeleportColorRoutine());
                 }
             }
