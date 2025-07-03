@@ -10,7 +10,7 @@ namespace TheGorillaWatch.Behaviors.Mods
         public override string modName => "VelocityFly";
         public override List<string> incompatibleModNames => new List<string> { "IronMonke", "DashMonk" };
 
-        private float vfSpeed = 1500f;
+        private float vfSpeed = 1250f;
 
         public override void OnUpdate()
         {

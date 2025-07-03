@@ -3,16 +3,16 @@ using TheGorillaWatch.Behaviors.Page;
 
 namespace TheGorillaWatch.Behaviors.Mods
 {
-    class NoGravity : ModPage
+    class LowGravity : ModPage
     {
-        public override string modName => "NoGravity";
-        public override List<string> incompatibleModNames => new List<string>() { "HighGravity", "LowGravity", "MonkeWallWalk" };
+        public override string modName => "LowGravity";
+        public override List<string> incompatibleModNames => new List<string>() { "HighGravity", "NoGravity", "MonkeWallWalk" };
 
         public override void Enable()
         {
             base.Enable();
             GravityUtils.isOn = true;
-            GravityUtils.SetGravity(0f);
+            GravityUtils.SetGravity(4f);
         }
 
         public override void Disable()

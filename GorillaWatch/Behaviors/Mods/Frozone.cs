@@ -19,11 +19,6 @@ namespace TheGorillaWatch.Behaviors.Mods
             Destroy(FrozoneL);
         }
 
-        public override void Enable()
-        {
-            base.Enable();
-        }
-
         public override void OnUpdate()
         {
             Vector3 leftOffset = new Vector3(0f, -0.06f, 0f);

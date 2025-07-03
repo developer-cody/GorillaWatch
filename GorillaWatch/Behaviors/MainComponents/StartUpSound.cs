@@ -6,13 +6,7 @@ namespace TheGorillaWatch.Behaviors.MainComponents
 {
     internal class StartUpSound : MonoBehaviour
     {
-        private void Start()
-        {
-            GorillaTagger.OnPlayerSpawned(() =>
-            {
-                StartCoroutine(PlaySound());
-            });
-        }
+        private void Start() => GorillaTagger.OnPlayerSpawned(() => StartCoroutine(PlaySound()));
 
         private IEnumerator PlaySound()
         {

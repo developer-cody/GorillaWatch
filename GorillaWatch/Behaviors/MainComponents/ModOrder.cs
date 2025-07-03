@@ -16,6 +16,8 @@
             "BigMonkers",
             "SmallMonkers",
             "SpeedyMonk",
+            "HighGravity",
+            "LowGravity",
             "NoGravity",
             "Checkpoint",
             "MonkePunch",

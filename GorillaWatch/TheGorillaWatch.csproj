@@ -5,14 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Assets\**" />
     <Compile Remove="Reasoure\**" />
+    <EmbeddedResource Remove="Assets\**" />
     <EmbeddedResource Remove="Reasoure\**" />
+    <None Remove="Assets\**" />
     <None Remove="Reasoure\**" />
   </ItemGroup>
 
-	<ItemGroup>
-		<EmbeddedResource Include="Assets\GorillaWatch.wav" />
-	</ItemGroup>
+  <ItemGroup>
+    <None Include="Behaviors\Mods\HighGravity.cs" />
+  </ItemGroup>
 
 	<ItemGroup>
     <Reference Include="0Harmony">
@@ -52,7 +55,7 @@
       <HintPath>$(BepInExAssemblyPath)\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.Harmony">
-      <HintPath>..\..\SteamLibrary\steamapps\common\Gorilla Tag\BepInEx\core\BepInEx.Harmony.dll</HintPath>
+      <HintPath>..\..\..\SteamLibrary\steamapps\common\Gorilla Tag\BepInEx\core\BepInEx.Harmony.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.Preloader">
       <HintPath>$(BepInExAssemblyPath)\BepInEx.Preloader.dll</HintPath>

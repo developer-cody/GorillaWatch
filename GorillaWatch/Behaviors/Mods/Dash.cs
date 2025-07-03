@@ -12,7 +12,7 @@ namespace TheGorillaWatch.Behaviors.Mods
         public override PageType pageType => PageType.Toggle;
 
         private bool buttonWasPressed = false;
-        private float dashForce = 10f;
+        private float dashForce = 8f;
 
         public override void OnUpdate()
         {

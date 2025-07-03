@@ -6,27 +6,38 @@ namespace TheGorillaWatch.Behaviors.Mods
 {
     class Noclip : ModPage
     {
-        public override List<string> requiredModNames => new List<string>() { "PlatformGuy" };
         public override string modName => "Noclip";
+        public override List<string> requiredModNames => new List<string>() { "PlatformGuy" };
+
+        private List<Collider> colliders = new List<Collider>();
 
         public override void Enable()
         {
             base.Enable();
-            MeshCollider[] array = FindObjectsOfType<MeshCollider>();
-            foreach (MeshCollider meshCollider in array)
+
+            Collider[] array = FindObjectsOfType<Collider>();
+
+            foreach (var collider in array)
             {
-                meshCollider.enabled = false;
+                if (collider.enabled)
+                {
+                    colliders.Add(collider);
+                    collider.enabled = false;
+                }
             }
         }
 
         public override void Disable()
         {
             base.Disable();
-            MeshCollider[] array = FindObjectsOfType<MeshCollider>();
-            foreach (MeshCollider meshCollider in array)
+
+            foreach (var collider in colliders)
             {
-                meshCollider.enabled = true;
+                if (collider != null)
+                    collider.enabled = true;
             }
+
+            colliders.Clear();
         }
 
         public override PageType pageType => PageType.Toggle;

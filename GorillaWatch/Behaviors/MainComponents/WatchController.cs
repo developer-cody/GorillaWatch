@@ -159,6 +159,7 @@ namespace TheGorillaWatch.Behaviors.MainComponents
                 foreach (var mod in ModInitializer.Mods)
                     if (page.requiredModNames.Contains(mod.modName))
                         mod.Enable();
+
                 page.Enable();
             }
         }

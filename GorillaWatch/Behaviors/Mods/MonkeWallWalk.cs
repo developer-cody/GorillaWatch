@@ -5,7 +5,6 @@ namespace TheGorillaWatch.Behaviors.Mods
     class MonkeWallWalk : ModPage
     {
         public override string modName => "MonkeWallWalk";
-        public override PageType pageType => PageType.Toggle;
         public static bool MonkeWallWalkEnabled;
 
         public override void Enable()
@@ -19,5 +18,7 @@ namespace TheGorillaWatch.Behaviors.Mods
             base.Disable();
             MonkeWallWalkEnabled = false;
         }
+
+        public override PageType pageType => PageType.Toggle;
     }
 }

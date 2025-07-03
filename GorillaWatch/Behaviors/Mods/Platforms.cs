@@ -25,18 +25,12 @@ namespace TheGorillaWatch.Behaviors.Mods
             Destroy(rightplat);
         }
 
-        public override void Enable()
-        {
-            base.Enable();
-        }
-
         public override void OnUpdate()
         {
             Color playerColor = GorillaTagger.Instance.offlineVRRig.mainSkin.material.color;
             Color newColor = Color.HSVToRGB(Mathf.PingPong(timeElapsed, 2f), 1f, 1f);
 
             timeElapsed += Time.deltaTime * colorChangeSpeed;
-
 
             if (ControllerInputPoller.instance.leftGrab)
             {

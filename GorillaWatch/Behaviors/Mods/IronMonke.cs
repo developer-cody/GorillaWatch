@@ -8,38 +8,31 @@ namespace TheGorillaWatch.Behaviors.Mods
     class IronMonke : ModPage
     {
         public override string modName => "IronMonke";
-        public override List<string> incompatibleModNames => new List<string> { "VelocityFly", "DashMonk" };
+        public override List<string> incompatibleModNames => new List<string>() { "VelocityFly", "DashMonk" };
 
         private const float forceMultiplier = 10f;
-        private const float vibrationStrengthDivisor = 25f;
+        private const float vibrationDivider = 25f;
 
         public override void OnUpdate()
         {
-            HandleHandForce(ControllerInputPoller.instance.leftGrab, GorillaTagger.Instance.leftHandTransform, true);
-            HandleHandForce(ControllerInputPoller.instance.rightGrab, GorillaTagger.Instance.rightHandTransform, false);
-        }
 
-        private void HandleHandForce(bool isGrabbed, Transform handTransform, bool isLeftHand)
-        {
-            if (isGrabbed)
+            if (ControllerInputPoller.instance.leftGrab)
             {
-                ApplyForce(handTransform, isLeftHand);
-                TriggerVibration(isLeftHand);
+                Vector3 leftForce = -GorillaTagger.Instance.leftHandTransform.right * forceMultiplier * GTPlayer.Instance.scale;
+                GTPlayer.Instance.bodyCollider.attachedRigidbody.AddForce(leftForce, ForceMode.Acceleration);
+                GorillaTagger.Instance.StartVibration(true, GorillaTagger.Instance.tapHapticStrength / vibrationDivider * 
+                    GTPlayer.Instance.bodyCollider.attachedRigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
+            }
+
+            if (ControllerInputPoller.instance.rightGrab)
+            {
+                Vector3 rightForce = GorillaTagger.Instance.rightHandTransform.right * forceMultiplier * GTPlayer.Instance.scale;
+                GTPlayer.Instance.bodyCollider.attachedRigidbody.AddForce(rightForce, ForceMode.Acceleration);
+                GorillaTagger.Instance.StartVibration(false, GorillaTagger.Instance.tapHapticStrength / vibrationDivider * 
+                    GTPlayer.Instance.bodyCollider.attachedRigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
             }
         }
-
-        private void ApplyForce(Transform handTransform, bool isLeftHand)
-        {
-            Vector3 forceDirection = isLeftHand ? -handTransform.right : handTransform.right;
-            GTPlayer.Instance.bodyCollider.attachedRigidbody.AddForce(forceMultiplier * GTPlayer.Instance.scale * forceDirection, ForceMode.Acceleration);
-        }
-
-        private void TriggerVibration(bool isLeftHand)
-        {
-            float vibrationStrength = GorillaTagger.Instance.tapHapticStrength / vibrationStrengthDivisor * GTPlayer.Instance.bodyCollider.attachedRigidbody.velocity.magnitude;
-            GorillaTagger.Instance.StartVibration(isLeftHand, vibrationStrength, GorillaTagger.Instance.tapHapticDuration);
-        }
-
+        
         public override PageType pageType => PageType.Toggle;
     }
 }

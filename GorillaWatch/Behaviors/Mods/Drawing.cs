@@ -22,6 +22,19 @@ namespace TheGorillaWatch.Behaviors.Mods
         {
             if (ControllerInputPoller.instance.leftGrab)
             {
+                if (ControllerInputPoller.instance.rightGrab)
+                {
+                    DrawR = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                    DrawR.transform.position = GTPlayer.Instance.rightControllerTransform.position;
+                    DrawR.transform.rotation = GTPlayer.Instance.rightControllerTransform.rotation;
+                    DrawR.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                    DrawR.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
+                    DrawR.GetComponent<Renderer>().material.color = Color.black;
+                    Destroy(DrawR.GetComponent<Rigidbody>());
+                    Destroy(DrawR.GetComponent<SphereCollider>());
+                    Destroy(DrawR, 5f);
+                }
+
                 DrawL = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                 DrawL.transform.position = GTPlayer.Instance.leftControllerTransform.position;
                 DrawL.transform.rotation = GTPlayer.Instance.leftControllerTransform.rotation;
@@ -33,18 +46,7 @@ namespace TheGorillaWatch.Behaviors.Mods
                 Destroy(DrawL, 5f);
             }
 
-            if (ControllerInputPoller.instance.rightGrab)
-            {
-                DrawR = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                DrawR.transform.position = GTPlayer.Instance.rightControllerTransform.position;
-                DrawR.transform.rotation = GTPlayer.Instance.rightControllerTransform.rotation;
-                DrawR.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-                DrawR.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
-                DrawR.GetComponent<Renderer>().material.color = Color.black;
-                Destroy(DrawR.GetComponent<Rigidbody>());
-                Destroy(DrawR.GetComponent<SphereCollider>());
-                Destroy(DrawR, 5f);
-            }
+
         }
 
         public override PageType pageType => PageType.Toggle;

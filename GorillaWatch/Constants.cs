@@ -4,6 +4,6 @@
     {
         public const string GUID = "net.cody.gorillawatch";
         public const string NAME = "GorillaWatch";
-        public const string VERS = "3.0.0";
+        public const string VERS = "3.1.0";
     }
 }

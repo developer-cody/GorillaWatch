@@ -1,8 +1,9 @@
-﻿using GorillaLocomotion;
+﻿using System.Collections.Generic;
+using GorillaLocomotion;
 using GorillaNetworking;
 using Photon.Pun;
-using System.Collections.Generic;
 using TheGorillaWatch.Behaviors.Page;
+using UnityEngine;
 
 namespace TheGorillaWatch.Behaviors.Mods
 {
@@ -10,6 +11,9 @@ namespace TheGorillaWatch.Behaviors.Mods
     {
         public override string modName => "BigMonkers";
         public override List<string> incompatibleModNames => new List<string>() { "SmallMonkers" };
+
+        private Vector3 grav = Physics.gravity / ConfigManager.bigMonkersSize.Value;
+
         public override void Enable()
         {
             base.Enable();
@@ -25,17 +29,14 @@ namespace TheGorillaWatch.Behaviors.Mods
             hash2.AddOrUpdate("size", 1f);
             PhotonNetwork.SetPlayerCustomProperties(hash2);
 
-            ChangeScale(1f);
+            typeof(GTPlayer).GetField("nativeScale", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(GTPlayer.Instance, 1f);
+            Physics.gravity = new Vector3(0, GravityUtils.ogGrav, 0);
         }
 
         public override void OnUpdate()
         {
-            ChangeScale(ConfigManager.bigMonkersSize.Value);
-        }
-
-        public static void ChangeScale(float scale)
-        {
-            typeof(GTPlayer).GetField("nativeScale", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(GTPlayer.Instance, scale);
+            typeof(GTPlayer).GetField("nativeScale", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(GTPlayer.Instance, ConfigManager.bigMonkersSize.Value);
+            Physics.gravity = grav;
         }
 
         public override PageType pageType => PageType.Toggle;

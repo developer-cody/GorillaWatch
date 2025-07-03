@@ -16,7 +16,7 @@ namespace TheGorillaWatch.Behaviors.MainComponents
         public static List<ModPage> Mods = new List<ModPage>();
         public static int MainPageIndex;
 
-        private void Start() => GorillaTagger.OnPlayerSpawned(delegate
+        private void Start() => GorillaTagger.OnPlayerSpawned(() =>
         {
             IsSteamVR = Traverse.Create(PlayFabAuthenticator.instance).Field("platform").GetValue().ToString().ToLower() == "steam";
             Initialized = true;
