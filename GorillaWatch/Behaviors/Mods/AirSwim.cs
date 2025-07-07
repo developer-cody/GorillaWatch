@@ -74,8 +74,6 @@ namespace TheGorillaWatch.Behaviors.Mods
             }
         }
 
-
-
         public override PageType pageType => PageType.Toggle;
     }
 }

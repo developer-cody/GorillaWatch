@@ -20,6 +20,7 @@
             "LowGravity",
             "NoGravity",
             "Checkpoint",
+            "GrapplingGuy",
             "MonkePunch",
             "MonkeWalker",
             "MonkeBoing",
