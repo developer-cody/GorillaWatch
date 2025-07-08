@@ -25,6 +25,5 @@ namespace TheGorillaWatch.Behaviors.Page
         public virtual void OnUpdate() { }
         
         public virtual PageType pageType { get; } = PageType.Toggle;
-
     }
 }

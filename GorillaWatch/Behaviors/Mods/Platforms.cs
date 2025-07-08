@@ -43,14 +43,8 @@ namespace TheGorillaWatch.Behaviors.Mods
                     leftplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                     leftplat.AddComponent<GorillaSurfaceOverride>().overrideIndex = 0;
 
-                    if (ConfigManager.platformConfig.Value)
-                    {
-                        leftplat.GetComponent<Renderer>().material.color = newColor;
-                    }
-                    else
-                    {
-                        leftplat.GetComponent<Renderer>().material.color = playerColor;
-                    }
+                    if (ConfigManager.platformConfig.Value) leftplat.GetComponent<Renderer>().material.color = newColor;
+                    else leftplat.GetComponent<Renderer>().material.color = playerColor;
                 }
             }
             else
@@ -73,14 +67,8 @@ namespace TheGorillaWatch.Behaviors.Mods
                     rightplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                     rightplat.AddComponent<GorillaSurfaceOverride>().overrideIndex = 0;
 
-                    if (ConfigManager.platformConfig.Value)
-                    {
-                        rightplat.GetComponent<Renderer>().material.color = newColor;
-                    }
-                    else
-                    {
-                        rightplat.GetComponent<Renderer>().material.color = playerColor;
-                    }
+                    if (ConfigManager.platformConfig.Value) rightplat.GetComponent<Renderer>().material.color = newColor;
+                    else rightplat.GetComponent<Renderer>().material.color = playerColor;
                 }
             }
             else

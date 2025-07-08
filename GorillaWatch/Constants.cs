@@ -2,8 +2,8 @@
 {
     internal class Constants
     {
-        public const string GUID = "net.cody.gorillawatch";
-        public const string NAME = "GorillaWatch";
-        public const string VERS = "3.1.0";
+        public const string GUID = "net.cody.gorillawatch",
+                            NAME = "GorillaWatch",
+                            VERS = "3.1.0";
     }
 }

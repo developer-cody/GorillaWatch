@@ -12,7 +12,7 @@ namespace TheGorillaWatch.Behaviors.Mods
         public override string modName => "BigMonkers";
         public override List<string> incompatibleModNames => new List<string>() { "SmallMonkers" };
 
-        private Vector3 grav = Physics.gravity * ConfigManager.bigMonkersSize.Value;
+        private Vector3 grav = Physics.gravity / ConfigManager.bigMonkersSize.Value;
 
         public override void Enable()
         {
