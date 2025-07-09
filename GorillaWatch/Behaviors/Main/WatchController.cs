@@ -15,7 +15,8 @@ namespace TheGorillaWatch.Behaviors.MainComponents
         private float pageCooldown;
         private readonly GameObject[] huntWatchComponents = new GameObject[5];
 
-        private void Start() => GorillaTagger.OnPlayerSpawned(() => {
+        private void Start() => GorillaTagger.OnPlayerSpawned(() =>
+        {
             var huntComputer = GorillaTagger.Instance.offlineVRRig.huntComputer.GetComponent<GorillaHuntComputer>();
 
             huntWatchComponents[0] = huntComputer.badge.gameObject;

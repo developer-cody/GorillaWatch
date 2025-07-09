@@ -137,6 +137,7 @@ public class GrapplingGuy : ModPage
             leftGrappleLine.SetPosition(0, GorillaTagger.Instance.leftHandTransform.position);
             leftGrappleLine.SetPosition(1, leftGrapplePoint);
         }
+
         if (isRightGrappling && GorillaTagger.Instance != null && GorillaTagger.Instance.rightHandTransform != null)
         {
             rightGrappleLine.SetPosition(0, GorillaTagger.Instance.rightHandTransform.position);

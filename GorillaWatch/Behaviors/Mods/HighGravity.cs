@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using TheGorillaWatch.Behaviors.Page;
+using TheGorillaWatch.Utilities;
 
 namespace TheGorillaWatch.Behaviors.Mods
 {
@@ -11,14 +12,12 @@ namespace TheGorillaWatch.Behaviors.Mods
         public override void Enable()
         {
             base.Enable();
-            GravityUtils.isOn = true;
             GravityUtils.SetGravity(-14f);
         }
 
         public override void Disable()
         {
             base.Disable();
-            GravityUtils.isOn = false;
             GravityUtils.SetGravity(GravityUtils.ogGrav);
         }
 

@@ -6,14 +6,14 @@ namespace TheGorillaWatch.Behaviors
 {
     class ConfigManager
     {
+        private static ConfigFile config;
+
         public static ConfigEntry<bool> toggleModButton;
         public static ConfigEntry<bool> toggleWatchButton;
         public static ConfigEntry<bool> toggleableWatch;
         public static ConfigEntry<bool> platformConfig;
         public static ConfigEntry<float> bigMonkersSize;
         public static ConfigEntry<float> smallMonkersSize;
-
-        private static ConfigFile config;
 
         public static void CreateConfig()
         {
@@ -26,9 +26,6 @@ namespace TheGorillaWatch.Behaviors
             toggleWatchButton = config.Bind("Settings", "Use Right Trigger for Watch Toggle", false,
                 "Choose whether to use your right joystick down or your right trigger to toggle the watch. " +
                 "If false, you will use your right joystick click to toggle. If true, you will use your right trigger.");
-
-            platformConfig = config.Bind("Settings", "RGB Platforms", false,
-                "If true, it cycles through red, green, and blue. If false, it's just your player's color.");
 
             toggleableWatch = config.Bind("Settings", "Do You Want Your Watch to be Toggleable?", true,
                 "Choose whether you want your watch to be toggleable with either your right joystick or trigger. " +

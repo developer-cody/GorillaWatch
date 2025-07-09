@@ -30,13 +30,13 @@ namespace TheGorillaWatch.Behaviors.Networking
             }
         }
 
-        IEnumerator WaitForInit(Player p)
+        public IEnumerator WaitForInit(Player p)
         {
             yield return new WaitForSeconds(0.7f);
             InitializePlayerWatch(p);
         }
 
-        void InitializePlayerWatch(Player p)
+        public void InitializePlayerWatch(Player p)
         {
             try
             {
@@ -47,6 +47,9 @@ namespace TheGorillaWatch.Behaviors.Networking
                 huntwatch.transform.SetParent(rig.leftHandTransform, false);
                 huntwatch.transform.localPosition = new Vector3(-0.6364f, 0.6427f, 0.0153f);
                 huntwatch.transform.localRotation = GorillaTagger.Instance.offlineVRRig.huntComputer.transform.localRotation;
+
+                huntwatch.GetComponent<GorillaHuntComputer>().text.text = "<color=black>Gorilla</colors>Watch";
+                huntwatch.GetComponent<GorillaHuntComputer>().text.alignment = TextAnchor.MiddleCenter;
 
                 PlayerList.Add(p, huntwatch);
                 Riglist.Add(p, rig.gameObject);
@@ -105,6 +108,7 @@ namespace TheGorillaWatch.Behaviors.Networking
                     Debug.LogError($"Error destroying watch in OnLeftRoom: {e.Message}");
                 }
             }
+
             PlayerList.Clear();
             Riglist.Clear();
         }

@@ -10,7 +10,7 @@ namespace TheGorillaWatch.Patches
         static void Postfix(ref float __result)
         {
             if (SlipMonk.SlipMonkEnabled) __result = 1f; 
-            if (NoSlip.NoSlipEnabled)  __result = 0f;
+            if (NoSlip.NoSlipEnabled) __result = 0f;
         }
     }
 }

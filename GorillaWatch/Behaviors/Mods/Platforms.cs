@@ -15,9 +15,6 @@ namespace TheGorillaWatch.Behaviors.Mods
         Vector3 leftOffset = new Vector3(0f, -0.06f, 0f);
         Vector3 rightOffset = new Vector3(0f, -0.06f, 0f);
 
-        private float colorChangeSpeed = 1f;
-        private float timeElapsed = 0f;
-
         public override void Disable()
         {
             base.Disable();
@@ -27,11 +24,6 @@ namespace TheGorillaWatch.Behaviors.Mods
 
         public override void OnUpdate()
         {
-            Color playerColor = GorillaTagger.Instance.offlineVRRig.mainSkin.material.color;
-            Color newColor = Color.HSVToRGB(Mathf.PingPong(timeElapsed, 2f), 1f, 1f);
-
-            timeElapsed += Time.deltaTime * colorChangeSpeed;
-
             if (ControllerInputPoller.instance.leftGrab)
             {
                 if (leftplat == null)
@@ -42,16 +34,14 @@ namespace TheGorillaWatch.Behaviors.Mods
                     leftplat.transform.rotation = GorillaTagger.Instance.leftHandTransform.rotation;
                     leftplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                     leftplat.AddComponent<GorillaSurfaceOverride>().overrideIndex = 0;
-
-                    if (ConfigManager.platformConfig.Value) leftplat.GetComponent<Renderer>().material.color = newColor;
-                    else leftplat.GetComponent<Renderer>().material.color = playerColor;
+                    leftplat.GetComponent<Renderer>().material.color = GorillaTagger.Instance.offlineVRRig.mainSkin.material.color;
                 }
             }
             else
             {
                 if (leftplat != null)
                 {
-                    Destroy(leftplat);
+                    Destroy(leftplat, .5f);
                     leftplat = null;
                 }
             }
@@ -66,16 +56,14 @@ namespace TheGorillaWatch.Behaviors.Mods
                     rightplat.transform.rotation = GorillaTagger.Instance.rightHandTransform.rotation;
                     rightplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                     rightplat.AddComponent<GorillaSurfaceOverride>().overrideIndex = 0;
-
-                    if (ConfigManager.platformConfig.Value) rightplat.GetComponent<Renderer>().material.color = newColor;
-                    else rightplat.GetComponent<Renderer>().material.color = playerColor;
+                    rightplat.GetComponent<Renderer>().material.color = GorillaTagger.Instance.offlineVRRig.mainSkin.material.color;
                 }
             }
             else
             {
                 if (rightplat != null)
                 {
-                    Destroy(rightplat);
+                    Destroy(rightplat, .5f);
                     rightplat = null;
                 }
             }

@@ -18,15 +18,12 @@ namespace TheGorillaWatch.Behaviors.MainComponents
 
                 while (!request.isDone) await Task.Yield();
 
-                if (www.result != UnityWebRequest.Result.Success)
-                {
-                    Debug.LogError($"Failed to load audio clip: {www.error}");
-                }
-                else
+                if (www.result == UnityWebRequest.Result.Success)
                 {
                     AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
                     audioSource.PlayOneShot(clip, 5f);
                 }
+                else Debug.LogError($"Failed to load audio clip: {www.error}");
             }
         }
     }

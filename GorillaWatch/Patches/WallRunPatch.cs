@@ -1,6 +1,7 @@
 ﻿using GorillaLocomotion;
 using HarmonyLib;
 using TheGorillaWatch.Behaviors.Mods;
+using TheGorillaWatch.Utilities;
 using UnityEngine;
 
 namespace TheGorillaWatch.Patches
@@ -13,7 +14,7 @@ namespace TheGorillaWatch.Patches
         static void Postfix(RaycastHit raycastHit)
         {
             if (MonkeWallWalk.MonkeWallWalkEnabled) Physics.gravity = raycastHit.normal * -9.81f; 
-            else if (!GravityUtils.isOn) Physics.gravity = ogGravity; 
+            else if (!GravityUtils.isOn()) Physics.gravity = ogGravity; 
         }
     }
 }
