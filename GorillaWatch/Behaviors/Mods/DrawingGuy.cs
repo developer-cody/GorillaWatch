@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TheGorillaWatch.Behaviors.Mods
 {
-    class Drawing : ModPage
+    class DrawingGuy : ModPage
     {
         public override string modName => "DrawingGuy";
 

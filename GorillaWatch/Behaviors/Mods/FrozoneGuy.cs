@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TheGorillaWatch.Behaviors.Mods
 {
-    class Frozone : ModPage
+    class FrozoneGuy : ModPage
     {
         public override string modName => "FrozoneGuy";
         public override List<string> incompatibleModNames => new List<string>() { "PlatformGuy" };

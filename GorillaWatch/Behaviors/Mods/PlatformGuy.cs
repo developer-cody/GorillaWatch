@@ -4,16 +4,13 @@ using UnityEngine;
 
 namespace TheGorillaWatch.Behaviors.Mods
 {
-    class Platforms : ModPage
+    class PlatformGuy : ModPage
     {
         public override string modName => "PlatformGuy";
         public override List<string> incompatibleModNames => new List<string>() { "FrozoneGuy" };
 
         GameObject leftplat;
         GameObject rightplat;
-
-        Vector3 leftOffset = new Vector3(0f, -0.06f, 0f);
-        Vector3 rightOffset = new Vector3(0f, -0.06f, 0f);
 
         public override void Disable()
         {
@@ -30,7 +27,7 @@ namespace TheGorillaWatch.Behaviors.Mods
                 {
                     leftplat = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     leftplat.transform.localScale = new Vector3(.02f, .27f, .353f);
-                    leftplat.transform.position = GorillaTagger.Instance.leftHandTransform.position + leftOffset;
+                    leftplat.transform.position = GorillaTagger.Instance.leftHandTransform.position + new Vector3(0f, -0.06f, 0f);
                     leftplat.transform.rotation = GorillaTagger.Instance.leftHandTransform.rotation;
                     leftplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                     leftplat.AddComponent<GorillaSurfaceOverride>().overrideIndex = 0;
@@ -41,7 +38,7 @@ namespace TheGorillaWatch.Behaviors.Mods
             {
                 if (leftplat != null)
                 {
-                    Destroy(leftplat, .5f);
+                    Destroy(leftplat);
                     leftplat = null;
                 }
             }
@@ -52,7 +49,7 @@ namespace TheGorillaWatch.Behaviors.Mods
                 {
                     rightplat = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     rightplat.transform.localScale = new Vector3(.02f, .27f, .353f);
-                    rightplat.transform.position = GorillaTagger.Instance.rightHandTransform.position + rightOffset;
+                    rightplat.transform.position = GorillaTagger.Instance.rightHandTransform.position + new Vector3(0f, -0.06f, 0f);
                     rightplat.transform.rotation = GorillaTagger.Instance.rightHandTransform.rotation;
                     rightplat.GetComponent<Renderer>().material.shader = Shader.Find("GorillaTag/UberShader");
                     rightplat.AddComponent<GorillaSurfaceOverride>().overrideIndex = 0;
@@ -63,7 +60,7 @@ namespace TheGorillaWatch.Behaviors.Mods
             {
                 if (rightplat != null)
                 {
-                    Destroy(rightplat, .5f);
+                    Destroy(rightplat);
                     rightplat = null;
                 }
             }

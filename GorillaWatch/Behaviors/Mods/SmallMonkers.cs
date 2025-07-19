@@ -3,8 +3,6 @@ using GorillaNetworking;
 using Photon.Pun;
 using System.Collections.Generic;
 using TheGorillaWatch.Behaviors.Page;
-using TheGorillaWatch.Utilities;
-using UnityEngine;
 
 namespace TheGorillaWatch.Behaviors.Mods
 {
@@ -12,8 +10,6 @@ namespace TheGorillaWatch.Behaviors.Mods
     {
         public override string modName => "SmallMonkers";
         public override List<string> incompatibleModNames => new List<string>() { "BigMonkers" };
-
-        private Vector3 grav = Physics.gravity / ConfigManager.smallMonkersSize.Value;
 
         public override void Enable()
         {
@@ -31,14 +27,9 @@ namespace TheGorillaWatch.Behaviors.Mods
             PhotonNetwork.SetPlayerCustomProperties(hash2);
 
             typeof(GTPlayer).GetField("nativeScale", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(GTPlayer.Instance, 1f);
-            Physics.gravity = new Vector3(0, GravityUtils.ogGrav, 0);
         }
 
-        public override void OnUpdate() 
-        {
-            typeof(GTPlayer).GetField("nativeScale", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(GTPlayer.Instance, ConfigManager.smallMonkersSize.Value);
-            Physics.gravity = grav;
-        }
+        public override void OnUpdate() => typeof(GTPlayer).GetField("nativeScale", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(GTPlayer.Instance, ConfigManager.smallMonkersSize.Value);
 
         public override PageType pageType => PageType.Toggle;
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TheGorillaWatch.Behaviors.Mods
 {
-    class Fly : ModPage
+    class VelocityFly : ModPage
     {
         public override string modName => "VelocityFly";
         public override List<string> incompatibleModNames => new List<string> { "IronMonke", "DashMonk" };
