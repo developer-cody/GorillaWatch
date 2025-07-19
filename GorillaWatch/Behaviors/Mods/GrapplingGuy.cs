@@ -1,149 +1,140 @@
 ﻿using TheGorillaWatch.Behaviors.Page;
 using UnityEngine;
 
-public class GrapplingGuy : ModPage
+namespace TheGorillaWatch.Behaviors.Mods
 {
-    public override string modName => "GrapplingGuy";
-
-    private GameObject leftLineObject;
-    private GameObject rightLineObject;
-    private LineRenderer leftGrappleLine;
-    private LineRenderer rightGrappleLine;
-    private SpringJoint leftGrappleJoint;
-    private SpringJoint rightGrappleJoint;
-    private bool isLeftGrappling;
-    private bool isRightGrappling;
-    private Vector3 leftGrapplePoint;
-    private Vector3 rightGrapplePoint;
-
-    public override void Init()
+    public class GrapplingGuy : ModPage
     {
-        leftLineObject = new GameObject("LeftGrappleLine");
-        leftLineObject.transform.SetParent(transform, false);
-        leftGrappleLine = leftLineObject.AddComponent<LineRenderer>();
-        leftGrappleLine.startWidth = 0.01f;
-        leftGrappleLine.endWidth = 0.01f;
-        leftGrappleLine.material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
-        leftGrappleLine.material.color = new Color(0.9f, 0.9f, 0.9f, 0.8f);
-        leftGrappleLine.material.SetFloat("_Metallic", 0.8f);
-        leftGrappleLine.material.SetFloat("_Smoothness", 0.9f);
-        leftGrappleLine.receiveShadows = true;
-        leftGrappleLine.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-        leftGrappleLine.positionCount = 2;
-        leftGrappleLine.enabled = false;
+        public override string modName => "GrapplingGuy";
 
-        rightLineObject = new GameObject("RightGrappleLine");
-        rightLineObject.transform.SetParent(transform, false);
-        rightGrappleLine = rightLineObject.AddComponent<LineRenderer>();
-        rightGrappleLine.startWidth = 0.01f;
-        rightGrappleLine.endWidth = 0.01f;
-        rightGrappleLine.material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
-        rightGrappleLine.material.color = new Color(0.9f, 0.9f, 0.9f, 0.8f);
-        rightGrappleLine.material.SetFloat("_Metallic", 0.8f);
-        rightGrappleLine.material.SetFloat("_Smoothness", 0.9f);
-        rightGrappleLine.receiveShadows = true;
-        rightGrappleLine.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-        rightGrappleLine.positionCount = 2;
-        rightGrappleLine.enabled = false;
-    }
+        private GameObject leftLineObj, rightLineObj;
+        private LineRenderer leftLine, rightLine;
+        private SpringJoint leftJoint, rightJoint;
+        private bool leftActive, rightActive;
+        private Vector3 leftPoint, rightPoint;
 
-    public override void Disable()
-    {
-        base.Disable();
-        if (leftGrappleJoint != null) Destroy(leftGrappleJoint);
-        if (rightGrappleJoint != null) Destroy(rightGrappleJoint);
-        leftGrappleLine.enabled = false;
-        rightGrappleLine.enabled = false;
-        isLeftGrappling = false;
-        isRightGrappling = false;
-    }
-
-    private void UpdateGrapple(bool useRightHand, bool isGripHeld)
-    {
-        if (!modEnabled) return;
-
-        if (useRightHand)
+        public override void Init()
         {
-            if (isGripHeld && GorillaTagger.Instance != null && GorillaTagger.Instance.rightHandTransform != null)
+            leftLineObj = new GameObject("LeftGrappleLine");
+            leftLineObj.transform.SetParent(transform, false);
+            leftLine = leftLineObj.AddComponent<LineRenderer>();
+            SetupLine(leftLine);
+
+            rightLineObj = new GameObject("RightGrappleLine");
+            rightLineObj.transform.SetParent(transform, false);
+            rightLine = rightLineObj.AddComponent<LineRenderer>();
+            SetupLine(rightLine);
+        }
+
+        public override void Disable()
+        {
+            base.Disable();
+            if (leftJoint) Destroy(leftJoint);
+            if (rightJoint) Destroy(rightJoint);
+            leftLine.enabled = false;
+            rightLine.enabled = false;
+            leftActive = false;
+            rightActive = false;
+        }
+
+        private void SetupLine(LineRenderer line)
+        {
+            line.startWidth = 0.01f;
+            line.endWidth = 0.01f;
+            line.material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
+            line.material.color = new Color(0.9f, 0.9f, 0.9f, 0.8f);
+            line.material.SetFloat("_Metallic", 0.8f);
+            line.material.SetFloat("_Smoothness", 0.9f);
+            line.receiveShadows = true;
+            line.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            line.positionCount = 2;
+            line.enabled = false;
+        }
+
+        private void HandleGrapple(bool right, bool grip)
+        {
+            if (!modEnabled) return;
+
+            var tagger = GorillaTagger.Instance;
+            if (tagger == null) return;
+
+            var hand = right ? tagger.rightHandTransform : tagger.leftHandTransform;
+            if (hand == null) return;
+
+            var joint = right ? rightJoint : leftJoint;
+            var line = right ? rightLine : leftLine;
+            var active = right ? rightActive : leftActive;
+            var point = right ? rightPoint : leftPoint;
+
+            if (grip)
             {
-                if (!isRightGrappling)
+                if (!active && Physics.Raycast(hand.position, hand.forward, out RaycastHit hit, 100f))
                 {
-                    Transform handTransform = GorillaTagger.Instance.rightHandTransform;
-                    if (Physics.Raycast(handTransform.position, handTransform.forward, out RaycastHit hit, 100f))
+                    point = hit.point;
+                    joint = tagger.gameObject.AddComponent<SpringJoint>();
+                    joint.autoConfigureConnectedAnchor = false;
+                    joint.connectedAnchor = point;
+                    joint.maxDistance = Vector3.Distance(hand.position, point) * 0.9f;
+                    joint.minDistance = 0.1f;
+                    joint.spring = 100f;
+                    joint.damper = 10f;
+                    joint.massScale = 2f;
+                    line.enabled = true;
+                    if (right)
                     {
-                        rightGrapplePoint = hit.point;
-                        rightGrappleJoint = GorillaTagger.Instance.gameObject.AddComponent<SpringJoint>();
-                        rightGrappleJoint.autoConfigureConnectedAnchor = false;
-                        rightGrappleJoint.connectedAnchor = rightGrapplePoint;
-                        rightGrappleJoint.maxDistance = Vector3.Distance(handTransform.position, rightGrapplePoint) * 0.9f;
-                        rightGrappleJoint.minDistance = 0.1f;
-                        rightGrappleJoint.spring = 100f;
-                        rightGrappleJoint.damper = 10f;
-                        rightGrappleJoint.massScale = 2f;
-                        rightGrappleLine.enabled = true;
-                        isRightGrappling = true;
+                        rightPoint = point;
+                        rightJoint = joint;
+                        rightActive = true;
+                    }
+                    else
+                    {
+                        leftPoint = point;
+                        leftJoint = joint;
+                        leftActive = true;
                     }
                 }
             }
             else
             {
-                if (rightGrappleJoint != null) Destroy(rightGrappleJoint);
-                rightGrappleLine.enabled = false;
-                isRightGrappling = false;
-            }
-        }
-        else
-        {
-            if (isGripHeld && GorillaTagger.Instance != null && GorillaTagger.Instance.leftHandTransform != null)
-            {
-                if (!isLeftGrappling)
+                if (joint) Destroy(joint);
+                line.enabled = false;
+                if (right)
                 {
-                    Transform handTransform = GorillaTagger.Instance.leftHandTransform;
-                    if (Physics.Raycast(handTransform.position, handTransform.forward, out RaycastHit hit, 100f))
-                    {
-                        leftGrapplePoint = hit.point;
-                        leftGrappleJoint = GorillaTagger.Instance.gameObject.AddComponent<SpringJoint>();
-                        leftGrappleJoint.autoConfigureConnectedAnchor = false;
-                        leftGrappleJoint.connectedAnchor = leftGrapplePoint;
-                        leftGrappleJoint.maxDistance = Vector3.Distance(handTransform.position, leftGrapplePoint) * 0.9f;
-                        leftGrappleJoint.minDistance = 0.1f;
-                        leftGrappleJoint.spring = 100f;
-                        leftGrappleJoint.damper = 10f;
-                        leftGrappleJoint.massScale = 2f;
-                        leftGrappleLine.enabled = true;
-                        isLeftGrappling = true;
-                    }
+                    rightJoint = null;
+                    rightActive = false;
+                }
+                else
+                {
+                    leftJoint = null;
+                    leftActive = false;
                 }
             }
-            else
+        }
+
+        public override void OnUpdate()
+        {
+            var poller = ControllerInputPoller.instance;
+            if (poller == null) return;
+
+            HandleGrapple(false, poller.leftGrab);
+            HandleGrapple(true, poller.rightGrab);
+
+            var tagger = GorillaTagger.Instance;
+            if (tagger == null) return;
+
+            if (leftActive && tagger.leftHandTransform)
             {
-                if (leftGrappleJoint != null) Destroy(leftGrappleJoint);
-                leftGrappleLine.enabled = false;
-                isLeftGrappling = false;
+                leftLine.SetPosition(0, tagger.leftHandTransform.position);
+                leftLine.SetPosition(1, leftPoint);
+            }
+
+            if (rightActive && tagger.rightHandTransform)
+            {
+                rightLine.SetPosition(0, tagger.rightHandTransform.position);
+                rightLine.SetPosition(1, rightPoint);
             }
         }
+
+        public override PageType pageType => PageType.Toggle;
     }
-
-    public override void OnUpdate()
-    {
-        bool leftGrab = ControllerInputPoller.instance != null && ControllerInputPoller.instance.leftGrab;
-        bool rightGrab = ControllerInputPoller.instance != null && ControllerInputPoller.instance.rightGrab;
-
-        UpdateGrapple(false, leftGrab);
-        UpdateGrapple(true, rightGrab);
-
-        if (isLeftGrappling && GorillaTagger.Instance != null && GorillaTagger.Instance.leftHandTransform != null)
-        {
-            leftGrappleLine.SetPosition(0, GorillaTagger.Instance.leftHandTransform.position);
-            leftGrappleLine.SetPosition(1, leftGrapplePoint);
-        }
-
-        if (isRightGrappling && GorillaTagger.Instance != null && GorillaTagger.Instance.rightHandTransform != null)
-        {
-            rightGrappleLine.SetPosition(0, GorillaTagger.Instance.rightHandTransform.position);
-            rightGrappleLine.SetPosition(1, rightGrapplePoint);
-        }
-    }
-
-    public override PageType pageType => PageType.Toggle;
 }

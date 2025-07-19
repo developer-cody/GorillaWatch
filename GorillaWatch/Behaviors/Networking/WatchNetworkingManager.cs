@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using Logger = TheGorillaWatch.Utilities.Logger;
 
 namespace TheGorillaWatch.Behaviors.Networking
 {
@@ -24,7 +25,7 @@ namespace TheGorillaWatch.Behaviors.Networking
                     }
                     catch (Exception e)
                     {
-                        Debug.LogError($"Error starting WaitForInit coroutine for player {p.NickName}: {e.Message}");
+                        Logger.Error("Error starting WaitForInit coroutine for player {0}: {1}", p.NickName, e.Message);
                     }
                 }
             }
@@ -48,7 +49,7 @@ namespace TheGorillaWatch.Behaviors.Networking
                 huntwatch.transform.localPosition = new Vector3(-0.6364f, 0.6427f, 0.0153f);
                 huntwatch.transform.localRotation = GorillaTagger.Instance.offlineVRRig.huntComputer.transform.localRotation;
 
-                huntwatch.GetComponent<GorillaHuntComputer>().text.text = "<color=black>Gorilla</colors>Watch";
+                huntwatch.GetComponent<GorillaHuntComputer>().text.text = "<color=black>Gorilla</color>Watch";
                 huntwatch.GetComponent<GorillaHuntComputer>().text.alignment = TextAnchor.MiddleCenter;
 
                 PlayerList.Add(p, huntwatch);
@@ -56,7 +57,7 @@ namespace TheGorillaWatch.Behaviors.Networking
             }
             catch (Exception e)
             {
-                Debug.LogError($"Error in InitializePlayerWatch for player {p.NickName}: {e.Message}");
+                Logger.Error("Error in InitializePlayerWatch for player {0}: {1}", p.NickName, e.Message);
             }
         }
 
@@ -70,7 +71,7 @@ namespace TheGorillaWatch.Behaviors.Networking
                 }
                 catch (Exception e)
                 {
-                    Debug.LogError($"Error initializing player watch for {newPlayer.NickName}: {e.Message}");
+                    Logger.Error("Error initializing player watch for {0}: {1}", newPlayer.NickName, e.Message);
                 }
             }
         }
@@ -87,7 +88,7 @@ namespace TheGorillaWatch.Behaviors.Networking
                 }
                 catch (Exception e)
                 {
-                    Debug.LogError($"Error cleaning up player {otherPlayer.NickName}: {e.Message}");
+                    Logger.Error("Error cleaning up player {0}: {1}", otherPlayer.NickName, e.Message);
                 }
             }
         }
@@ -105,7 +106,7 @@ namespace TheGorillaWatch.Behaviors.Networking
                 }
                 catch (Exception e)
                 {
-                    Debug.LogError($"Error destroying watch in OnLeftRoom: {e.Message}");
+                    Logger.Error("Error destroying watch in OnLeftRoom: {0}", e.Message);
                 }
             }
 

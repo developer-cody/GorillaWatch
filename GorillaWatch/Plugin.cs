@@ -12,6 +12,7 @@ namespace TheGorillaWatch
         {
             Harmony.CreateAndPatchAll(typeof(Plugin).Assembly, Constants.GUID);
             ConfigManager.CreateConfig();
+            Utilities.Logger.Initialize();
 
             gameObject.AddComponent<ModInitializer>();
             gameObject.AddComponent<WatchController>();
@@ -19,8 +20,10 @@ namespace TheGorillaWatch
         }
     }
 
-    internal class Constants
+    internal static class Constants
     {
-        public const string GUID = "net.cody.gorillawatch", NAME = "GorillaWatch", VERS = "3.1.0";
+        public const string GUID = "net.cody.gorillawatch";
+        public const string NAME = "GorillaWatch";
+        public const string VERS = "3.1.0";
     }
 }

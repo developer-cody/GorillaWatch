@@ -2,6 +2,7 @@
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using Logger = TheGorillaWatch.Utilities.Logger;
 
 namespace TheGorillaWatch.Behaviors.Networking
 {
@@ -19,7 +20,7 @@ namespace TheGorillaWatch.Behaviors.Networking
                     }
                     catch (Exception e)
                     {
-                        Debug.LogError($"Error updating size for player {p.NickName}: {e.Message}");
+                        Logger.Error("Error updating size for player {0}: {1}", p.NickName, e.Message);
                     }
                 }
             }
@@ -34,7 +35,7 @@ namespace TheGorillaWatch.Behaviors.Networking
             }
             catch (Exception e)
             {
-                Debug.LogError($"Error in UpdatePlayerSize for player {p.NickName}: {e.Message}");
+                Logger.Error("Error in UpdatePlayerSize for player {0}: {1}", p.NickName, e.Message);
             }
         }
 
@@ -48,7 +49,7 @@ namespace TheGorillaWatch.Behaviors.Networking
                 }
                 catch (Exception e)
                 {
-                    Debug.LogError($"Error updating size for player {targetPlayer.NickName}: {e.Message}");
+                    Logger.Error("Error updating size for player {0}: {1}", targetPlayer.NickName, e.Message);
                 }
             }
         }
@@ -62,7 +63,7 @@ namespace TheGorillaWatch.Behaviors.Networking
             }
             catch (Exception e)
             {
-                Debug.LogError($"Error resetting rig scale for player {otherPlayer.NickName}: {e.Message}");
+                Logger.Error("Error resetting rig scale for player {0}: {1}", otherPlayer.NickName, e.Message);
             }
         }
 
@@ -77,7 +78,7 @@ namespace TheGorillaWatch.Behaviors.Networking
                 }
                 catch (Exception e)
                 {
-                    Debug.LogError($"Error resetting rig scale in OnLeftRoom: {e.Message}");
+                    Logger.Error("Error resetting rig scale in OnLeftRoom: {0}", e.Message);
                 }
             }
         }

@@ -6,6 +6,7 @@ using Photon.Pun;
 using TheGorillaWatch.Behaviors.Networking;
 using TheGorillaWatch.Behaviors.Page;
 using UnityEngine;
+using Logger = TheGorillaWatch.Utilities.Logger;
 
 namespace TheGorillaWatch.Behaviors.MainComponents
 {
@@ -53,12 +54,12 @@ namespace TheGorillaWatch.Behaviors.MainComponents
                         }
                         else
                         {
-                            Debug.LogWarning($"ModPage not found for: {modName}");
+                            Logger.Warn($"ModPage not found", modName);
                         }
                     }
                     catch (Exception e)
                     {
-                        Debug.LogError($"Error loading mod {modName}: {e}");
+                        Logger.Error($"Error loading mod {modName}: {e}");
                     }
                 }
 

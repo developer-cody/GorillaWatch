@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
+using Logger = TheGorillaWatch.Utilities.Logger;
 
 namespace TheGorillaWatch.Behaviors.MainComponents
 {
@@ -23,7 +24,7 @@ namespace TheGorillaWatch.Behaviors.MainComponents
                     AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
                     audioSource.PlayOneShot(clip, 5f);
                 }
-                else Debug.LogError($"Failed to load audio clip: {www.error}");
+                else Logger.Error($"Failed to load audio clip: {www.error}");
             }
         }
     }

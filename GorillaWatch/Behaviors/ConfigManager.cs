@@ -1,6 +1,6 @@
-﻿using BepInEx;
+﻿using System.IO;
+using BepInEx;
 using BepInEx.Configuration;
-using System.IO;
 
 namespace TheGorillaWatch.Behaviors
 {
@@ -22,7 +22,7 @@ namespace TheGorillaWatch.Behaviors
 
             bigMonkersSize = config.Bind("Settings", "How Big Do You Want BigMonkers to Be?", 2f, "Choose how big you want the scale to be when BigMonkers is enabled.");
             smallMonkersSize = config.Bind("Settings", "How Small Do You Want SmallMonkers to Be?", 0.1f, "Choose how small you want the scale to be when SmallMonkers is enabled.");
-            
+
             if (bigMonkersSize.Value <= 1f) bigMonkersSize.Value = 2f;
 
             if (smallMonkersSize.Value >= 1f) smallMonkersSize.Value = 0.1f;
